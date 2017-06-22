@@ -10,7 +10,7 @@ if (!$autoload) {
   // Modify composer to not autoload WonderPush
   $composer = json_decode($composerOriginalRaw, true);
   unset($composer['autoload']);
-  file_put_contents('composer.json', json_encode($composer, JSON_PRETTY_PRINT));
+  file_put_contents('composer.json', json_encode($composer));
 }
 
 passthru('composer install', $returnStatus);
