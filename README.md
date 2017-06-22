@@ -1,6 +1,8 @@
 WonderPush PHP library
 ======================
 
+[![Build Status](https://travis-ci.org/wonderpush/wonderpush-php-lib.svg?branch=master)](https://travis-ci.org/wonderpush/wonderpush-php-lib)
+
 Find the full WonderPush services documentation at:
 http://www.wonderpush.com/docs/.
 
