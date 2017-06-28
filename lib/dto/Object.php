@@ -2,7 +2,7 @@
 
 namespace WonderPush;
 
-class Object implements \JsonSerializable {
+class Object implements Util\JsonSerializable {
 
   public function __construct($data = null) {
     if ($data !== null) {

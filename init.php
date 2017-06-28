@@ -1,6 +1,7 @@
 <?php
 
 // Util
+require(dirname(__FILE__) . '/lib/util/JsonSerializable.php');
 require(dirname(__FILE__) . '/lib/util/DefaultLogger.php');
 require(dirname(__FILE__) . '/lib/util/ArrayUtil.php');
 require(dirname(__FILE__) . '/lib/util/StringUtil.php');
