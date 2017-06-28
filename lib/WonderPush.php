@@ -7,12 +7,15 @@ namespace WonderPush;
  */
 class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
-  const API_BASE = 'https://api.wonderpush.com';
-  const API_VERSION = 'v1';
+  const API_BASE = 'https://api.wonderpush.com'; // DO NOT END WITH SLASH
+  const API_VERSION = 'v1'; // "vX", NO SLASH
+  const API_PREFIX = '/management'; // DO NOT END WITH SLASH
+
   const VERSION = '0.1.0';
 
   private $accessToken;
   private $applicationId;
+  private $apiBase;
 
   /**
    * The logger to which the library will produce messages.
@@ -26,7 +29,19 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
    */
   private $logger;
 
-  public function __construct($accessToken, $applicationId) {
+  /**
+   * The HttpClient implementation to use.
+   * @var Net\HttpClientInterface
+   */
+  private $httpClient;
+
+  /**
+   * Lazily initialized Rest API.
+   * @var Rest
+   */
+  private $rest;
+
+  public function __construct($accessToken, $applicationId = null) {
     $this->accessToken = $accessToken;
     $this->applicationId = $applicationId;
   }
@@ -69,6 +84,40 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
    */
   public function setLogger(\Psr\Log\LoggerInterface $logger) {
     $this->logger = $logger;
+  }
+
+  public function getHttpClient() {
+    if ($this->httpClient === null) {
+      $this->httpClient = new Net\CurlHttpClient($this);
+    }
+    return $this->httpClient;
+  }
+
+  public function setHttpClient(Net\HttpClientInterface $httpClient) {
+    $this->httpClient = $httpClient;
+  }
+
+  public function getApiBase() {
+    return $this->apiBase ?: self::API_BASE;
+  }
+
+  public function setApiBase($apiBase) {
+    $this->apiBase = $apiBase;
+  }
+
+  public function getApiRoot() {
+    return $this->getApiBase() . '/' . self::API_VERSION . self::API_PREFIX;
+  }
+
+  /**
+   * Rest API instance.
+   * @return Rest
+   */
+  public function getRest() {
+    if ($this->rest === null) {
+      $this->rest = new Rest($this);
+    }
+    return $this->rest;
   }
 
 }

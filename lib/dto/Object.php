@@ -11,17 +11,17 @@ class Object implements \JsonSerializable {
   }
 
   public function clearAllFields() {
-    $class = new ReflectionClass($this);
-    $methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
+    $class = new \ReflectionClass($this);
+    $methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
       if ($method->getDeclaringClass()->getName() === 'Object') {
         continue;
       }
-      /* @var $method ReflectionMethod */
-      if (!StringUtil::beginsWith($method->getName(), 'set')) {
+      /* @var $method \ReflectionMethod */
+      if (!Util\StringUtil::beginsWith($method->getName(), 'set')) {
         continue; // not a setter
       }
-      if (StringUtil::endsWith($method->getName(), 'FromData')) {
+      if (Util\StringUtil::endsWith($method->getName(), 'FromData')) {
         continue; // avoid using the FromData variant, we need to set real nulls and avoid Object::$NULL
       }
       try {
@@ -74,11 +74,11 @@ class Object implements \JsonSerializable {
   protected function buildDataFromFields() {
     $data = new \stdClass();
 
-    $x = new ReflectionClass(get_class($this));
-    $methods = $x->getMethods(ReflectionMethod::IS_PUBLIC);
+    $x = new \ReflectionClass(get_class($this));
+    $methods = $x->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
       if (!$method->isStatic()) {
-        if (StringUtil::beginsWith($method->name, 'get')) {
+        if (Util\StringUtil::beginsWith($method->name, 'get')) {
           $field = substr($method->name, 3);
           $field{0} = strtolower($field{0});
           $value = $method->invoke($this);
@@ -114,7 +114,11 @@ class Object implements \JsonSerializable {
   }
 
   public function __toString() {
-    return '<' . get_class($this) . '>' . json_encode($this);
+    if (defined('JSON_UNESCAPED_SLASHES')) {
+      return '<' . get_class($this) . '>' . json_encode($this, JSON_UNESCAPED_SLASHES);
+    } else {
+      return '<' . get_class($this) . '>' . json_encode($this);
+    }
   }
 
   /**
