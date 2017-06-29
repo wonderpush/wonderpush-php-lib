@@ -485,20 +485,6 @@ class NotificationAlert extends Object {
   /** @var NotificationAlertWeb */
   protected $web;
 
-  protected function buildDataFromFields($fields = NULL, $viewerAccess = NULL, $context = array()) {
-    $rtn = parent::buildDataFromFields($fields, $viewerAccess, $context);
-
-    if ($viewerAccess === Viewer::OWNER_ACCESS || $viewerAccess === Viewer::PUBLIC_ACCESS) {
-      foreach (array('android', 'ios', 'web') as $field) {
-        if (is_array(ArrayUtil::getIfSet($rtn, $field)) && count($rtn[$field]) === 0) {
-          $rtn[$field] = (object) $rtn[$field];
-        }
-      }
-    }
-
-    return $rtn;
-  }
-
   /**
    * @return string
    */
