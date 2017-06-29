@@ -81,7 +81,7 @@ class CurlHttpClient implements HttpClientInterface {
         } else {
           return $key . ': ' . $value;
         }
-      }, $headers, array_keys($headers));
+      }, array_keys($headers), $headers);
     }
 
     // Prepare other cURL options: Response headers reader
