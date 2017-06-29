@@ -278,14 +278,16 @@ class ArrayUtilTest extends \WonderPush\TestCase {
     $this->assertEquals($sortedHash, $unsortedHash);
 
     // Assert unicode strings survive encoding and decoding
-    $input = array(3, "( ͡° ͜ʖ ͡°)", 1);
-    $hashOriginal = ArrayUtil::hash($input);
-    $reparsed = json_decode(json_encode($input));
-    $hashReparsed = ArrayUtil::hash($reparsed);
-    $this->assertEquals($hashOriginal, $hashReparsed);
-    $reparsed = json_decode(json_encode($input, JSON_UNESCAPED_UNICODE));
-    $hashReparsed = ArrayUtil::hash($reparsed);
-    $this->assertEquals($hashOriginal, $hashReparsed);
+    if (defined('JSON_UNESCAPED_UNICODE')) {
+      $input = array(3, "( ͡° ͜ʖ ͡°)", 1);
+      $hashOriginal = ArrayUtil::hash($input);
+      $reparsed = json_decode(json_encode($input));
+      $hashReparsed = ArrayUtil::hash($reparsed);
+      $this->assertEquals($hashOriginal, $hashReparsed);
+      $reparsed = json_decode(json_encode($input, JSON_UNESCAPED_UNICODE));
+      $hashReparsed = ArrayUtil::hash($reparsed);
+      $this->assertEquals($hashOriginal, $hashReparsed);
+    }
 
     // Assert deep unsorted strings survive encoding and decoding with sort sensitive hashing
     $input = array(3, array("b" => array("bb" => "b", "ba" => "a"), "a" => array("ab" => "b", "aa" => "a")), 1);
