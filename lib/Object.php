@@ -10,6 +10,16 @@ class Object implements Util\JsonSerializable {
     }
   }
 
+  /**
+   * Factory style constructor.
+   * Compensates PHP 5.3's lack of (new Class())-> syntax support.
+   * @param array $data
+   * @return \static
+   */
+  public static function _new($data = null) {
+    return new static($data);
+  }
+
   public function clearAllFields() {
     $class = new \ReflectionClass($this);
     $methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
