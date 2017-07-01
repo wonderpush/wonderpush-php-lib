@@ -113,7 +113,7 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
    * Rest API instance.
    * @return Rest
    */
-  public function getRest() {
+  public function rest() {
     if ($this->rest === null) {
       $this->rest = new Rest($this);
     }

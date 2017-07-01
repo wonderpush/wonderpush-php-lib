@@ -11,7 +11,7 @@ class RestTest extends TestCase {
   }
 
   public function testGetFakeEndpoint() {
-    $response = $this->wp->getRest()->get('/fake-endpoint');
+    $response = $this->wp->rest()->get('/fake-endpoint');
     $this->assertInstanceOf('\WonderPush\Net\Response', $response);
     $resp = $response->parsedBody();
     $this->assertInternalType('object', $resp);
@@ -28,7 +28,7 @@ class RestTest extends TestCase {
   }
 
   public function testGet() {
-    $response = $this->wp->getRest()->get('/installations', array('limit' => 0));
+    $response = $this->wp->rest()->get('/installations', array('limit' => 0));
     $this->assertInstanceOf('\WonderPush\Net\Response', $response);
     $resp = $response->parsedBody();
     $this->assertInternalType('object', $resp);
@@ -37,7 +37,7 @@ class RestTest extends TestCase {
   }
 
   public function testSendNotification() {
-    $response = $this->wp->getRest()->post('/deliveries', array(
+    $response = $this->wp->rest()->post('/deliveries', array(
         'targetSegmentIds' => array('@NOBODY'),
         'notification' => Notification::_new()
             ->setAlert(NotificationAlert::_new()
