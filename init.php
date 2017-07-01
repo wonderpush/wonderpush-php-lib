@@ -25,3 +25,10 @@ require(dirname(__FILE__) . '/lib/Net/Request.php');
 require(dirname(__FILE__) . '/lib/Net/Response.php');
 require(dirname(__FILE__) . '/lib/Net/HttpClientInterface.php');
 require(dirname(__FILE__) . '/lib/Net/CurlHttpClient.php');
+
+// WonderPush\RequestBuilders
+require(dirname(__FILE__) . '/lib/RequestBuilders/Base.php');
+require(dirname(__FILE__) . '/lib/RequestBuilders/PostDeliveries.php');
+
+// WonderPush\DAO
+require(dirname(__FILE__) . '/lib/DAO/Deliveries.php');

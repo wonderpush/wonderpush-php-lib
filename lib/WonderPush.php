@@ -41,6 +41,12 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
    */
   private $rest;
 
+  /**
+   * Lazily initialized Rest API.
+   * @var DAO\Deliveries
+   */
+  private $deliveries;
+
   public function __construct($accessToken, $applicationId = null) {
     $this->accessToken = $accessToken;
     $this->applicationId = $applicationId;
@@ -118,6 +124,17 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
       $this->rest = new Rest($this);
     }
     return $this->rest;
+  }
+
+  /**
+   * Deliveries endpoints.
+   * @return DAO\Deliveries
+   */
+  public function deliveries() {
+    if ($this->deliveries === null) {
+      $this->deliveries = new DAO\Deliveries($this);
+    }
+    return $this->deliveries;
   }
 
 }
