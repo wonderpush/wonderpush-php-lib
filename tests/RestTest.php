@@ -36,4 +36,18 @@ class RestTest extends TestCase {
     $this->assertInternalType('integer', $resp->count);
   }
 
+  public function testSendNotification() {
+    $response = $this->wp->getRest()->post('/deliveries', array(
+        'targetSegmentIds' => array('@NOBODY'),
+        'notification' => Notification::_new()
+            ->setAlert(NotificationAlert::_new()
+                ->setText('Test PHP lib')
+            )
+        ,
+    ));
+    $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
+    $this->assertLessThan(300, $response->getStatusCode());
+    $this->assertAttributeEquals(true, 'success', $response->parsedBody());
+  }
+
 }
