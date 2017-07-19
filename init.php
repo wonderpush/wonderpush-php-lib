@@ -14,6 +14,7 @@ require(dirname(__FILE__) . '/lib/Util/UrlUtil.php');
 require(dirname(__FILE__) . '/lib/Rest.php');
 require(dirname(__FILE__) . '/lib/WonderPush.php');
 require(dirname(__FILE__) . '/lib/Object.php');
+require(dirname(__FILE__) . '/lib/NullObject.php');
 require(dirname(__FILE__) . '/lib/GeoLocation.php');
 require(dirname(__FILE__) . '/lib/User.php');
 require(dirname(__FILE__) . '/lib/Installation.php');
