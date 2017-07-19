@@ -36,7 +36,7 @@ class Object implements Util\JsonSerializable {
       }
       try {
         $this->{$method->getName()}(null);
-      } catch (Exception $ex) {
+      } catch (\Exception $ex) {
         error_log('[' . __METHOD__ . '()] Exception caught while invoking ' . $method->getName() . "(null)\n" . $ex->getTraceAsString());
       }
     }
@@ -48,7 +48,7 @@ class Object implements Util\JsonSerializable {
    */
   protected function updateFieldsFromData($data) {
     if (!is_array($data) && !is_object($data)) {
-      $ex = new Exception();
+      $ex = new \Exception();
       error_log('[' . __METHOD__ . '] Not an array or object: ' . json_encode($data) . "\n" . $ex->getTraceAsString());
     }
     foreach ($data as $key => $value) {

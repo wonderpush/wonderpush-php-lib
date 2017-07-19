@@ -121,7 +121,7 @@ class TimeUtil {
     if ($parsed == false && $resortToStrtotime) {
       try {
         $parsed = new \DateTime($date, $utc);
-      } catch (Exception $ignored) {}
+      } catch (\Exception $ignored) {}
     }
     if ($parsed instanceof \DateTime) {
       $parsed = $parsed->getTimestamp();
