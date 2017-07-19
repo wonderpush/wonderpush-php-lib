@@ -52,15 +52,10 @@ class Object implements Util\JsonSerializable {
       error_log('[' . __METHOD__ . '] Not an array or object: ' . json_encode($data) . "\n" . $ex->getTraceAsString());
     }
     foreach ($data as $key => $value) {
-      $methodName = 'set' . ucfirst($key) . 'FromData';
+      $methodName = 'set' . ucfirst($key);
       if (method_exists($this, $methodName)) {
+        if ($value === null) $value = NullObject::getInstance();
         $this->{$methodName}($value);
-      } else {
-        $methodName = 'set' . ucfirst($key);
-        if (method_exists($this, $methodName)) {
-          if ($value === null) $value = NullObject::getInstance();
-          $this->{$methodName}($value);
-        }
       }
     }
   }
