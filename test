@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+tests/check-missing-classes-in-init-php.sh
+
+./build.php ${AUTOLOAD-0}

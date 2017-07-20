@@ -34,4 +34,4 @@ matrix:
       dist: trusty
       env: AUTOLOAD=0
 
-script: ./build.php ${AUTOLOAD}
+script: ./test
