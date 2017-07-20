@@ -27,6 +27,10 @@ require(dirname(__FILE__) . '/lib/Net/Response.php');
 require(dirname(__FILE__) . '/lib/Net/HttpClientInterface.php');
 require(dirname(__FILE__) . '/lib/Net/CurlHttpClient.php');
 
+// WonderPush\Errors
+require(dirname(__FILE__) . '/lib/Errors/Base.php');
+require(dirname(__FILE__) . '/lib/Errors/Json.php');
+
 // WonderPush\RequestBuilders
 require(dirname(__FILE__) . '/lib/RequestBuilders/Base.php');
 require(dirname(__FILE__) . '/lib/RequestBuilders/PostDeliveries.php');
