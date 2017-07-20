@@ -10,7 +10,7 @@ class Net extends Base {
   /** @var Response */
   protected $response;
 
-  public function __construct(Request $request, Response $response, $message = "", $code = 0, \Exception $previous = null) {
+  public function __construct(\WonderPush\Net\Request $request, \WonderPush\Net\Response $response, $message = "", $code = 0, \Exception $previous = null) {
     parent::__construct($message, $code, $previous);
     $this->request = $request;
     $this->response = $response;

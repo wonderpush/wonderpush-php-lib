@@ -79,7 +79,7 @@ abstract class Base extends \WonderPush\Object {
 
       $error = true;
       if (isset($body->error->message)) $errorMessage = $body->error->message;
-      if (isset($body->error->code   )) $errorMessage = $body->error->code;
+      if (isset($body->error->code   )) $errorCode    = $body->error->code;
       //if (isset($body->error->status )) $statusCode   = $body->error->status;
 
     }

@@ -32,4 +32,27 @@ class DeliveriesTest extends \WonderPush\TestCase {
     $this->assertNotNull($response->getNotificationId());
   }
 
+  public function testSendNotificationNoParameter() {
+    $response = $this->dao->preparePostDeliveries()
+        ->execute();
+    $this->assertEquals(400, $response->netResponse()->getStatusCode());
+    $this->assertInstanceOf('\WonderPush\Errors\Net', $response->exception());
+    $exception = null;
+    try {
+      $response->checked();
+      $this->fail();
+    } catch (\Exception $ex) {
+      $exception = $ex;
+    }
+    $this->assertInstanceOf('\WonderPush\Errors\Net', $exception);
+    /* @var $exception \WonderPush\Errors\Net */
+    $this->assertEquals('10002', $exception->getCodeStr());
+    $this->assertEquals(10002, $exception->getCode());
+    $this->assertInternalType('string', $exception->getMessage());
+    $this->assertNotEmpty($exception->getMessage());
+    $this->assertNull($response->getSuccess());
+    $this->assertNull($response->getCampaignId());
+    $this->assertNull($response->getNotificationId());
+  }
+
 }
