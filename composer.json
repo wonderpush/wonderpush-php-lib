@@ -1,5 +1,5 @@
 {
-  "name": "vendor/wonderpush-php-lib",
+  "name": "wonderpush/wonderpush-php-lib",
   "description": "PHP library for WonderPush",
   "authors": [
     {
