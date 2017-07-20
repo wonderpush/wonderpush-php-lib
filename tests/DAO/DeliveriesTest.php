@@ -22,9 +22,14 @@ class DeliveriesTest extends \WonderPush\TestCase {
                 ->setText('Test PHP lib')
             ))
         ->execute();
-    $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
-    $this->assertLessThan(300, $response->getStatusCode());
-    $this->assertAttributeEquals(true, 'success', $response->parsedBody());
+    $this->assertGreaterThanOrEqual(200, $response->netResponse()->getStatusCode());
+    $this->assertLessThan(300, $response->netResponse()->getStatusCode());
+    $this->assertAttributeEquals(true, 'success', $response->netResponse()->parsedBody());
+    $this->assertTrue($response->getSuccess());
+    $this->assertNull($response->exception());
+    $this->assertSame($response, $response->checked());
+    $this->assertSame(\WonderPush\NullObject::getInstance(), $response->getCampaignId());
+    $this->assertNotNull($response->getNotificationId());
   }
 
 }

@@ -16,8 +16,23 @@ abstract class Base {
 
   public abstract function request();
 
+  protected function responseParserClass() {
+    $class = str_replace('WonderPush\RequestBuilders', 'WonderPush\ResponseParsers', get_class($this));
+    if (class_exists($class)) {
+      return $class;
+    } else {
+      return 'WonderPush\ResponseParsers\Base';
+    }
+  }
+
+  /**
+   * @return \WonderPush\ResponseParsers\Base
+   */
   public function execute() {
-    return $this->wp->rest()->execute($this->request());
+    $request = $this->request();
+    $response = $this->wp->rest()->execute($request);
+    $class = $this->responseParserClass();
+    return new $class($this->wp, $this, $request, $response);
   }
 
 }

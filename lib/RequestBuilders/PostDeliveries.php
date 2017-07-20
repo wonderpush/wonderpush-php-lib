@@ -30,6 +30,13 @@ class PostDeliveries extends Base {
   }
 
   /**
+   * @return \WonderPush\ResponseParsers\PostDeliveries
+   */
+  public function execute() {
+    return parent::execute();
+  }
+
+  /**
    * @param string $viewId
    * @return $this
    */

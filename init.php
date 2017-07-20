@@ -30,10 +30,17 @@ require(dirname(__FILE__) . '/lib/Net/CurlHttpClient.php');
 // WonderPush\Errors
 require(dirname(__FILE__) . '/lib/Errors/Base.php');
 require(dirname(__FILE__) . '/lib/Errors/Json.php');
+require(dirname(__FILE__) . '/lib/Errors/Net.php');
+require(dirname(__FILE__) . '/lib/Errors/Unsuccessful.php');
 
 // WonderPush\RequestBuilders
 require(dirname(__FILE__) . '/lib/RequestBuilders/Base.php');
 require(dirname(__FILE__) . '/lib/RequestBuilders/PostDeliveries.php');
+
+// WonderPush\ResponseParsers
+require(dirname(__FILE__) . '/lib/ResponseParsers/Base.php');
+require(dirname(__FILE__) . '/lib/ResponseParsers/BaseSuccess.php');
+require(dirname(__FILE__) . '/lib/ResponseParsers/PostDeliveries.php');
 
 // WonderPush\DAO
 require(dirname(__FILE__) . '/lib/DAO/Deliveries.php');
