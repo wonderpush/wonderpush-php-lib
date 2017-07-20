@@ -88,7 +88,41 @@ class Response extends \WonderPush\Object {
     if ($this->isParsed) return;
     $this->parsedBody = json_decode($this->rawBody);
     $this->parseError = json_last_error();
-    $this->parseErrorMsg = json_last_error_msg();
+    if (function_exists('json_last_error_msg')) {
+      $this->parseErrorMsg = json_last_error_msg();
+    } else {
+      switch ($this->parseError) {
+        case JSON_ERROR_NONE:
+          // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
+          $this->parseErrorMsg = 'No error';
+          break;
+        case JSON_ERROR_DEPTH:
+          // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
+          $this->parseErrorMsg = 'Maximum stack depth exceeded';
+          break;
+        case JSON_ERROR_STATE_MISMATCH:
+          // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
+          $this->parseErrorMsg = 'State mismatch (invalid or malformed JSON)';
+          break;
+        case JSON_ERROR_CTRL_CHAR:
+          // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
+          $this->parseErrorMsg = 'Control character error, possibly incorrectly encoded';
+          break;
+        case JSON_ERROR_SYNTAX:
+          // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
+          $this->parseErrorMsg = 'Syntax error';
+          break;
+        case JSON_ERROR_UTF8:
+          // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/bug54058.phpt
+          $this->parseErrorMsg = 'Malformed UTF-8 characters, possibly incorrectly encoded';
+          break;
+        default:
+          // On PHP 5.5.0 there were other codes, but fortunately, the json_last_error_msg() function exists
+          // so we won't end up here.
+          $this->parseErrorMsg = 'Unknown error';
+          break;
+      }
+    }
     if ($this->parseError !== JSON_ERROR_NONE) {
       $this->parsedBody = new \WonderPush\Errors\Json($this->parseErrorMsg, $this->parseError);
     }
