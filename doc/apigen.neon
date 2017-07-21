@@ -1,0 +1,9 @@
+title: WonderPush PHP library
+baseUrl: https://wonderpush.github.io/wonderpush-php-lib/latest
+templateConfig: vendor/wonderpush/apigen-theme-bootstrap/src/config.neon
+accessLevels:
+    - public
+source:
+    - ../overview.md
+    - ../lib
+destination: generated

@@ -1,0 +1,6 @@
+{
+  "require-dev": {
+    "apigen/apigen": "~4.1",
+    "wonderpush/apigen-theme-bootstrap": "~2.1"
+  }
+}
