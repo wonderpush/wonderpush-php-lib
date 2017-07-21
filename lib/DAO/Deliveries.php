@@ -15,7 +15,7 @@ class Deliveries {
   }
 
   /**
-   * @return \WonderPush\PostDeliveriesRequestBuilder
+   * @return \WonderPush\RequestBuilders\PostDeliveries
    */
   public function preparePostDeliveries() {
     return new \WonderPush\RequestBuilders\PostDeliveries($this->wp);
