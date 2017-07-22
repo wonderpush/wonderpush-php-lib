@@ -2,6 +2,11 @@
 
 namespace WonderPush;
 
+/**
+ * DTO for notifications.
+ *
+ * See {@link https://www.wonderpush.com/docs/concepts/notifications}
+ */
 class Notification extends Object {
 
   /** @var string */
@@ -155,7 +160,10 @@ class Notification extends Object {
 
 }
 
-/** Base class for button reusability */
+/**
+ * DTO part base for notification button reusability.
+ * @see NotificationButton
+ */
 class NotificationButton extends Object {
 
   /** @var string */
@@ -215,7 +223,10 @@ class NotificationButton extends Object {
 
 }
 
-/** Base class for button action reusability */
+/**
+ * DTO part base for notification button action reusability.
+ * @see NotificationButton
+ */
 class NotificationButtonAction extends Object {
 
   const TYPE_CLOSE = 'close';
@@ -425,6 +436,10 @@ class NotificationButtonAction extends Object {
 
 }
 
+/**
+ * DTO part for notification button action `event` field.
+ * @see NotificationButtonAction
+ */
 class NotificationButtonActionEvent extends Object {
 
   /** @var string */
@@ -466,6 +481,10 @@ class NotificationButtonActionEvent extends Object {
 
 }
 
+/**
+ * DTO part for `notification.alert`.
+ * @see Notification
+ */
 class NotificationAlert extends Object {
 
   /** @var string */
@@ -615,6 +634,10 @@ class NotificationAlert extends Object {
 
 }
 
+/**
+ * DTO part for `notification.alert.ios`.
+ * @see NotificationAlert
+ */
 class NotificationAlertIos extends NotificationAlert {
 
   // title is already taken in the platform-independent parent object
@@ -873,6 +896,10 @@ class NotificationAlertIos extends NotificationAlert {
 
 }
 
+/**
+ * DTO part for `notification.alert.ios.foreground`.
+ * @see NotificationAlertIos
+ */
 class NotificationAlertIosForeground extends Object {
 
   /** @var boolean */
@@ -914,6 +941,10 @@ class NotificationAlertIosForeground extends Object {
 
 }
 
+/**
+ * DTO part for `notification.alert.ios.attachments` items.
+ * @see NotificationAlertIos
+ */
 class NotificationAlertIosAttachment extends Object {
 
   /** @var string */
@@ -1031,6 +1062,10 @@ class NotificationAlertIosAttachment extends Object {
 
 }
 
+/**
+ * DTO part for `notification.alert.android`.
+ * @see NotificationAlert
+ */
 class NotificationAlertAndroid extends NotificationAlert {
 
   /** @var string */
@@ -1477,6 +1512,10 @@ class NotificationAlertAndroid extends NotificationAlert {
 
 }
 
+/**
+ * DTO part for `notification.alert.android.buttons` items.
+ * @see NotificationAlertAndroid
+ */
 class NotificationAlertAndroidButton extends NotificationButton {
 
   /** @var string */
@@ -1500,6 +1539,10 @@ class NotificationAlertAndroidButton extends NotificationButton {
 
 }
 
+/**
+ * DTO part for `notification.alert.web`.
+ * @see NotificationAlert
+ */
 class NotificationAlertWeb extends NotificationAlert {
 
   // title is already present in the platform-independent parent object
@@ -1682,6 +1725,10 @@ class NotificationAlertWeb extends NotificationAlert {
 
 }
 
+/**
+ * DTO part for `notification.alert.web.buttons` items.
+ * @see NotificationAlertWeb
+ */
 class NotificationAlertWebButton extends NotificationButton {
 
   /** @var string */
@@ -1723,6 +1770,10 @@ class NotificationAlertWebButton extends NotificationButton {
 
 }
 
+/**
+ * DTO part for `notification.inApp`.
+ * @see Notification
+ */
 class NotificationInApp extends Object {
 
   const TYPE_TEXT = 'text';
@@ -1850,12 +1901,20 @@ class NotificationInApp extends Object {
 
 }
 
+/**
+ * DTO part for `notification.inApp.buttons` items.
+ * @see NotificationInApp
+ */
 class NotificationInAppButton extends NotificationButton {
 
   // Nothing to add
 
 }
 
+/**
+ * DTO part for `notification.inApp.map`.
+ * @see NotificationInApp
+ */
 class NotificationInAppMap extends Object {
 
   /** @var NotificationInAppMapPlace */
@@ -1879,6 +1938,10 @@ class NotificationInAppMap extends Object {
 
 }
 
+/**
+ * DTO part for `notification.inApp.map.place`.
+ * @see NotificationInAppMap
+ */
 class NotificationInAppMapPlace extends Object {
 
   /** @var GeoLocation */
@@ -1938,6 +2001,10 @@ class NotificationInAppMapPlace extends Object {
 
 }
 
+/**
+ * DTO part for `notification.push`.
+ * @see Notification
+ */
 class NotificationPush extends Object {
 
   const PRIORITY_NORMAL = 'normal';
@@ -2105,18 +2172,30 @@ class NotificationPush extends Object {
 
 }
 
+/**
+ * DTO part for `notification.push.ios`.
+ * @see NotificationPush
+ */
 class NotificationPushIos extends NotificationPush {
 
   // Nothing special, only let overriding common values
 
 }
 
+/**
+ * DTO part for `notification.push.web`.
+ * @see NotificationPush
+ */
 class NotificationPushWeb extends NotificationPush {
 
   // Nothing special, only let overriding common values
 
 }
 
+/**
+ * DTO part for `notification.push.android`.
+ * @see NotificationPush
+ */
 class NotificationPushAndroid extends NotificationPush {
 
   /** @var boolean */

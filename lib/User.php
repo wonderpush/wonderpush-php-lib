@@ -2,6 +2,11 @@
 
 namespace WonderPush;
 
+/**
+ * DTO for users.
+ *
+ * See {@link https://www.wonderpush.com/docs/concepts/user}
+ */
 class User extends Object {
 
   const INVALID_USER_ID = '@INVALID';

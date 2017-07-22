@@ -2,6 +2,9 @@
 
 namespace WonderPush\Errors;
 
+/**
+ * Network related errors, and API error responses.
+ */
 class Net extends Base {
 
   /** @var Request */

@@ -2,6 +2,9 @@
 
 namespace WonderPush\DAO;
 
+/**
+ * Deliveries API
+ */
 class Deliveries {
 
   /**

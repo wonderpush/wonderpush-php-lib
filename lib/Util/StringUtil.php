@@ -2,6 +2,9 @@
 
 namespace WonderPush\Util;
 
+/**
+ * Utility class for string manipulation.
+ */
 class StringUtil {
 
   static public function beginsWith($subject, $sub) {

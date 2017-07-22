@@ -2,6 +2,11 @@
 
 namespace WonderPush\ResponseParsers;
 
+/**
+ * Base class for parsed response with `success` fields.
+ *
+ * Raises `success: false` responses into `\WonderPush\Errors\Unsuccessful` errors.
+ */
 class BaseSuccess extends Base {
 
   private $success;

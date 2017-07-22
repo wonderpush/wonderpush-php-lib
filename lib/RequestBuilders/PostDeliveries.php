@@ -2,6 +2,9 @@
 
 namespace WonderPush\RequestBuilders;
 
+/**
+ * `POST /deliveries` request builder.
+ */
 class PostDeliveries extends Base {
 
   const PATH = '/deliveries';

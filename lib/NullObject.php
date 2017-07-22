@@ -3,7 +3,13 @@
 namespace WonderPush;
 
 /**
- * Null marker for \WonderPush\Object fields.
+ * Null marker for {@link \WonderPush\Object} fields.
+ *
+ * The singleton instance of this class marks JSON `null` fields, as opposed to fields that are not set - which are represented by PHP's `null` value.
+ *
+ * For instance when deserializing the following JSON object `{"foo": "bar", "baz": null}` into a {@link \WonderPush\Object},
+ * calling `getBar()` would return `NullObject::getInstance()`, because the field is set to the JSON null value,
+ * but calling `getQux()` would return `null`, because the field is not set.
  */
 class NullObject extends Object {
 

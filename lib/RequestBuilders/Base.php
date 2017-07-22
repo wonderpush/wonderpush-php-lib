@@ -2,6 +2,9 @@
 
 namespace WonderPush\RequestBuilders;
 
+/**
+ * Base class for request builders.
+ */
 abstract class Base {
 
   /**

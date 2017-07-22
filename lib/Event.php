@@ -2,6 +2,11 @@
 
 namespace WonderPush;
 
+/**
+ * DTO for installation's events.
+ *
+ * See {@link https://www.wonderpush.com/docs/concepts/event}
+ */
 class Event extends Object {
 
   /** @var string */

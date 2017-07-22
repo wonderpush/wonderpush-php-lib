@@ -2,6 +2,9 @@
 
 namespace WonderPush;
 
+/**
+ * DTO part for `location` fields.
+ */
 class GeoLocation extends Object {
 
   /** @var double */

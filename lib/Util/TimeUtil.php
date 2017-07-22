@@ -2,6 +2,9 @@
 
 namespace WonderPush\Util;
 
+/**
+ * Utility class for time manipulation.
+ */
 class TimeUtil {
 
   private static $tzCache = array();

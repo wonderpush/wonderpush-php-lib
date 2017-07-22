@@ -2,6 +2,9 @@
 
 namespace WonderPush\ResponseParsers;
 
+/**
+ * `POST /deliveries` response parser.
+ */
 class PostDeliveries extends Base {
 
   private $success;

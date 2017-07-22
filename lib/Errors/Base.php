@@ -2,6 +2,12 @@
 
 namespace WonderPush\Errors;
 
+/**
+ * Base class for WonderPush errors.
+ *
+ * The WonderPush API returns string error codes.
+ * This class exposes them as string, in addition to expose their parsed version with {@link getCode()}.
+ */
 abstract class Base extends \Exception {
 
   const DEFAULT_MESSAGE = '';

@@ -2,6 +2,9 @@
 
 namespace WonderPush\Util;
 
+/**
+ * Utility class for URL manipulation.
+ */
 class UrlUtil {
 
   public static function parseQueryString($queryString) {

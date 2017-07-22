@@ -2,6 +2,9 @@
 
 namespace WonderPush\Util;
 
+/**
+ * Time units and conversion.
+ */
 class TimeUnit {
 
   // Constants are defined by the multiple of seconds they represent

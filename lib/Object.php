@@ -2,6 +2,9 @@
 
 namespace WonderPush;
 
+/**
+ * Base class for DTO objects.
+ */
 class Object implements Util\JsonSerializable {
 
   public function __construct($data = null) {

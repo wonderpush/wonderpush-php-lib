@@ -2,6 +2,9 @@
 
 namespace WonderPush\Util;
 
+/**
+ * Time duration representation and conversion.
+ */
 class TimeValue {
 
   public $value;

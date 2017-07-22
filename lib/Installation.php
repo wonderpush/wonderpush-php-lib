@@ -2,6 +2,11 @@
 
 namespace WonderPush;
 
+/**
+ * DTO for installations.
+ *
+ * See {@link https://www.wonderpush.com/docs/concepts/installation}
+ */
 class Installation extends Object {
 
   /** @var string */
@@ -217,6 +222,10 @@ class Installation extends Object {
 
 }
 
+/**
+ * DTO part for `installation.pushToken`.
+ * @see Installation
+ */
 class InstallationPushToken extends Object {
 
   /** @var string */
@@ -353,6 +362,10 @@ class InstallationPushToken extends Object {
 
 }
 
+/**
+ * DTO part for `installation.application`.
+ * @see Installation
+ */
 class InstallationApplication extends Object {
 
   /** @var string */
@@ -452,6 +465,10 @@ class InstallationApplication extends Object {
 
 }
 
+/**
+ * DTO part for `installation.application.apple`.
+ * @see InstallationApplication
+ */
 class InstallationApplicationApple extends Object {
 
   /** @var string */
@@ -515,6 +532,10 @@ class InstallationApplicationApple extends Object {
 
 }
 
+/**
+ * DTO part for `installation.device`.
+ * @see Installation
+ */
 class InstallationDevice extends Object {
 
   /** @var string */
@@ -722,6 +743,10 @@ class InstallationDevice extends Object {
 
 }
 
+/**
+ * DTO part for `installation.device.capabilities`.
+ * @see InstallationDevice
+ */
 class InstallationDeviceCapabilities extends Object {
 
   /** @var boolean */
@@ -1271,6 +1296,10 @@ class InstallationDeviceCapabilities extends Object {
 
 }
 
+/**
+ * DTO part for `installation.device.configuration`.
+ * @see InstallationDevice
+ */
 class InstallationDeviceConfiguration extends Object {
 
   /** @var string */
@@ -1370,6 +1399,10 @@ class InstallationDeviceConfiguration extends Object {
 
 }
 
+/**
+ * DTO part for `installation.preferences`.
+ * @see Installation
+ */
 class InstallationPreferences extends Object {
 
   const SUBSCRIPTION_STATUS_OPTIN = 'optIn';

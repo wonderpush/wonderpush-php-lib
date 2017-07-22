@@ -3,7 +3,7 @@
 namespace WonderPush;
 
 /**
- * WonderPush main class
+ * **WonderPush library entry class.**
  */
 class WonderPush implements \Psr\Log\LoggerAwareInterface {
 

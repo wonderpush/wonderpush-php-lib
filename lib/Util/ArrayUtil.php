@@ -2,6 +2,9 @@
 
 namespace WonderPush\Util;
 
+/**
+ * Utility class for array manipulation.
+ */
 class ArrayUtil {
 
   static public function intersectRecursive($a, $b) {

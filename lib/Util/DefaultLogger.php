@@ -3,7 +3,7 @@
 namespace WonderPush\Util;
 
 /**
- * A logger that dumps to error_log()
+ * A logger that dumps to `error_log()`.
  */
 class DefaultLogger extends \Psr\Log\AbstractLogger {
 
