@@ -1,21 +1,21 @@
 <?php
 
-namespace WonderPush\DAO;
+namespace WonderPush\Api;
 
 class DeliveriesTest extends \WonderPush\TestCase {
 
   /** @var \WonderPush\WonderPush */
   protected $wp;
-  /** @var \WonderPush\DAO\Deliveries */
-  protected $dao;
+  /** @var \WonderPush\Api\Deliveries */
+  protected $api;
 
   protected function setUp() {
     $this->wp = \WonderPush\WonderPushTest::getWonderPush();
-    $this->dao = $this->wp->deliveries();
+    $this->api = $this->wp->deliveries();
   }
 
   public function testSendNotification() {
-    $response = $this->dao->preparePostDeliveries()
+    $response = $this->api->preparePostDeliveries()
         ->setTargetSegmentIds('@NOBODY')
         ->setNotification(\WonderPush\Notification::_new()
             ->setAlert(\WonderPush\NotificationAlert::_new()
@@ -33,7 +33,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
   }
 
   public function testSendNotificationNoParameter() {
-    $response = $this->dao->preparePostDeliveries()
+    $response = $this->api->preparePostDeliveries()
         ->execute();
     $this->assertEquals(400, $response->netResponse()->getStatusCode());
     $this->assertInstanceOf('\WonderPush\Errors\Net', $response->exception());

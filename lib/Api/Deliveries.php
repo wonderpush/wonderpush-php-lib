@@ -1,6 +1,6 @@
 <?php
 
-namespace WonderPush\DAO;
+namespace WonderPush\Api;
 
 /**
  * Deliveries API

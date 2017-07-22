@@ -42,5 +42,5 @@ require(dirname(__FILE__) . '/lib/ResponseParsers/Base.php');
 require(dirname(__FILE__) . '/lib/ResponseParsers/BaseSuccess.php');
 require(dirname(__FILE__) . '/lib/ResponseParsers/PostDeliveries.php');
 
-// WonderPush\DAO
-require(dirname(__FILE__) . '/lib/DAO/Deliveries.php');
+// WonderPush\Api
+require(dirname(__FILE__) . '/lib/Api/Deliveries.php');
