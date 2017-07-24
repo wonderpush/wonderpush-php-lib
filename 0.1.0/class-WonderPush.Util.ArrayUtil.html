@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Class WonderPush\Util\ArrayUtil | WonderPush PHP library</title>
+
+	<link rel="stylesheet" href="resources/style.css?36a6cc9b03cfe40f279b90d69b6f815786867416">
+
+														</head>
+
+<body>
+	<nav class="navbar">
+		<svg width="50" height="50" viewBox="23.177 138.194 50 50" xmlns="http://www.w3.org/2000/svg" class="sidebar-toggle" role="button" aria-pressed="false"><path d="M73.18 146.94c0 .7-.43 1.25-.96 1.25H24.14c-.53 0-.96-.58-.96-1.26v-7.5c0-.7.43-1.26.96-1.26h48.08c.53 0 .96.55.96 1.24v7.5zm0 12.5c0-.7-.43-1.25-.96-1.25H24.14c-.53 0-.96.54-.96 1.23v7.5c0 .7.43 1.25.96 1.25h48.08c.53 0 .96-.56.96-1.26v-7.5zm0 20c0-.7-.43-1.25-.96-1.25H24.14c-.53 0-.96.54-.96 1.23v7.5c0 .7.43 1.25.96 1.25h48.08c.53 0 .96-.57.96-1.26v-7.5z"></path></svg>
+        <div class="navbar-brand"><a href="index.html">WonderPush PHP library</a></div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+	                        <li>
+                    <a href="namespace-WonderPush.Util.html" title="Summary of WonderPush\Util"><span class="nav-link">Namespace</span></a>
+                </li>
+                <li class="active">
+<span class="nav-link">Class</span>                </li>
+
+
+
+
+
+
+            </ul>
+
+	        <form id="search" role="search" accept-charset="UTF-8" class="search-wrapper">
+		        <svg viewBox="0 0 512 640" xmlns="http://www.w3.org/2000/svg"><path d="M215.64 62.7a154.5 154.5 0 1 1-154.5 154.5 154.5 154.5 0 0 1 154.5-154.5m0-61.14a215.68 215.68 0 0 0-84 414.31A215.68 215.68 0 0 0 299.59 18.52a214.35 214.35 0 0 0-84-17z"></path><path d="M315.188 356.876l43.232-43.233L511.997 467.22l-43.233 43.232z"></path></svg>
+		        <input class="search-query"
+		               size="8"
+		               data-hotkey="s" name="q" placeholder="Search"
+		               aria-label="Search this document"
+		               data-unscoped-placeholder="Search GitHub"
+		               data-scoped-placeholder="Search"
+		               autocapitalize="off"
+		               type="text">
+	        </form>
+        </div>
+	</nav>
+
+	<div class="veil"></div>
+
+	<aside class="sidebar">
+		<nav>
+			<div id="navigation-mirror">
+				<strong>Navigation</strong>
+				<ul>                <li>
+                    <a href="namespace-WonderPush.Util.html" title="Summary of WonderPush\Util"><span class="nav-link">Namespace</span></a>
+                </li>
+                <li class="active">
+<span class="nav-link">Class</span>                </li>
+
+
+
+
+
+</ul>
+			</div>
+
+
+		<div id="groups">
+				<strong>Namespaces</strong>
+			<ul>
+					<li class="active">
+						<a href="namespace-WonderPush.html">
+							WonderPush<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-WonderPush.Api.html">
+							Api						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Errors.html">
+							Errors						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Net.html">
+							Net						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Obj.html">
+							Obj						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.RequestBuilders.html">
+							RequestBuilders						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.ResponseParsers.html">
+							ResponseParsers						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-WonderPush.Util.html">
+							Util						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<strong>Classes</strong>
+			<ul>
+				<li class="active"><a href="class-WonderPush.Util.ArrayUtil.html">ArrayUtil</a></li>
+				<li><a href="class-WonderPush.Util.DefaultLogger.html">DefaultLogger</a></li>
+				<li><a href="class-WonderPush.Util.JsonSerializable.html" class="invalid">JsonSerializable</a></li>
+				<li><a href="class-WonderPush.Util.StringUtil.html">StringUtil</a></li>
+				<li><a href="class-WonderPush.Util.TimeUnit.html">TimeUnit</a></li>
+				<li><a href="class-WonderPush.Util.TimeUtil.html">TimeUtil</a></li>
+				<li><a href="class-WonderPush.Util.TimeValue.html">TimeValue</a></li>
+				<li><a href="class-WonderPush.Util.UrlUtil.html">UrlUtil</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</nav>
+</aside>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1><span class="type">Class</span> ArrayUtil</h1>
+
+
+	<div class="description">
+	<p>Utility class for array manipulation.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WonderPush.html">WonderPush</a>\<a href="namespace-WonderPush.Util.html">Util</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-WonderPush.Util.ArrayUtil.html#5-603" title="Go to source code">Util/ArrayUtil.php</a>
+		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<div class="summary" id="methods">
+		<div data-order="intersectRecursive" id="_intersectRecursive" class="element">
+			<a class="anchor" href="#_intersectRecursive"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#10-22" title="Go to source code"><span class="name">intersectRecursive</span></a>( <span class="method-param"> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$b</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="deepMerge" id="_deepMerge" class="element">
+			<a class="anchor" href="#_deepMerge"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#24-46" title="Go to source code"><span class="name">deepMerge</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$base</code><span class="initializer"></span>, <span class="method-param"><span class="type">array</span> <code class="parameter">$toBeMerged</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$nullFieldRemoves</code><span class="initializer"> = false</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>(object means associative array)
+base    | toBeMerged | result
+--------+------------+-----------
+present | absent     | base
+absent  | present    | toBeMerged
+any     | null       | remove or null
+null    | any        | toBeMerged
+object  | object     | deep merge
+object  | array      | toBeMerged
+array   | object     | toBeMerged
+array   | array      | toBeMerged
+array   | scalar     | toBeMerged
+scalar  | array      | toBeMerged
+object  | scalar     | toBeMerged
+scalar  | object     | toBeMerged
+scalar  | scalar     | toBeMerged</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>(object means associative array)
+base    | toBeMerged | result
+--------+------------+-----------
+present | absent     | base
+absent  | present    | toBeMerged
+any     | null       | remove or null
+null    | any        | toBeMerged
+object  | object     | deep merge
+object  | array      | toBeMerged
+array   | object     | toBeMerged
+array   | array      | toBeMerged
+array   | scalar     | toBeMerged
+scalar  | array      | toBeMerged
+object  | scalar     | toBeMerged
+scalar  | object     | toBeMerged
+scalar  | scalar     | toBeMerged</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$base</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$toBeMerged</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$nullFieldRemoves</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="deepMergeInplace" id="_deepMergeInplace" class="element">
+			<a class="anchor" href="#_deepMergeInplace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#48-63" title="Go to source code"><span class="name">deepMergeInplace</span></a>( <span class="method-param"> <code class="parameter">&amp; $base</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$toBeMerged</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$nullFieldRemoves</code><span class="initializer"> = false</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setMerge" id="_setMerge" class="element">
+			<a class="anchor" href="#_setMerge"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#65-73" title="Go to source code"><span class="name">setMerge</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$setA</code><span class="initializer"></span>, <span class="method-param"><span class="type">array</span> <code class="parameter">$setB</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Combine values of the two given arrays, then remove duplicates.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Combine values of the two given arrays, then remove duplicates.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$setA</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$setB</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="diffStrictRecursive" id="_diffStrictRecursive" class="element">
+			<a class="anchor" href="#_diffStrictRecursive"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#75-125" title="Go to source code"><span class="name">diffStrictRecursive</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$new</code><span class="initializer"></span>, <span class="method-param"><span class="type">array</span> <code class="parameter">$base</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$removedValueMarked</code><span class="initializer"> = null</span></span> )
+				</span>
+
+				: <span class="type">mixed|array</span>
+			</code>
+
+			<div class="description short">
+				<p>Returns the recursive strict difference between two arrays.
+The returned diff can be applied to transform $base into $new,
+hence it contains a subset of values from $new.
+The special value null is used when a key is removed.
+Nonassociative arrays are treated as scalar values.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns the recursive strict difference between two arrays.
+The returned diff can be applied to transform $base into $new,
+hence it contains a subset of values from $new.
+The special value null is used when a key is removed.
+Nonassociative arrays are treated as scalar values.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$new</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$base</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$removedValueMarked</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed|array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="trim" id="_trim" class="element">
+			<a class="anchor" href="#_trim"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#127-133" title="Go to source code"><span class="name">trim</span></a>( <span class="method-param"> <code class="parameter">$a</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="flatten" id="_flatten" class="element">
+			<a class="anchor" href="#_flatten"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#135-143" title="Go to source code"><span class="name">flatten</span></a>( <span class="method-param"> <code class="parameter">$a</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="collectAtDepth" id="_collectAtDepth" class="element">
+			<a class="anchor" href="#_collectAtDepth"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#145-157" title="Go to source code"><span class="name">collectAtDepth</span></a>( <span class="method-param"><span class="type">mixed</span> <code class="parameter">&amp; $array</code><span class="initializer"></span>, <span class="method-param"><span class="type">integer</span> <code class="parameter">$depth</code><span class="initializer"></span>, <span class="method-param"><span class="type">boolean</span> <code class="parameter">$references</code><span class="initializer"> = false</span></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Walks the input array and collects values encountered at the desired depth.
+If depth is 0, return the input value inside an array, for consistency.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Walks the input array and collects values encountered at the desired depth.
+If depth is 0, return the input value inside an array, for consistency.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd><ul>
+<li>Should be nested arrays upto <code>depth</code> levels. If <code>depth</code> is 0, can be any type.</li>
+</ul></dd>
+						<dt><code class="parameter">$depth</code></dt>
+						<dd><ul>
+<li>The depth of the items to collect and return.</li>
+</ul></dd>
+						<dt><code class="parameter">$references</code></dt>
+						<dd><ul>
+<li>Whether to collect references to the items, or to copy them.</li>
+</ul></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="collectAtDepthInto" id="_collectAtDepthInto" class="element">
+			<a class="anchor" href="#_collectAtDepthInto"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#159-191" title="Go to source code"><span class="name">collectAtDepthInto</span></a>( <span class="method-param"><span class="type">mixed</span> <code class="parameter">&amp; $array</code><span class="initializer"></span>, <span class="method-param"><span class="type">integer</span> <code class="parameter">$depth</code><span class="initializer"></span>, <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $collectInto</code><span class="initializer"></span>, <span class="method-param"><span class="type">boolean</span> <code class="parameter">$references</code><span class="initializer"> = false</span></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Walks the input array and collects values encountered at the desired depth.
+If depth is 0, return the input value inside an array, for consistency.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Walks the input array and collects values encountered at the desired depth.
+If depth is 0, return the input value inside an array, for consistency.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd><ul>
+<li>Should be nested arrays upto <code>depth</code> levels. If <code>depth</code> is 0, can be any type.</li>
+</ul></dd>
+						<dt><code class="parameter">$depth</code></dt>
+						<dd><ul>
+<li>The depth of the items to collect and return.</li>
+</ul></dd>
+						<dt><code class="parameter">$collectInto</code></dt>
+						<dd><ul>
+<li>Array in which the collected items will be appended.</li>
+</ul></dd>
+						<dt><code class="parameter">$references</code></dt>
+						<dd><ul>
+<li>Whether to collect references to the items, or to copy them.</li>
+</ul></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="remove" id="_remove" class="element">
+			<a class="anchor" href="#_remove"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#193-203" title="Go to source code"><span class="name">remove</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Return a copy of the array, where the first occurrence of the given value
+is removed. The array preserves its non-associativeness.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a copy of the array, where the first occurrence of the given value
+is removed. The array preserves its non-associativeness.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="removeInplace" id="_removeInplace" class="element">
+			<a class="anchor" href="#_removeInplace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#205-220" title="Go to source code"><span class="name">removeInplace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Remove the first occurrence of the given value.
+The array preserves its non-associativeness.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove the first occurrence of the given value.
+The array preserves its non-associativeness.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd>$a</dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="removeAll" id="_removeAll" class="element">
+			<a class="anchor" href="#_removeAll"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#222-232" title="Go to source code"><span class="name">removeAll</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Return a copy of the array, where all occurrences of the given value
+are removed. The array preserves its non-associativeness.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a copy of the array, where all occurrences of the given value
+are removed. The array preserves its non-associativeness.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="removeAllInplace" id="_removeAllInplace" class="element">
+			<a class="anchor" href="#_removeAllInplace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#234-256" title="Go to source code"><span class="name">removeAllInplace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Remove all occurrences of the given value.
+The array preserves its non-associativeness.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove all occurrences of the given value.
+The array preserves its non-associativeness.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd>$a</dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="replace" id="_replace" class="element">
+			<a class="anchor" href="#_replace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#258-269" title="Go to source code"><span class="name">replace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$v</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Return a copy of the array, where the first occurrence of the given value
+is replaced by the other given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a copy of the array, where the first occurrence of the given value
+is replaced by the other given value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$v</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="replaceInplace" id="_replaceInplace" class="element">
+			<a class="anchor" href="#_replaceInplace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#271-282" title="Go to source code"><span class="name">replaceInplace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$v</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Replaces the first occurrence of the given value by the other given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Replaces the first occurrence of the given value by the other given value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd>$a</dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$v</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="replaceAll" id="_replaceAll" class="element">
+			<a class="anchor" href="#_replaceAll"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#284-295" title="Go to source code"><span class="name">replaceAll</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$v</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Return a copy of the array, where all occurrences of the given value
+are replaced by the other given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a copy of the array, where all occurrences of the given value
+are replaced by the other given value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$v</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="replaceAllInplace" id="_replaceAllInplace" class="element">
+			<a class="anchor" href="#_replaceAllInplace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#297-309" title="Go to source code"><span class="name">replaceAllInplace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$v</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Replace all occurrences of the given value by the other given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Replace all occurrences of the given value by the other given value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd>$a</dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$v</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="replaceAllRecursive" id="_replaceAllRecursive" class="element">
+			<a class="anchor" href="#_replaceAllRecursive"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#311-322" title="Go to source code"><span class="name">replaceAllRecursive</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$v</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">array</span>
+			</code>
+
+			<div class="description short">
+				<p>Return a copy of the array, where all occurrences of the given value
+are recursively replaced by the other given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return a copy of the array, where all occurrences of the given value
+are recursively replaced by the other given value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$v</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="replaceAllRecursiveInplace" id="_replaceAllRecursiveInplace" class="element">
+			<a class="anchor" href="#_replaceAllRecursiveInplace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#324-338" title="Go to source code"><span class="name">replaceAllRecursiveInplace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$e</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$v</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Recursively replace all occurrences of the given value by the other given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Recursively replace all occurrences of the given value by the other given value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd>$a</dd>
+						<dt><code class="parameter">$e</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$v</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getIfSet" id="_getIfSet" class="element">
+			<a class="anchor" href="#_getIfSet"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#340-342" title="Go to source code"><span class="name">getIfSet</span></a>( <span class="method-param"> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$i</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$notSet</code><span class="initializer"> = NULL</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="copyIfSet" id="_copyIfSet" class="element">
+			<a class="anchor" href="#_copyIfSet"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#344-356" title="Go to source code"><span class="name">copyIfSet</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $dest</code><span class="initializer"></span>, <span class="method-param"><span class="type">array</span> <code class="parameter">$source</code><span class="initializer"></span>, <span class="method-param"><span class="type">array</span> <code class="parameter">$keys</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Copy a set of keys from a source array to a destination array</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Copy a set of keys from a source array to a destination array</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$dest</code></dt>
+						<dd>associative array</dd>
+						<dt><code class="parameter">$source</code></dt>
+						<dd>associative array</dd>
+						<dt><code class="parameter">$keys</code></dt>
+						<dd>indexed array</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="allKeysSet" id="_allKeysSet" class="element">
+			<a class="anchor" href="#_allKeysSet"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#358-382" title="Go to source code"><span class="name">allKeysSet</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$array</code><span class="initializer"></span>, <span class="method-param"><span class="type">unknown_type</span> <code class="parameter">$key</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">boolean</span>
+			</code>
+
+			<div class="description short">
+				<p>Applies isset() on the first parameter, for every key given,
+and returns true iif all keys exist in the array and the associated value
+is not null.
+Keys can be either be given as variadic arguments, as an array, or both.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Applies isset() on the first parameter, for every key given,
+and returns true iif all keys exist in the array and the associated value
+is not null.
+Keys can be either be given as variadic arguments, as an array, or both.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$key</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="allKeysExist" id="_allKeysExist" class="element">
+			<a class="anchor" href="#_allKeysExist"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#384-407" title="Go to source code"><span class="name">allKeysExist</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$array</code><span class="initializer"></span>, <span class="method-param"><span class="type">unknown_type</span> <code class="parameter">$key</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">boolean</span>
+			</code>
+
+			<div class="description short">
+				<p>Applies array_key_exists() on the first parameter, for every key given,
+and returns true iif all keys exist in the array.
+Keys can be either be given as variadic arguments, as an array, or both.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Applies array_key_exists() on the first parameter, for every key given,
+and returns true iif all keys exist in the array.
+Keys can be either be given as variadic arguments, as an array, or both.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$key</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="pluck" id="_pluck" class="element">
+			<a class="anchor" href="#_pluck"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#409-421" title="Go to source code"><span class="name">pluck</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$a</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$col</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Returns all values in a column from an multidimension array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns all values in a column from an multidimension array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$a</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$col</code></dt>
+						<dd>index or key to collect from each entry in $a</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setData" id="_setData" class="element">
+			<a class="anchor" href="#_setData"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#423-437" title="Go to source code"><span class="name">setData</span></a>( <span class="method-param"> <code class="parameter">&amp; $data</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$field</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$source</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$path</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="isAssociative" id="_isAssociative" class="element">
+			<a class="anchor" href="#_isAssociative"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#439-453" title="Go to source code"><span class="name">isAssociative</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $array</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">boolean</span>
+			</code>
+
+			<div class="description short">
+				<p>A non-associative array must have keys ranging from 0 to count($array)-1,
+in this strict order.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>A non-associative array must have keys ranging from 0 to count($array)-1,
+in this strict order.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="is_not_null" id="_is_not_null" class="element">
+			<a class="anchor" href="#_is_not_null"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#455-457" title="Go to source code"><span class="name">is_not_null</span></a>( <span class="method-param"> <code class="parameter">$var</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="filterNulls" id="_filterNulls" class="element">
+			<a class="anchor" href="#_filterNulls"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#459-461" title="Go to source code"><span class="name">filterNulls</span></a>( <span class="method-param"> <code class="parameter">$array</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="recursiveSortAssociativeInPlace" id="_recursiveSortAssociativeInPlace" class="element">
+			<a class="anchor" href="#_recursiveSortAssociativeInPlace"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#463-472" title="Go to source code"><span class="name">recursiveSortAssociativeInPlace</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $array</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Sorts associative arrays recursively, leaving nonassociative arrays as is.
+Sorted or not, all arrays values are likewise recursively sorted.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sorts associative arrays recursively, leaving nonassociative arrays as is.
+Sorted or not, all arrays values are likewise recursively sorted.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="hash" id="_hash" class="element">
+			<a class="anchor" href="#_hash"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#474-484" title="Go to source code"><span class="name">hash</span></a>( <span class="method-param"> <code class="parameter">$array</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$algo</code><span class="initializer"> = 'sha1'</span></span>, <span class="method-param"> <code class="parameter">$recursiveSortAssociativeArrays</code><span class="initializer"> = true</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="keepPath" id="_keepPath" class="element">
+			<a class="anchor" href="#_keepPath"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#486-515" title="Go to source code"><span class="name">keepPath</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$array</code><span class="initializer"></span>, <span class="method-param"><span class="type">string</span> <code class="parameter">$path</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">sub</span>
+			</code>
+
+			<div class="description short">
+				<p>Returns array that is sub part of input array matching path</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns array that is sub part of input array matching path</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$path</code></dt>
+						<dd>something like "foo" or "foo.bar.baz"</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						sub<br>part array that match $path
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="keepPaths" id="_keepPaths" class="element">
+			<a class="anchor" href="#_keepPaths"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#517-534" title="Go to source code"><span class="name">keepPaths</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">$array</code><span class="initializer"></span>, <span class="method-param"><span class="type">string[]</span> <code class="parameter">$paths</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">sub</span>
+			</code>
+
+			<div class="description short">
+				<p>Returns array that is sub part of input array matching given paths</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns array that is sub part of input array matching given paths</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$paths</code></dt>
+						<dd>each value is something like "foo" or "foo.bar.baz"</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						sub<br>part array that match $paths
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getAtDottedPath" id="_getAtDottedPath" class="element">
+			<a class="anchor" href="#_getAtDottedPath"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#536-548" title="Go to source code"><span class="name">getAtDottedPath</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $array</code><span class="initializer"></span>, <span class="method-param"><span class="type">string[]</span> <code class="parameter">$path</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">mixed</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$path</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getAtPath" id="_getAtPath" class="element">
+			<a class="anchor" href="#_getAtPath"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#550-570" title="Go to source code"><span class="name">getAtPath</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $array</code><span class="initializer"></span>, <span class="method-param"><span class="type">string[]</span> <code class="parameter">$path</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">mixed</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$path</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setAtDottedPath" id="_setAtDottedPath" class="element">
+			<a class="anchor" href="#_setAtDottedPath"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#572-585" title="Go to source code"><span class="name">setAtDottedPath</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $array</code><span class="initializer"></span>, <span class="method-param"><span class="type">string</span> <code class="parameter">$path</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$value</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Sets a value inside a recursive array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets a value inside a recursive array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd><ul>
+<li>Array to alter</li>
+</ul></dd>
+						<dt><code class="parameter">$path</code></dt>
+						<dd><ul>
+<li>Dot separated path.to.key</li>
+</ul></dd>
+						<dt><code class="parameter">$value</code></dt>
+						<dd><ul>
+<li>Desired value</li>
+</ul></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setAtPath" id="_setAtPath" class="element">
+			<a class="anchor" href="#_setAtPath"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.ArrayUtil.html#587-601" title="Go to source code"><span class="name">setAtPath</span></a>( <span class="method-param"><span class="type">array</span> <code class="parameter">&amp; $array</code><span class="initializer"></span>, <span class="method-param"><span class="type">string[]</span> <code class="parameter">$path</code><span class="initializer"></span>, <span class="method-param"><span class="type">mixed</span> <code class="parameter">$value</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Sets a value inside a recursive array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets a value inside a recursive array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$array</code></dt>
+						<dd><ul>
+<li>Array to alter</li>
+</ul></dd>
+						<dt><code class="parameter">$path</code></dt>
+						<dd><ul>
+<li>Path to key</li>
+</ul></dd>
+						<dt><code class="parameter">$value</code></dt>
+						<dd><ul>
+<li>Desired value</li>
+</ul></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<footer>
+		WonderPush PHP library API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</footer>
+</div>
+
+    <div id="assets" aria-hidden="true">
+
+        <svg data-asset="icon-anchor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M 4 9 L 5 9 L 5 10 L 4 10 C 2.5 10 1 8.31 1 6.5 C 1 4.69 2.55 3 4 3 L 6.442 3 L 8 3 C 9.45 3 11 4.69 11 6.5 C 11 7.91 10.09 9.22 9 9.75 L 9 8.59 C 9.58 8.14 10 7.32 10 6.5 C 10 5.22 8.98 4 8 4 L 4 4 C 3.02 4 2 5.22 2 6.5 C 2 7.78 3 9 4 9 Z M 13 6 L 12 6 L 12 7 L 12.679 7 L 13 7 C 14 7 15 8.22 15 9.5 C 15 10.78 13.98 12 13 12 L 9 12 C 8.02 12 7 10.78 7 9.5 C 7 8.67 7.42 7.86 8 7.41 L 8 6.25 C 6.91 6.78 6 8.09 6 9.5 C 6 11.31 7.55 13 9 13 L 13 13 C 14.45 13 16 11.31 16 9.5 C 16 7.69 14.5 6 13 6 Z"></path>
+        </svg>
+
+    </div>
+
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

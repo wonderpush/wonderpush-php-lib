@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Class WonderPush\Util\TimeUtil | WonderPush PHP library</title>
+
+	<link rel="stylesheet" href="resources/style.css?36a6cc9b03cfe40f279b90d69b6f815786867416">
+
+														</head>
+
+<body>
+	<nav class="navbar">
+		<svg width="50" height="50" viewBox="23.177 138.194 50 50" xmlns="http://www.w3.org/2000/svg" class="sidebar-toggle" role="button" aria-pressed="false"><path d="M73.18 146.94c0 .7-.43 1.25-.96 1.25H24.14c-.53 0-.96-.58-.96-1.26v-7.5c0-.7.43-1.26.96-1.26h48.08c.53 0 .96.55.96 1.24v7.5zm0 12.5c0-.7-.43-1.25-.96-1.25H24.14c-.53 0-.96.54-.96 1.23v7.5c0 .7.43 1.25.96 1.25h48.08c.53 0 .96-.56.96-1.26v-7.5zm0 20c0-.7-.43-1.25-.96-1.25H24.14c-.53 0-.96.54-.96 1.23v7.5c0 .7.43 1.25.96 1.25h48.08c.53 0 .96-.57.96-1.26v-7.5z"></path></svg>
+        <div class="navbar-brand"><a href="index.html">WonderPush PHP library</a></div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+	                        <li>
+                    <a href="namespace-WonderPush.Util.html" title="Summary of WonderPush\Util"><span class="nav-link">Namespace</span></a>
+                </li>
+                <li class="active">
+<span class="nav-link">Class</span>                </li>
+
+
+
+
+
+
+            </ul>
+
+	        <form id="search" role="search" accept-charset="UTF-8" class="search-wrapper">
+		        <svg viewBox="0 0 512 640" xmlns="http://www.w3.org/2000/svg"><path d="M215.64 62.7a154.5 154.5 0 1 1-154.5 154.5 154.5 154.5 0 0 1 154.5-154.5m0-61.14a215.68 215.68 0 0 0-84 414.31A215.68 215.68 0 0 0 299.59 18.52a214.35 214.35 0 0 0-84-17z"></path><path d="M315.188 356.876l43.232-43.233L511.997 467.22l-43.233 43.232z"></path></svg>
+		        <input class="search-query"
+		               size="8"
+		               data-hotkey="s" name="q" placeholder="Search"
+		               aria-label="Search this document"
+		               data-unscoped-placeholder="Search GitHub"
+		               data-scoped-placeholder="Search"
+		               autocapitalize="off"
+		               type="text">
+	        </form>
+        </div>
+	</nav>
+
+	<div class="veil"></div>
+
+	<aside class="sidebar">
+		<nav>
+			<div id="navigation-mirror">
+				<strong>Navigation</strong>
+				<ul>                <li>
+                    <a href="namespace-WonderPush.Util.html" title="Summary of WonderPush\Util"><span class="nav-link">Namespace</span></a>
+                </li>
+                <li class="active">
+<span class="nav-link">Class</span>                </li>
+
+
+
+
+
+</ul>
+			</div>
+
+
+		<div id="groups">
+				<strong>Namespaces</strong>
+			<ul>
+					<li class="active">
+						<a href="namespace-WonderPush.html">
+							WonderPush<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-WonderPush.Api.html">
+							Api						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Errors.html">
+							Errors						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Net.html">
+							Net						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Obj.html">
+							Obj						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.RequestBuilders.html">
+							RequestBuilders						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.ResponseParsers.html">
+							ResponseParsers						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-WonderPush.Util.html">
+							Util						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<strong>Classes</strong>
+			<ul>
+				<li><a href="class-WonderPush.Util.ArrayUtil.html">ArrayUtil</a></li>
+				<li><a href="class-WonderPush.Util.DefaultLogger.html">DefaultLogger</a></li>
+				<li><a href="class-WonderPush.Util.JsonSerializable.html" class="invalid">JsonSerializable</a></li>
+				<li><a href="class-WonderPush.Util.StringUtil.html">StringUtil</a></li>
+				<li><a href="class-WonderPush.Util.TimeUnit.html">TimeUnit</a></li>
+				<li class="active"><a href="class-WonderPush.Util.TimeUtil.html">TimeUtil</a></li>
+				<li><a href="class-WonderPush.Util.TimeValue.html">TimeValue</a></li>
+				<li><a href="class-WonderPush.Util.UrlUtil.html">UrlUtil</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</nav>
+</aside>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1><span class="type">Class</span> TimeUtil</h1>
+
+
+	<div class="description">
+	<p>Utility class for time manipulation.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WonderPush.html">WonderPush</a>\<a href="namespace-WonderPush.Util.html">Util</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-WonderPush.Util.TimeUtil.html#5-291" title="Go to source code">Util/TimeUtil.php</a>
+		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<div class="summary" id="methods">
+		<div data-order="getDateTimeZoneUTC" id="_getDateTimeZoneUTC" class="element">
+			<a class="anchor" href="#_getDateTimeZoneUTC"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#18-23" title="Go to source code"><span class="name">getDateTimeZoneUTC</span></a>( void )
+				</span>
+
+				: <span class="type">DateTimeZone</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTimeZone
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getDateTimeZone" id="_getDateTimeZone" class="element">
+			<a class="anchor" href="#_getDateTimeZone"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#25-38" title="Go to source code"><span class="name">getDateTimeZone</span></a>( <span class="method-param"><span class="type">string</span> <code class="parameter">$timezone</code><span class="initializer"> = null</span></span> )
+				</span>
+
+				: <span class="type">DateTimeZone</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$timezone</code></dt>
+						<dd><ul>
+<li>ex: "UTC", "CET", "Europe/Paris", etc.
+                      If null, uses the default timezone.</li>
+</ul></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTimeZone
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="dateTimeFromTimeMs" id="_dateTimeFromTimeMs" class="element">
+			<a class="anchor" href="#_dateTimeFromTimeMs"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#40-46" title="Go to source code"><span class="name">dateTimeFromTimeMs</span></a>( <span class="method-param"><span class="type">long</span> <code class="parameter">$timeMs</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">DateTime</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$timeMs</code></dt>
+						<dd>in milliseconds</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTime
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="dateTimeFromTimestamp" id="_dateTimeFromTimestamp" class="element">
+			<a class="anchor" href="#_dateTimeFromTimestamp"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#48-55" title="Go to source code"><span class="name">dateTimeFromTimestamp</span></a>( <span class="method-param"><span class="type">integer</span> <code class="parameter">$timestamp</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">DateTime</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$timestamp</code></dt>
+						<dd>in seconds</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTime
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="dateTimeNow" id="_dateTimeNow" class="element">
+			<a class="anchor" href="#_dateTimeNow"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#57-62" title="Go to source code"><span class="name">dateTimeNow</span></a>( void )
+				</span>
+
+				: <span class="type">DateTime</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTime
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getTimeMs" id="_getTimeMs" class="element">
+			<a class="anchor" href="#_getTimeMs"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#64-66" title="Go to source code"><span class="name">getTimeMs</span></a>( void )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="date" id="_date" class="element">
+			<a class="anchor" href="#_date"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#68-73" title="Go to source code"><span class="name">date</span></a>( <span class="method-param"> <code class="parameter">$format</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$timestamp</code><span class="initializer"> = NULL</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="gmdate" id="_gmdate" class="element">
+			<a class="anchor" href="#_gmdate"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#75-80" title="Go to source code"><span class="name">gmdate</span></a>( <span class="method-param"> <code class="parameter">$format</code><span class="initializer"></span>, <span class="method-param"> <code class="parameter">$timestamp</code><span class="initializer"> = NULL</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="time" id="_time" class="element">
+			<a class="anchor" href="#_time"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#82-85" title="Go to source code"><span class="name">time</span></a>( void )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setTimeReferenceMs" id="_setTimeReferenceMs" class="element">
+			<a class="anchor" href="#_setTimeReferenceMs"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#87-93" title="Go to source code"><span class="name">setTimeReferenceMs</span></a>( <span class="method-param"> <code class="parameter">$timeReferenceMs</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="parseHTTPDate" id="_parseHTTPDate" class="element">
+			<a class="anchor" href="#_parseHTTPDate"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#95-133" title="Go to source code"><span class="name">parseHTTPDate</span></a>( <span class="method-param"><span class="type">string</span> <code class="parameter">$date</code><span class="initializer"></span>, <span class="method-param"><span class="type">boolean</span> <code class="parameter">$resortToStrtotime</code><span class="initializer"> = true</span></span> )
+				</span>
+
+				: <span class="type">integer|false</span>
+			</code>
+
+			<div class="description short">
+				<p>Parses an HTTP-Date, as defined in RFC 2616.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Parses an HTTP-Date, as defined in RFC 2616.</p>
+
+<p>If the given date is an int, returns it unmodified.
+If the given date is not a string, or cannot be parsed as a date, returns false.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$date</code></dt>
+						<dd>The input date.</dd>
+						<dt><code class="parameter">$resortToStrtotime</code></dt>
+						<dd>Resort to strtotime()'s automatic parsing if no known format worked.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer|false<br>The parsed timestamp, or false.
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1<br>
+					</div>
+
+
+			</div>
+		</div>
+		<div data-order="parseISO8601DateOptionalTime" id="_parseISO8601DateOptionalTime" class="element">
+			<a class="anchor" href="#_parseISO8601DateOptionalTime"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#135-158" title="Go to source code"><span class="name">parseISO8601DateOptionalTime</span></a>( <span class="method-param"><span class="type">string</span> <code class="parameter">$str</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">DateTime</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$str</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTime
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="dateTimeToISO8601" id="_dateTimeToISO8601" class="element">
+			<a class="anchor" href="#_dateTimeToISO8601"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#160-166" title="Go to source code"><span class="name">dateTimeToISO8601</span></a>( <span class="method-param"><span class="type">DateTimeInterface</span> <code class="parameter">$dt</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$dt</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getMillisecondTimestampFromDateTime" id="_getMillisecondTimestampFromDateTime" class="element">
+			<a class="anchor" href="#_getMillisecondTimestampFromDateTime"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#168-171" title="Go to source code"><span class="name">getMillisecondTimestampFromDateTime</span></a>( <span class="method-param"> <code class="parameter">$dt</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="formatHTTPDate" id="_formatHTTPDate" class="element">
+			<a class="anchor" href="#_formatHTTPDate"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#173-182" title="Go to source code"><span class="name">formatHTTPDate</span></a>( <span class="method-param"><span class="type">integer</span> <code class="parameter">$timestamp</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				<p>Generates a date according to the subset of RFC 1123, as defined in RFC 2616.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Generates a date according to the subset of RFC 1123, as defined in RFC 2616.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$timestamp</code></dt>
+						<dd>in seconds</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1<br>
+					</div>
+
+
+			</div>
+		</div>
+		<div data-order="YmdToYMd" id="_YmdToYMd" class="element">
+			<a class="anchor" href="#_YmdToYMd"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#184-191" title="Go to source code"><span class="name">YmdToYMd</span></a>( <span class="method-param"><span class="type">string</span> <code class="parameter">$s</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$s</code></dt>
+						<dd><ul>
+<li>a date in format Y-m-d (ex: 2014-01-15)</li>
+</ul></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br><ul>
+<li>a date in format Y M d (ex: 2014 jan 15)</li>
+</ul>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="localeFormat" id="_localeFormat" class="element">
+			<a class="anchor" href="#_localeFormat"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#193-223" title="Go to source code"><span class="name">localeFormat</span></a>( <span class="method-param"><span class="type">DateTime|IntlCalendar|long</span> <code class="parameter">$timestampOrDateTime</code><span class="initializer"></span>, <span class="method-param"><span class="type">string|array</span> <code class="parameter">$format</code><span class="initializer"></span>, <span class="method-param"><span class="type">string</span> <code class="parameter">$locale</code><span class="initializer"> = null</span></span> )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$timestampOrDateTime</code></dt>
+						<dd>$timestampOr\DateTime</dd>
+						<dt><code class="parameter">$format</code></dt>
+						<dd><ul>
+<li>see IntlDateFormatter::formatObject</li>
+</ul></dd>
+						<dt><code class="parameter">$locale</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getSmallestTimeUnitFromDateInterval" id="_getSmallestTimeUnitFromDateInterval" class="element">
+			<a class="anchor" href="#_getSmallestTimeUnitFromDateInterval"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#225-245" title="Go to source code"><span class="name">getSmallestTimeUnitFromDateInterval</span></a>( <span class="method-param"><span class="type">WonderPush\Util\DateInterval</span> <code class="parameter">$dateInterval</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">integer</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$dateInterval</code></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>A TimeUnit constant, or TimeUnit::DAYS * 30 for a month and TimeUnit::DAYS * 365 for a year, or 0
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="roundDateTimeToTimeUnit" id="_roundDateTimeToTimeUnit" class="element">
+			<a class="anchor" href="#_roundDateTimeToTimeUnit"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#247-267" title="Go to source code"><span class="name">roundDateTimeToTimeUnit</span></a>( <span class="method-param"><span class="type">DateTime</span> <code class="parameter">$dateTime</code><span class="initializer"></span>, <span class="method-param"><span class="type">integer</span> <code class="parameter">$timeUnit</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">DateTime</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$dateTime</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$timeUnit</code></dt>
+						<dd>A TimeUnit constant, or TimeUnit::DAYS * 30 for a month and TimeUnit::DAYS * 365 for a year, or 0</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTime
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="roundDateTimeToTimeSubUnit" id="_roundDateTimeToTimeSubUnit" class="element">
+			<a class="anchor" href="#_roundDateTimeToTimeSubUnit"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><a href="source-class-WonderPush.Util.TimeUtil.html#269-289" title="Go to source code"><span class="name">roundDateTimeToTimeSubUnit</span></a>( <span class="method-param"><span class="type">DateTime</span> <code class="parameter">$dateTime</code><span class="initializer"></span>, <span class="method-param"><span class="type">integer</span> <code class="parameter">$timeUnit</code><span class="initializer"></span> )
+				</span>
+
+				: <span class="type">DateTime</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$dateTime</code></dt>
+						<dd></dd>
+						<dt><code class="parameter">$timeUnit</code></dt>
+						<dd>A TimeUnit constant, or TimeUnit::DAYS * 30 for a month and TimeUnit::DAYS * 365 for a year, or 0</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						DateTime
+					</div>
+
+
+
+
+			</div>
+		</div>
+		</div>
+
+
+
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<div class="summary constants" id="constants">
+		<div data-order="RFC1123" id="RFC1123" class="element">
+			<a href="#RFC1123" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+					<a href="source-class-WonderPush.Util.TimeUtil.html#14" title="Go to source code"><b>RFC1123</b></a>
+				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+
+			<pre class="value">\DateTime::RFC1123</pre>
+		</div>
+		<div data-order="RFC850" id="RFC850" class="element">
+			<a href="#RFC850" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+					<a href="source-class-WonderPush.Util.TimeUtil.html#15" title="Go to source code"><b>RFC850</b></a>
+				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+
+			<pre class="value">\DateTime::RFC850</pre>
+		</div>
+		<div data-order="ASCTIME" id="ASCTIME" class="element">
+			<a href="#ASCTIME" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+					<a href="source-class-WonderPush.Util.TimeUtil.html#16" title="Go to source code"><b>ASCTIME</b></a>
+				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+
+			<pre class="value"><span class="php-quote">'D M j H:i:s Y'</span></pre>
+		</div>
+		</div>
+
+
+
+
+</div>
+	</div>
+
+	<footer>
+		WonderPush PHP library API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</footer>
+</div>
+
+    <div id="assets" aria-hidden="true">
+
+        <svg data-asset="icon-anchor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M 4 9 L 5 9 L 5 10 L 4 10 C 2.5 10 1 8.31 1 6.5 C 1 4.69 2.55 3 4 3 L 6.442 3 L 8 3 C 9.45 3 11 4.69 11 6.5 C 11 7.91 10.09 9.22 9 9.75 L 9 8.59 C 9.58 8.14 10 7.32 10 6.5 C 10 5.22 8.98 4 8 4 L 4 4 C 3.02 4 2 5.22 2 6.5 C 2 7.78 3 9 4 9 Z M 13 6 L 12 6 L 12 7 L 12.679 7 L 13 7 C 14 7 15 8.22 15 9.5 C 15 10.78 13.98 12 13 12 L 9 12 C 8.02 12 7 10.78 7 9.5 C 7 8.67 7.42 7.86 8 7.41 L 8 6.25 C 6.91 6.78 6 8.09 6 9.5 C 6 11.31 7.55 13 9 13 L 13 13 C 14.45 13 16 11.31 16 9.5 C 16 7.69 14.5 6 13 6 Z"></path>
+        </svg>
+
+    </div>
+
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
