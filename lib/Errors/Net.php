@@ -19,4 +19,20 @@ class Net extends Base {
     $this->response = $response;
   }
 
+  /**
+   * The network request that was performed.
+   * @return \WonderPush\Net\Request
+   */
+  public function getRequest() {
+    return $this->request;
+  }
+
+  /**
+   * The network response that was received.
+   * @return \WonderPush\Net\Response
+   */
+  public function getResponse() {
+    return $this->response;
+  }
+
 }

@@ -46,6 +46,8 @@ class DeliveriesTest extends \WonderPush\TestCase {
     }
     $this->assertInstanceOf('\WonderPush\Errors\Net', $exception);
     /* @var $exception \WonderPush\Errors\Net */
+    $this->assertInstanceOf('\WonderPush\Net\Request', $exception->getRequest());
+    $this->assertInstanceOf('\WonderPush\Net\Response', $exception->getResponse());
     $this->assertEquals('10002', $exception->getCodeStr());
     $this->assertEquals(10002, $exception->getCode());
     $this->assertInternalType('string', $exception->getMessage());
