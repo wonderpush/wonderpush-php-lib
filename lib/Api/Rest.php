@@ -1,6 +1,6 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Api;
 
 /**
  * Permits placing arbitrary calls against the WonderPush Management API.
@@ -11,11 +11,11 @@ class Rest {
 
   /**
    * Instance of the library whose credentials are to be used.
-   * @var WonderPush
+   * @var \WonderPush\WonderPush
    */
   private $wp;
 
-  public function __construct(WonderPush $wp) {
+  public function __construct(\WonderPush\WonderPush $wp) {
     $this->wp = $wp;
   }
 
@@ -27,7 +27,7 @@ class Rest {
    * @return \WonderPush\Net\Request
    */
   public function request($method, $path, $params = array()) {
-    $rtn = new Net\Request();
+    $rtn = new \WonderPush\Net\Request();
     $rtn->setMethod($method);
     $rtn->setRoot($this->wp->getApiRoot());
     if (!\WonderPush\Util\StringUtil::beginsWith($path, '/')) {
@@ -59,7 +59,7 @@ class Rest {
    * @return \WonderPush\Net\Request
    */
   public function requestForGet($path, $params = array()) {
-    return $this->request(Net\Request::GET, $path, $params);
+    return $this->request(\WonderPush\Net\Request::GET, $path, $params);
   }
 
   /**
@@ -79,7 +79,7 @@ class Rest {
    * @return \WonderPush\Net\Request
    */
   public function requestForPost($path, $params = array()) {
-    return $this->request(Net\Request::POST, $path, $params);
+    return $this->request(\WonderPush\Net\Request::POST, $path, $params);
   }
 
   /**
@@ -99,7 +99,7 @@ class Rest {
    * @return \WonderPush\Net\Request
    */
   public function requestForPut($path, $params = array()) {
-    return $this->request(Net\Request::PUT, $path, $params);
+    return $this->request(\WonderPush\Net\Request::PUT, $path, $params);
   }
 
   /**
@@ -119,7 +119,7 @@ class Rest {
    * @return \WonderPush\Net\Request
    */
   public function requestForPatch($path, $params = array()) {
-    return $this->request(Net\Request::PATCH, $path, $params);
+    return $this->request(\WonderPush\Net\Request::PATCH, $path, $params);
   }
 
   /**
@@ -139,7 +139,7 @@ class Rest {
    * @return \WonderPush\Net\Request
    */
   public function requestForDelete($path, $params = array()) {
-    return $this->request(Net\Request::DELETE, $path, $params);
+    return $this->request(\WonderPush\Net\Request::DELETE, $path, $params);
   }
 
   /**
@@ -147,7 +147,7 @@ class Rest {
    * @param \WonderPush\Net\Request $request
    * @return \WonderPush\Net\Response
    */
-  public function execute(Net\Request $request) {
+  public function execute(\WonderPush\Net\Request $request) {
     return $this->wp->getHttpClient()->execute($request);
   }
 

@@ -11,7 +11,6 @@ require(dirname(__FILE__) . '/lib/Util/TimeValue.php');
 require(dirname(__FILE__) . '/lib/Util/UrlUtil.php');
 
 // WonderPush
-require(dirname(__FILE__) . '/lib/Rest.php');
 require(dirname(__FILE__) . '/lib/WonderPush.php');
 
 // WonderPush\Obj
@@ -45,4 +44,5 @@ require(dirname(__FILE__) . '/lib/ResponseParsers/BaseSuccess.php');
 require(dirname(__FILE__) . '/lib/ResponseParsers/PostDeliveries.php');
 
 // WonderPush\Api
+require(dirname(__FILE__) . '/lib/Api/Rest.php');
 require(dirname(__FILE__) . '/lib/Api/Deliveries.php');

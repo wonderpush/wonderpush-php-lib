@@ -37,7 +37,7 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   /**
    * Lazily initialized Rest API.
-   * @var Rest
+   * @var Api\Rest
    */
   private $rest;
 
@@ -117,11 +117,11 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   /**
    * Rest API instance.
-   * @return Rest
+   * @return Api\Rest
    */
   public function rest() {
     if ($this->rest === null) {
-      $this->rest = new Rest($this);
+      $this->rest = new Api\Rest($this);
     }
     return $this->rest;
   }

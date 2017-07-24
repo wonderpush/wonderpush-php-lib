@@ -1,13 +1,13 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Api;
 
-class RestTest extends TestCase {
+class RestTest extends \WonderPush\TestCase {
 
   protected $wp;
 
   protected function setUp() {
-    $this->wp = WonderPushTest::getWonderPush();
+    $this->wp = \WonderPush\WonderPushTest::getWonderPush();
   }
 
   public function testGetFakeEndpoint() {
@@ -39,8 +39,8 @@ class RestTest extends TestCase {
   public function testSendNotification() {
     $response = $this->wp->rest()->post('/deliveries', array(
         'targetSegmentIds' => array('@NOBODY'),
-        'notification' => Obj\Notification::_new()
-            ->setAlert(Obj\NotificationAlert::_new()
+        'notification' => \WonderPush\Obj\Notification::_new()
+            ->setAlert(\WonderPush\Obj\NotificationAlert::_new()
                 ->setText('Test PHP lib')
             )
         ,
