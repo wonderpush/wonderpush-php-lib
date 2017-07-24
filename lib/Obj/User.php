@@ -1,6 +1,6 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Obj;
 
 /**
  * DTO for users.

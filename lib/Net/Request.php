@@ -5,7 +5,7 @@ namespace WonderPush\Net;
 /**
  * Represents an HTTP request.
  */
-class Request extends \WonderPush\Object {
+class Request extends \WonderPush\Obj\Object {
 
   const GET    = 'GET';
   const POST   = 'POST';

@@ -1,11 +1,11 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Obj;
 
 /**
  * Base class for DTO objects.
  */
-class Object implements Util\JsonSerializable {
+class Object implements \WonderPush\Util\JsonSerializable {
 
   public function __construct($data = null) {
     if ($data !== null) {
@@ -28,7 +28,7 @@ class Object implements Util\JsonSerializable {
     $methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
       /* @var $method \ReflectionMethod */
-      if (!Util\StringUtil::beginsWith($method->getName(), 'set')) {
+      if (!\WonderPush\Util\StringUtil::beginsWith($method->getName(), 'set')) {
         continue; // not a setter
       }
       try {
@@ -80,7 +80,7 @@ class Object implements Util\JsonSerializable {
     $methods = $x->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
       if (!$method->isStatic()) {
-        if (Util\StringUtil::beginsWith($method->name, 'get')) {
+        if (\WonderPush\Util\StringUtil::beginsWith($method->name, 'get')) {
           $field = substr($method->name, 3);
           $field{0} = strtolower($field{0});
           $value = $method->invoke($this);
@@ -95,7 +95,7 @@ class Object implements Util\JsonSerializable {
   }
 
   protected static function instantiateForSetter($type, $data) {
-    if (Util\StringUtil::endsWith($type, '[]')) {
+    if (\WonderPush\Util\StringUtil::endsWith($type, '[]')) {
       $type = substr($type, 0, -2);
       return array_map(function($item) use ($type) {
         return self::instantiateForSetter($type, $item);

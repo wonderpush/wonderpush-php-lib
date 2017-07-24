@@ -17,8 +17,8 @@ class DeliveriesTest extends \WonderPush\TestCase {
   public function testSendNotification() {
     $response = $this->api->preparePostDeliveries()
         ->setTargetSegmentIds('@NOBODY')
-        ->setNotification(\WonderPush\Notification::_new()
-            ->setAlert(\WonderPush\NotificationAlert::_new()
+        ->setNotification(\WonderPush\Obj\Notification::_new()
+            ->setAlert(\WonderPush\Obj\NotificationAlert::_new()
                 ->setText('Test PHP lib')
             ))
         ->execute();
@@ -28,7 +28,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
     $this->assertTrue($response->getSuccess());
     $this->assertNull($response->exception());
     $this->assertSame($response, $response->checked());
-    $this->assertSame(\WonderPush\NullObject::getInstance(), $response->getCampaignId());
+    $this->assertSame(\WonderPush\Obj\NullObject::getInstance(), $response->getCampaignId());
     $this->assertNotNull($response->getNotificationId());
   }
 

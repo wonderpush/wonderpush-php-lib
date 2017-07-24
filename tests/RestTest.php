@@ -39,8 +39,8 @@ class RestTest extends TestCase {
   public function testSendNotification() {
     $response = $this->wp->rest()->post('/deliveries', array(
         'targetSegmentIds' => array('@NOBODY'),
-        'notification' => Notification::_new()
-            ->setAlert(NotificationAlert::_new()
+        'notification' => Obj\Notification::_new()
+            ->setAlert(Obj\NotificationAlert::_new()
                 ->setText('Test PHP lib')
             )
         ,

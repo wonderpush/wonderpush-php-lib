@@ -152,7 +152,7 @@ class PostDeliveries extends Base {
   }
 
   /**
-   * @param \WonderPush\Notification|array $notification
+   * @param \WonderPush\Obj\Notification|array $notification
    * @return $this
    */
   public function setNotification($notification) {
@@ -161,7 +161,7 @@ class PostDeliveries extends Base {
   }
 
   /**
-   * @param \WonderPush\Notification|array $notificationOverride
+   * @param \WonderPush\Obj\Notification|array $notificationOverride
    * @return $this
    */
   public function setNotificationOverride($notificationOverride) {

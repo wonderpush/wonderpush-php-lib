@@ -1,6 +1,6 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Obj;
 
 /**
  * DTO for installations.
@@ -152,7 +152,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setPushToken($pushToken) {
-    $this->pushToken = Object::instantiateForSetter('\WonderPush\InstallationPushToken', $pushToken);
+    $this->pushToken = Object::instantiateForSetter('\WonderPush\Obj\InstallationPushToken', $pushToken);
     return $this;
   }
 
@@ -168,7 +168,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setApplication($application) {
-    $this->application = Object::instantiateForSetter('\WonderPush\InstallationApplication', $application);
+    $this->application = Object::instantiateForSetter('\WonderPush\Obj\InstallationApplication', $application);
     return $this;
   }
 
@@ -184,7 +184,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setDevice($device) {
-    $this->device = Object::instantiateForSetter('\WonderPush\InstallationDevice', $device);
+    $this->device = Object::instantiateForSetter('\WonderPush\Obj\InstallationDevice', $device);
     return $this;
   }
 
@@ -200,7 +200,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setPreferences($preferences) {
-    $this->preferences = Object::instantiateForSetter('\WonderPush\InstallationPreferences', $preferences);
+    $this->preferences = Object::instantiateForSetter('\WonderPush\Obj\InstallationPreferences', $preferences);
     return $this;
   }
 
@@ -459,7 +459,7 @@ class InstallationApplication extends Object {
    * @return InstallationApplication
    */
   public function setApple($apple) {
-    $this->apple = Object::instantiateForSetter('\WonderPush\InstallationApplicationApple', $apple);
+    $this->apple = Object::instantiateForSetter('\WonderPush\Obj\InstallationApplicationApple', $apple);
     return $this;
   }
 
@@ -721,7 +721,7 @@ class InstallationDevice extends Object {
    * @return InstallationDevice
    */
   public function setCapabilities($capabilities) {
-    $this->capabilities = Object::instantiateForSetter('\WonderPush\InstallationDeviceCapabilities', $capabilities);
+    $this->capabilities = Object::instantiateForSetter('\WonderPush\Obj\InstallationDeviceCapabilities', $capabilities);
     return $this;
   }
 
@@ -737,7 +737,7 @@ class InstallationDevice extends Object {
    * @return InstallationDevice
    */
   public function setConfiguration($configuration) {
-    $this->configuration = Object::instantiateForSetter('\WonderPush\InstallationDeviceConfiguration', $configuration);
+    $this->configuration = Object::instantiateForSetter('\WonderPush\Obj\InstallationDeviceConfiguration', $configuration);
     return $this;
   }
 

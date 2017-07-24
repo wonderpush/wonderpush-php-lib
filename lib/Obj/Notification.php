@@ -1,6 +1,6 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Obj;
 
 /**
  * DTO for notifications.
@@ -122,7 +122,7 @@ class Notification extends Object {
    * @return Notification
    */
   public function setAlert($alert) {
-    $this->alert = Object::instantiateForSetter('\WonderPush\NotificationAlert', $alert);
+    $this->alert = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlert', $alert);
     return $this;
   }
 
@@ -138,7 +138,7 @@ class Notification extends Object {
    * @return Notification
    */
   public function setInApp($inApp) {
-    $this->inApp = Object::instantiateForSetter('\WonderPush\NotificationInApp', $inApp);
+    $this->inApp = Object::instantiateForSetter('\WonderPush\Obj\NotificationInApp', $inApp);
     return $this;
   }
 
@@ -154,7 +154,7 @@ class Notification extends Object {
    * @return Notification
    */
   public function setPush($push) {
-    $this->push = Object::instantiateForSetter('\WonderPush\NotificationPush', $push);
+    $this->push = Object::instantiateForSetter('\WonderPush\Obj\NotificationPush', $push);
     return $this;
   }
 
@@ -217,7 +217,7 @@ class NotificationButton extends Object {
    * @return NotificationButton
    */
   public function setActions($actions) {
-    $this->actions = Object::instantiateForSetter('\WonderPush\NotificationButtonAction[]', $actions);
+    $this->actions = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $actions);
     return $this;
   }
 
@@ -350,7 +350,7 @@ class NotificationButtonAction extends Object {
    * @return NotificationButtonAction
    */
   public function setEvent($event) {
-    $this->event = Object::instantiateForSetter('\WonderPush\NotificationButtonActionEvent', $event);
+    $this->event = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonActionEvent', $event);
     return $this;
   }
 
@@ -382,7 +382,7 @@ class NotificationButtonAction extends Object {
    * @return NotificationButtonAction
    */
   public function setInstallation($installation) {
-    $this->installation = Object::instantiateForSetter('\WonderPush\Installation', $installation);
+    $this->installation = Object::instantiateForSetter('\WonderPush\Obj\Installation', $installation);
     return $this;
   }
 
@@ -564,7 +564,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setActions($actions) {
-    $this->actions = Object::instantiateForSetter('\WonderPush\NotificationButtonAction[]', $actions);
+    $this->actions = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $actions);
     return $this;
   }
 
@@ -580,7 +580,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setReceiveActions($receiveActions) {
-    $this->receiveActions = Object::instantiateForSetter('\WonderPush\NotificationButtonAction[]', $receiveActions);
+    $this->receiveActions = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $receiveActions);
     return $this;
   }
 
@@ -596,7 +596,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setIos($ios) {
-    $this->ios = Object::instantiateForSetter('\WonderPush\NotificationAlertIos', $ios);
+    $this->ios = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertIos', $ios);
     return $this;
   }
 
@@ -612,7 +612,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setAndroid($android) {
-    $this->android = Object::instantiateForSetter('\WonderPush\NotificationAlertAndroid', $android);
+    $this->android = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $android);
     return $this;
   }
 
@@ -628,7 +628,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setWeb($web) {
-    $this->web = Object::instantiateForSetter('\WonderPush\NotificationAlertWeb', $web);
+    $this->web = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertWeb', $web);
     return $this;
   }
 
@@ -874,7 +874,7 @@ class NotificationAlertIos extends NotificationAlert {
    * @return NotificationAlertIos
    */
   public function setForeground($foreground) {
-    $this->foreground = Object::instantiateForSetter('\WonderPush\NotificationAlertIosForeground', $foreground);
+    $this->foreground = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertIosForeground', $foreground);
     return $this;
   }
 
@@ -890,7 +890,7 @@ class NotificationAlertIos extends NotificationAlert {
    * @return NotificationAlertIos
    */
   public function setAttachments($attachments) {
-    $this->attachments = Object::instantiateForSetter('\WonderPush\NotificationAlertIosAttachment[]', $attachments);
+    $this->attachments = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertIosAttachment[]', $attachments);
     return $this;
   }
 
@@ -1433,7 +1433,7 @@ class NotificationAlertAndroid extends NotificationAlert {
   }
 
   public function setButtons($buttons) {
-    $this->buttons = Object::instantiateForSetter('\WonderPush\NotificationAlertAndroidButton[]', $buttons);
+    $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroidButton[]', $buttons);
     return $this;
   }
 
@@ -1449,7 +1449,7 @@ class NotificationAlertAndroid extends NotificationAlert {
    * @return NotificationAlertAndroid
    */
   public function setForeground($foreground) {
-    $this->foreground = Object::instantiateForSetter('\WonderPush\NotificationAlertAndroid', $foreground);
+    $this->foreground = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $foreground);
     if ($this->foreground instanceof NotificationAlertAndroid) {
       $this->foreground->setForeground(null);
     }
@@ -1719,7 +1719,7 @@ class NotificationAlertWeb extends NotificationAlert {
   }
 
   public function setButtons($buttons) {
-    $this->buttons = Object::instantiateForSetter('\WonderPush\NotificationAlertWebButton[]', $buttons);
+    $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertWebButton[]', $buttons);
     return $this;
   }
 
@@ -1863,7 +1863,7 @@ class NotificationInApp extends Object {
    * @return NotificationInApp
    */
   public function setMap($map) {
-    $this->map = Object::instantiateForSetter('\WonderPush\NotificationInAppMap', $map);
+    $this->map = Object::instantiateForSetter('\WonderPush\Obj\NotificationInAppMap', $map);
     return $this;
   }
 
@@ -1895,7 +1895,7 @@ class NotificationInApp extends Object {
    * @return NotificationInApp
    */
   public function setButtons($buttons) {
-    $this->buttons = Object::instantiateForSetter('\WonderPush\NotificationInAppButton[]', $buttons);
+    $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationInAppButton[]', $buttons);
     return $this;
   }
 
@@ -1932,7 +1932,7 @@ class NotificationInAppMap extends Object {
    * @return NotificationInAppMap
    */
   public function setPlace($place) {
-    $this->place = Object::instantiateForSetter('\WonderPush\NotificationInAppMapPlace', $place);
+    $this->place = Object::instantiateForSetter('\WonderPush\Obj\NotificationInAppMapPlace', $place);
     return $this;
   }
 
@@ -1963,7 +1963,7 @@ class NotificationInAppMapPlace extends Object {
    * @return NotificationInAppMapPlace
    */
   public function setPoint($point) {
-    $this->point = Object::instantiateForSetter('\WonderPush\GeoLocation', $point);
+    $this->point = Object::instantiateForSetter('\WonderPush\Obj\GeoLocation', $point);
     return $this;
   }
 
@@ -2134,7 +2134,7 @@ class NotificationPush extends Object {
    * @return NotificationPush
    */
   public function setAndroid($android) {
-    $this->android = Object::instantiateForSetter('\WonderPush\NotificationPushAndroid', $android);
+    $this->android = Object::instantiateForSetter('\WonderPush\Obj\NotificationPushAndroid', $android);
     return $this;
   }
 
@@ -2150,7 +2150,7 @@ class NotificationPush extends Object {
    * @return NotificationPush
    */
   public function setIos($ios) {
-    $this->ios = Object::instantiateForSetter('\WonderPush\NotificationPushIos', $ios);
+    $this->ios = Object::instantiateForSetter('\WonderPush\Obj\NotificationPushIos', $ios);
     return $this;
   }
 
@@ -2166,7 +2166,7 @@ class NotificationPush extends Object {
    * @return NotificationPush
    */
   public function setWeb($web) {
-    $this->web = Object::instantiateForSetter('\WonderPush\NotificationPushWeb', $web);
+    $this->web = Object::instantiateForSetter('\WonderPush\Obj\NotificationPushWeb', $web);
     return $this;
   }
 

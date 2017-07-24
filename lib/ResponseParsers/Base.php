@@ -5,11 +5,11 @@ namespace WonderPush\ResponseParsers;
 /**
  * Base class for response parsers, representing a parsed response.
  *
- * Concrete subclasses parse {@link \WonderPush\Net\Response}s into DTO {@link \WonderPush\Object}s.
+ * Concrete subclasses parse {@link \WonderPush\Net\Response}s into DTO {@link \WonderPush\Obj\Object}s.
  *
  * This class also provide accessors for the original request builder, request and response.
  */
-abstract class Base extends \WonderPush\Object {
+abstract class Base extends \WonderPush\Obj\Object {
 
   /**
    * Instance of the library whose credentials are to be used.

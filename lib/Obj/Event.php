@@ -1,6 +1,6 @@
 <?php
 
-namespace WonderPush;
+namespace WonderPush\Obj;
 
 /**
  * DTO for installation's events.
@@ -258,7 +258,7 @@ class Event extends Object {
    * @return Event
    */
   public function setLocation($location) {
-    $this->location = Object::instantiateForSetter('\WonderPush\GeoLocation', $location);
+    $this->location = Object::instantiateForSetter('\WonderPush\Obj\GeoLocation', $location);
     return $this;
   }
 
