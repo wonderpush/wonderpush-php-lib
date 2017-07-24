@@ -27,15 +27,9 @@ class Object implements Util\JsonSerializable {
     $class = new \ReflectionClass($this);
     $methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
-      if ($method->getDeclaringClass()->getName() === 'Object') {
-        continue;
-      }
       /* @var $method \ReflectionMethod */
       if (!Util\StringUtil::beginsWith($method->getName(), 'set')) {
         continue; // not a setter
-      }
-      if (Util\StringUtil::endsWith($method->getName(), 'FromData')) {
-        continue; // avoid using the FromData variant, we need to set real nulls and avoid Object::$NULL
       }
       try {
         $this->{$method->getName()}(null);
