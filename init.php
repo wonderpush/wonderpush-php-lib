@@ -36,12 +36,12 @@ require(dirname(__FILE__) . '/lib/Errors/Unsuccessful.php');
 
 // WonderPush\RequestBuilders
 require(dirname(__FILE__) . '/lib/RequestBuilders/Base.php');
-require(dirname(__FILE__) . '/lib/RequestBuilders/PostDeliveries.php');
+require(dirname(__FILE__) . '/lib/RequestBuilders/DeliveriesCreate.php');
 
 // WonderPush\ResponseParsers
 require(dirname(__FILE__) . '/lib/ResponseParsers/Base.php');
 require(dirname(__FILE__) . '/lib/ResponseParsers/BaseSuccess.php');
-require(dirname(__FILE__) . '/lib/ResponseParsers/PostDeliveries.php');
+require(dirname(__FILE__) . '/lib/ResponseParsers/DeliveriesCreate.php');
 
 // WonderPush\Api
 require(dirname(__FILE__) . '/lib/Api/Rest.php');

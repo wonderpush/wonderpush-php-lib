@@ -5,7 +5,7 @@ namespace WonderPush\RequestBuilders;
 /**
  * `POST /deliveries` request builder.
  */
-class PostDeliveries extends Base {
+class DeliveriesCreate extends Base {
 
   const PATH = '/deliveries';
 
@@ -33,7 +33,7 @@ class PostDeliveries extends Base {
   }
 
   /**
-   * @return \WonderPush\ResponseParsers\PostDeliveries
+   * @return \WonderPush\ResponseParsers\DeliveriesCreate
    */
   public function execute() {
     return parent::execute();

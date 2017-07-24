@@ -3,7 +3,7 @@
 Simple usage looks like:
 
     $wonderpush = new \WonderPush\WonderPush(WONDERPUSH_ACCESS_TOKEN, WONDERPUSH_APPLICATION_ID);
-    $response = $wonderpush->deliveries()->preparePostDeliveries()
+    $response = $wonderpush->deliveries()->prepareCreate()
         ->setTargetSegmentIds('@ALL')
         ->setNotification(\WonderPush\Notification::_new()
             ->setAlert(\WonderPush\NotificationAlert::_new()

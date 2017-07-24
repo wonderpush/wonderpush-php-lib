@@ -15,7 +15,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
   }
 
   public function testSendNotification() {
-    $response = $this->api->preparePostDeliveries()
+    $response = $this->api->prepareCreate()
         ->setTargetSegmentIds('@NOBODY')
         ->setNotification(\WonderPush\Obj\Notification::_new()
             ->setAlert(\WonderPush\Obj\NotificationAlert::_new()
@@ -33,7 +33,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
   }
 
   public function testSendNotificationNoParameter() {
-    $response = $this->api->preparePostDeliveries()
+    $response = $this->api->prepareCreate()
         ->execute();
     $this->assertEquals(400, $response->netResponse()->getStatusCode());
     $this->assertInstanceOf('\WonderPush\Errors\Net', $response->exception());

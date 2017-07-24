@@ -18,10 +18,10 @@ class Deliveries {
   }
 
   /**
-   * @return \WonderPush\RequestBuilders\PostDeliveries
+   * @return \WonderPush\RequestBuilders\DeliveriesCreate
    */
-  public function preparePostDeliveries() {
-    return new \WonderPush\RequestBuilders\PostDeliveries($this->wp);
+  public function prepareCreate() {
+    return new \WonderPush\RequestBuilders\DeliveriesCreate($this->wp);
   }
 
 }

@@ -5,7 +5,7 @@ namespace WonderPush\ResponseParsers;
 /**
  * `POST /deliveries` response parser.
  */
-class PostDeliveries extends Base {
+class DeliveriesCreate extends Base {
 
   private $success;
   private $campaignId;
