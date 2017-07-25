@@ -7,20 +7,16 @@ namespace WonderPush\Util;
  */
 class StringUtil {
 
-  static public function beginsWith($subject, $sub) {
-    return ( substr( $subject, 0, strlen( $sub ) ) == $sub );
+  public static function beginsWith($subject, $sub) {
+    return substr($subject, 0, strlen($sub)) === $sub;
   }
 
-  static public function endsWith($haystack, $needle) {
-    $length = strlen($needle);
-    if ($length == 0) {
-      return true;
-    }
-
-    return (substr($haystack, -$length) === $needle);
+  public static function endsWith($haystack, $needle) {
+    if ($needle === '') return true;
+    return substr($haystack, -strlen($needle)) === $needle;
   }
 
-  static public function contains($haystack, $needle) {
+  public static function contains($haystack, $needle) {
     return strpos($haystack, $needle) !== false;
   }
 
@@ -28,28 +24,25 @@ class StringUtil {
    * replace instances of {0} by the second arg, {1} by the third arg ...
    * If the second argument is an associative array, we will use the values
    * in the array to replace {key} 's occurences in the string $s
-   * @param string $s
+   * @param string $format
    * @param string[] $args
    */
-  static public function format($s) {
+  public static function format($format, $args) {
     $vars = func_get_args();
-    $search = $replace = array();
+    $search = array();
+    $replace = array();
 
-    if (is_array($vars[1])) {
-      foreach($vars[1] as $key => $value) {
-        $search[] = '{' . $key .'}';
-        $replace[] = $value;
-      }
-    } else {
-      $nb = func_num_args();
-      for($i=1; $i<$nb;$i++)
-      {
-        $search[] = '{'.($i-1).'}';
-        $replace[] = $vars[$i];
-      }
+    if (!is_array($args) && !is_object($args)) {
+      $args = func_get_args();
+      array_shift($args);
     }
 
-    return str_replace($search, $replace, $s);
+    foreach($args as $key => $value) {
+      $search[] = '{' . $key . '}';
+      $replace[] = $value;
+    }
+
+    return str_replace($search, $replace, $format);
   }
 
 }
