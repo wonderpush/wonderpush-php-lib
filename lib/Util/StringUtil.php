@@ -52,16 +52,4 @@ class StringUtil {
     return str_replace($search, $replace, $s);
   }
 
-  static public function underscoreToUpperCamelCase($s) {
-    return preg_replace_callback('/(?:^|_)(.?)/', function($matches){return strtoupper($matches[1]);}, $s);
-  }
-
-  static public function underscoreToLowerCamelCase($s) {
-    return preg_replace_callback('/_(.?)/', function($matches){return strtoupper($matches[1]);}, $s);
-  }
-
-  static public function camelCaseToUnderscore($s) {
-    return strtolower(preg_replace('/([^A-Z])([A-Z])/', "$1_$2", $s));
-  }
-
 }
