@@ -14,6 +14,7 @@ class StringUtil {
    * @return boolean
    */
   public static function beginsWith($subject, $prefix) {
+    if ($subject === '') return $prefix === ''; // substr() returns FALSE if the start arguments equals the string length prior to PHP 7.0.0
     return substr($subject, 0, strlen($prefix)) === $prefix;
   }
 
