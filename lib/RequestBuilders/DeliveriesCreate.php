@@ -33,6 +33,7 @@ class DeliveriesCreate extends Base {
   }
 
   /**
+   * Executes the corresponding request and returns the parsed response.
    * @return \WonderPush\ResponseParsers\DeliveriesCreate
    */
   public function execute() {

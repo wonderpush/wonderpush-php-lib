@@ -13,8 +13,11 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   const VERSION = '0.1.0';
 
+  /** @var string */
   private $accessToken;
+  /** @var string */
   private $applicationId;
+  /** @var string */
   private $apiBase;
 
   /**
@@ -47,15 +50,38 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
    */
   private $deliveries;
 
+  /**
+   * Constructs the library instance that you can use to send API calls against WonderPush.
+   *
+   * This is the library entry-point.
+   *
+   * Relying on an instance instead of a static enables you to easily handle multiple projects,
+   * and does not prevent you from creating your own static singleton instance out of it.
+   *
+   * You can find your credentials in the _Settings_ / _Configuration_ page of {@link https://dashboard.wonderpush.com/ your project dashboard}.
+   *
+   * @param string $accessToken
+   *    The Management API access token used to perform API calls.
+   * @param string $applicationId
+   *    The application id corresponding to the access token.
+   */
   public function __construct($accessToken, $applicationId = null) {
     $this->accessToken = $accessToken;
     $this->applicationId = $applicationId;
   }
 
+  /**
+   * The Management API access token used to perform API calls.
+   * @return string
+   */
   function getAccessToken() {
     return $this->accessToken;
   }
 
+  /**
+   * The application id corresponding to the access token.
+   * @return string
+   */
   function getApplicationId() {
     return $this->applicationId;
   }
@@ -69,8 +95,8 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
   }
 
   /**
+   * Set the logger to which the library will produce messages, when used outside the scope of a WonderPush instance.
    * @param \Psr\Log\LoggerInterface $logger
-   *   The logger to which the library will produce messages, when used outside the scope of a WonderPush instance.
    */
   public static function setGlobalLogger(\Psr\Log\LoggerInterface $logger) {
     self::$globalLogger = $logger;
@@ -85,13 +111,17 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
   }
 
   /**
+   * Set the logger to which the library will produce messages.
    * @param \Psr\Log\LoggerInterface $logger
-   *   The logger to which the library will produce messages.
    */
   public function setLogger(\Psr\Log\LoggerInterface $logger) {
     $this->logger = $logger;
   }
 
+  /**
+   * The HTTP client to use to perform API calls.
+   * @return Net\HttpClientInterface
+   */
   public function getHttpClient() {
     if ($this->httpClient === null) {
       $this->httpClient = new Net\CurlHttpClient($this);
@@ -99,18 +129,47 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
     return $this->httpClient;
   }
 
+  /**
+   * Set the HTTP client to use to perform API calls.
+   * @param \WonderPush\Net\HttpClientInterface $httpClient
+   */
   public function setHttpClient(Net\HttpClientInterface $httpClient) {
     $this->httpClient = $httpClient;
   }
 
+  /**
+   * The API base against which to place API calls.
+   * 
+   * This is mostly useful for developing the PHP library itself, you should ignore it.
+   *
+   * @return string
+   * @see API_BASE
+   */
   public function getApiBase() {
     return $this->apiBase ?: self::API_BASE;
   }
 
+  /**
+   * The API base against which to place API calls.
+   *
+   * This is mostly useful for developing the PHP library itself, you should ignore it.
+   *
+   * @param string $apiBase
+   */
   public function setApiBase($apiBase) {
     $this->apiBase = $apiBase;
   }
 
+  /**
+   * The API root against which to place API calls.
+   *
+   * Builds on the API base, API version and API prefix.
+   *
+   * @return string
+   * @see getApiBase()
+   * @see API_VERSION
+   * @see API_PREFIX
+   */
   public function getApiRoot() {
     return $this->getApiBase() . '/' . self::API_VERSION . self::API_PREFIX;
   }

@@ -3,7 +3,9 @@
 namespace WonderPush\Api;
 
 /**
- * Deliveries API
+ * Deliveries API.
+ *
+ * Using this API you can send push notifications.
  */
 class Deliveries {
 
@@ -18,6 +20,7 @@ class Deliveries {
   }
 
   /**
+   * Prepare a call to `POST /deliveries`, to send push notifications.
    * @return \WonderPush\RequestBuilders\DeliveriesCreate
    */
   public function prepareCreate() {

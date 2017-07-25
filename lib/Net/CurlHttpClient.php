@@ -87,7 +87,7 @@ class CurlHttpClient implements HttpClientInterface {
     // Prepare other cURL options: Response headers reader
     $responseHeaders = array();
     $readHeaderCallback = function ($ch, $headerLine) use (&$responseHeaders) {
-      if (strpos($headerLine, ":") !== false) {
+      if (\WonderPush\Util\StringUtil::contains($headerLine, ":")) {
         list($key, $value) = explode(":", trim($headerLine), 2);
         $responseHeaders[trim($key)] = trim($value);
       } // else, we're reading the HTTP status line

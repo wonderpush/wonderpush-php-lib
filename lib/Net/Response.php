@@ -32,8 +32,10 @@ class Response extends \WonderPush\Obj\Object {
   private $isParsed;
 
   /**
-   * JSON parsed body, or {@code null} on parsing errors.
-   * Uses objects instead of associative arrays to preserve {}/[] distinctions.
+   * JSON parsed body, or `null` on parsing errors.
+   *
+   * Uses objects instead of associative arrays to preserve `{}`/`[]` distinctions.
+   *
    * @var object|null
    */
   private $parsedBody;
@@ -50,28 +52,55 @@ class Response extends \WonderPush\Obj\Object {
    */
   private $parseErrorMsg;
 
+  /**
+   * The HTTP Status code.
+   * @return integer
+   */
   public function getStatusCode() {
     return $this->statusCode;
   }
 
+  /**
+   * Set the HTTP Status code.
+   * @param integer $statusCode
+   * @return $this
+   */
   public function setStatusCode($statusCode) {
     $this->statusCode = $statusCode;
     return $this;
   }
 
+  /**
+   * The HTTP headers.
+   * @return string[]
+   */
   public function getHeaders() {
     return $this->headers;
   }
 
+  /**
+   * Set the HTTP headers.
+   * @param string[] $headers
+   * @return $this
+   */
   public function setHeaders($headers) {
     $this->headers = $headers;
     return $this;
   }
 
+  /**
+   * The raw HTTP body.
+   * @return string
+   */
   public function getRawBody() {
     return $this->rawBody;
   }
 
+  /**
+   * Set the raw HTTP body.
+   * @param string $rawBody
+   * @return $this
+   */
   public function setRawBody($rawBody) {
     $this->rawBody = $rawBody;
 
@@ -84,6 +113,9 @@ class Response extends \WonderPush\Obj\Object {
     return $this;
   }
 
+  /**
+   * Parses the raw HTML body into JSON, and notes any parsing error.
+   */
   private function parseBody() {
     if ($this->isParsed) return;
     $this->parsedBody = json_decode($this->rawBody);
@@ -130,7 +162,8 @@ class Response extends \WonderPush\Obj\Object {
   }
 
   /**
-   * @return int One of json_last_error() returned constants. JSON_ERROR_NONE if there were no error.
+   * The error code encountered while parsing the body, if any.
+   * @return int One of `json_last_error()` returned constants. `JSON_ERROR_NONE` if there were no error.
    */
   public function parseError() {
     $this->parseBody();
@@ -138,7 +171,8 @@ class Response extends \WonderPush\Obj\Object {
   }
 
   /**
-   * @return string The output of json_last_error_msg().
+   * The error message encountered while parsing the body, if any.
+   * @return string The output of `json_last_error_msg()`.
    */
   public function parseErrorMsg() {
     $this->parseBody();
@@ -146,7 +180,7 @@ class Response extends \WonderPush\Obj\Object {
   }
 
   /**
-   * The parsed body, or a JsonError.
+   * The parsed body, or a {@link \WonderPush\Errors\Json}.
    * @return mixed|\WonderPush\Errors\Json
    */
   public function parsedBody() {

@@ -19,8 +19,12 @@ class TimeUnit {
   const WEEKS = 604800;    // 7 days
   // other typical constants (month, year) don't convert to a constant number of seconds
 
+  /**
+   * Asserts the given unit is valid.
+   * @param mixed $unit
+   */
   public static function assertValidUnit($unit) {
-    assert(is_int($unit) || is_float($unit));
+    assert(is_int($unit));
   }
 
   private static $units = array(
@@ -47,10 +51,19 @@ class TimeUnit {
 
   private static $labelsToUnits = null; // lazily initialized
 
+  /**
+   * Returns a list of predefined units.
+   * @return integer[]
+   */
   public static function getUnits() {
     return self::$units;
   }
 
+  /**
+   * Returns the labels of a given unit, or of all units.
+   * @param integer $unit
+   * @return string|null
+   */
   public static function getUnitLabels($unit = null) {
     if (null === $unit) {
       return self::$unitsLabels;
@@ -60,6 +73,10 @@ class TimeUnit {
     }
   }
 
+  /**
+   * Returns an mapping of labels to associated unit.
+   * @return integer[]
+   */
   public static function getLabelsToUnits() {
     if (null === self::$labelsToUnits) {
       $map = array();
@@ -74,10 +91,22 @@ class TimeUnit {
     return self::$labelsToUnits;
   }
 
+  /**
+   * Returns the unit associated to the given label.
+   * @param string $label
+   * @return integer|null
+   */
   public static function labelToUnit($label) {
     return ArrayUtil::getIfSet(self::getLabelsToUnits(), $label);
   }
 
+  /**
+   * Converts a value from a given unit to another.
+   * @param integer|float $value
+   * @param integer $fromUnit
+   * @param integer $toUnit
+   * @return integer|float
+   */
   public static function convert($value, $fromUnit, $toUnit) {
     self::assertValidUnit($fromUnit);
     self::assertValidUnit($toUnit);

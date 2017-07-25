@@ -8,8 +8,9 @@ namespace WonderPush\Util;
 class TimeUtil {
 
   /**
+   * Parse an ISO 8601 date with optional time into a `\DateTime`.
    * @param string $str
-   * @return \DateTime
+   * @return \DateTime|null
    */
   public static function parseISO8601DateOptionalTime($str) {
     // Parse parts
@@ -32,6 +33,11 @@ class TimeUtil {
     return $parsed;
   }
 
+  /**
+   * Converts a `\DateTime` into a unix timestamp in milliseconds.
+   * @param \DateTime $dt
+   * @return integer|null
+   */
   public static function getMillisecondTimestampFromDateTime($dt) {
     if (!($dt instanceof \DateTime)) return null;
     return $dt->getTimestamp() * 1000 + round(intval($dt->format('u')) / 1000);

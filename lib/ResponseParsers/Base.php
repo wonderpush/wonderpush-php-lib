@@ -18,16 +18,19 @@ abstract class Base extends \WonderPush\Obj\Object {
   protected $wp;
 
   /**
+   * The request builder this response is built for.
    * @var \WonderPush\RequestBuilders\Base
    */
   protected $requestBuilder;
 
   /**
+   * The network request this response is built for.
    * @var \WonderPush\Net\Request
    */
   protected $netRequest;
 
   /**
+   * The network response this response is build for.
    * @var \WonderPush\Net\Response
    */
   protected $netResponse;
@@ -41,6 +44,7 @@ abstract class Base extends \WonderPush\Obj\Object {
   }
 
   /**
+   * The request builder this response is built for.
    * @return \WonderPush\RequestBuilders\Base
    */
   public function requestBuilder() {
@@ -48,6 +52,7 @@ abstract class Base extends \WonderPush\Obj\Object {
   }
 
   /**
+   * The network request this response is built for.
    * @return \WonderPush\Net\Request
    */
   public function netRequest() {
@@ -55,18 +60,30 @@ abstract class Base extends \WonderPush\Obj\Object {
   }
 
   /**
+   * The network response this response is build for.
    * @return \WonderPush\Net\Response
    */
   public function netResponse() {
     return $this->netResponse;
   }
 
+  /**
+   * Parse the network response and fills the current object.
+   *
+   * The default implementation, which you should probably reuse,
+   * fills the object fields using the fields from the response.
+   */
   protected function parse() {
     $this->updateFieldsFromData($this->netResponse()->parsedBody());
   }
 
   /**
-   * @return \WonderPush\Errors\Net An exception or {@code null}
+   * Returns an exception, if the response is an error.
+   *
+   * An error might be caused by the network, an error response, or in general, any "unsuccessful" response.
+   *
+   * @return \WonderPush\Errors\Net An exception or `null`
+   * @see checked()
    */
   public function exception() {
     $statusCode = $this->netResponse()->getStatusCode();
@@ -105,8 +122,14 @@ abstract class Base extends \WonderPush\Obj\Object {
   }
 
   /**
+   * Throws an exception if the response is an error, or returns `$this`.
+   *
+   * You can use this function for its sole effect of throwing, typically after calling {@link \WonderPush\RequestBuilders\Base::execute()}.
+   *
    * @return $this
-   * @throws \WonderPush\Errors/NetError
+   * @throws \WonderPush\Errors\Net
+   * @see exception()
+   * @see \WonderPush\RequestBuilders\Base::execute()
    */
   public function checked() {
     $exception = $this->exception();

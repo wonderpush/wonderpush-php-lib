@@ -21,7 +21,8 @@ abstract class Base extends \Exception {
   }
 
   /**
-   * @return string The code as is has been returned by the API, as a string
+   * The code as is has been returned by the API, as a string.
+   * @return string
    */
   public function getCodeStr() {
     return $this->codeStr;

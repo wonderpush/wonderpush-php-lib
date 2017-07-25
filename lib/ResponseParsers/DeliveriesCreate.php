@@ -7,19 +7,22 @@ namespace WonderPush\ResponseParsers;
  */
 class DeliveriesCreate extends Base {
 
+  /** @var boolean */
   private $success;
+  /** @var string */
   private $campaignId;
+  /** @var string */
   private $notificationId;
 
   /**
-   * @return bool
+   * @return boolean
    */
   public function getSuccess() {
     return $this->success;
   }
 
   /**
-   * @param bool $success
+   * @param boolean $success
    * @return $this
    */
   public function setSuccess($success) {

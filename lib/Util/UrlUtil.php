@@ -7,6 +7,15 @@ namespace WonderPush\Util;
  */
 class UrlUtil {
 
+  /**
+   * Parses a query string into an associative array.
+   *
+   * PHP syntax and duplicated arguments are not supported (`foo[bar]=`, `foo[]=`, etc.).
+   *
+   * @param string $queryString
+   * @return string[] String parameter values by parameter name.
+   * @throws \InvalidArgumentException
+   */
   public static function parseQueryString($queryString) {
     if (is_array($queryString)) {
       return $queryString;
@@ -23,6 +32,12 @@ class UrlUtil {
     }, explode('&', $queryString)));
   }
 
+  /**
+   * Returns a new URL with the desired query string in lieu of the original one, if any.
+   * @param string $url The original URL to replace the query string from.
+   * @param string|array $newQueryString The new query string to use.
+   * @return string The modified URL with a new query string.
+   */
   public static function replaceQueryStringInUrl($url, $newQueryString) {
     $hashPos = strpos($url, '#');
     if ($hashPos === false) {

@@ -1084,7 +1084,7 @@ class NotificationAlertAndroid extends NotificationAlert {
   protected $info;
   /** @var string */
   protected $ticker;
-  /** @var string|null|missing */
+  /** @var string|NullObject|null */
   protected $tag;
   /** @var integer */
   protected $priority;
@@ -1149,289 +1149,514 @@ class NotificationAlertAndroid extends NotificationAlert {
   /** @var string[] */ // types: inbox
   protected $lines;
 
+  /**
+   * @return string
+   */
   public function getType() {
     return $this->type;
   }
 
+  /**
+   * @param string $type
+   * @return $this
+   */
   public function setType($type) {
     $this->type = $type;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getChannel() {
     return $this->channel;
   }
 
+  /**
+   * @param string $channel
+   * @return $this
+   */
   public function setChannel($channel) {
     $this->channel = $channel;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getHtml() {
     return $this->html;
   }
 
+  /**
+   * @param boolean $html
+   * @return $this
+   */
   public function setHtml($html) {
     $this->html = $html;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getTitle() {
     return $this->title;
   }
 
+  /**
+   * @param string $title
+   * @return $this
+   */
   public function setTitle($title) {
     $this->title = $title;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getText() {
     return $this->text;
   }
 
+  /**
+   * @param string $text
+   * @return $this
+   */
   public function setText($text) {
     $this->text = $text;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getSubText() {
     return $this->subText;
   }
 
+  /**
+   * @param string $subText
+   * @return $this
+   */
   public function setSubText($subText) {
     $this->subText = $subText;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getInfo() {
     return $this->info;
   }
 
+  /**
+   * @param string $info
+   * @return $this
+   */
   public function setInfo($info) {
     $this->info = $info;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getTicker() {
     return $this->ticker;
   }
 
+  /**
+   * @param string $ticker
+   * @return $this
+   */
   public function setTicker($ticker) {
     $this->ticker = $ticker;
     return $this;
   }
 
+  /**
+   * @return string|NullObject|null
+   */
   public function getTag() {
     return $this->tag;
   }
 
+  /**
+   * @param string|NullObject|null $tag
+   * @return $this
+   */
   public function setTag($tag) {
     $this->tag = $tag;
     return $this;
   }
 
+  /**
+   * @return integer
+   */
   public function getPriority() {
     return $this->priority;
   }
 
+  /**
+   * @param integer $priority
+   * @return $this
+   */
   public function setPriority($priority) {
     $this->priority = $priority;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getAutoOpen() {
     return $this->autoOpen;
   }
 
+  /**
+   * @param boolean $autoOpen
+   * @return $this
+   */
   public function setAutoOpen($autoOpen) {
     $this->autoOpen = $autoOpen;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getAutoDrop() {
     return $this->autoDrop;
   }
 
+  /**
+   * @param boolean $autoDrop
+   * @return $this
+   */
   public function setAutoDrop($autoDrop) {
     $this->autoDrop = $autoDrop;
     return $this;
   }
 
+  /**
+   * @return string[]
+   */
   public function getPersons() {
     return $this->persons;
   }
 
+  /**
+   * @param string[] $persons
+   * @return $this
+   */
   public function setPersons($persons) {
     $this->persons = $persons;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getCategory() {
     return $this->category;
   }
 
+  /**
+   * @param string $category
+   * @return $this
+   */
   public function setCategory($category) {
     $this->category = $category;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getColor() {
     return $this->color;
   }
 
+  /**
+   * @param string $color
+   * @return $this
+   */
   public function setColor($color) {
     $this->color = $color;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getGroup() {
     return $this->group;
   }
 
+  /**
+   * @param string $group
+   * @return $this
+   */
   public function setGroup($group) {
     $this->group = $group;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getSortKey() {
     return $this->sortKey;
   }
 
+  /**
+   * @param string $sortKey
+   * @return $this
+   */
   public function setSortKey($sortKey) {
     $this->sortKey = $sortKey;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getLocalOnly() {
     return $this->localOnly;
   }
 
+  /**
+   * @param boolean $localOnly
+   * @return $this
+   */
   public function setLocalOnly($localOnly) {
     $this->localOnly = $localOnly;
     return $this;
   }
 
+  /**
+   * @return integer
+   */
   public function getNumber() {
     return $this->number;
   }
 
+  /**
+   * @param integer $number
+   * @return $this
+   */
   public function setNumber($number) {
     $this->number = $number;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getOnlyAlertOnce() {
     return $this->onlyAlertOnce;
   }
 
+  /**
+   * @param boolean $onlyAlertOnce
+   * @return $this
+   */
   public function setOnlyAlertOnce($onlyAlertOnce) {
     $this->onlyAlertOnce = $onlyAlertOnce;
     return $this;
   }
 
+  /**
+   * @return long Timestamp in milliseconds
+   */
   public function getWhen() {
     return $this->when;
   }
 
+  /**
+   * @param long $when Timestamp in milliseconds
+   * @return $this
+   */
   public function setWhen($when) {
     $this->when = $when;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getShowWhen() {
     return $this->showWhen;
   }
 
+  /**
+   * @param boolean $showWhen
+   * @return $this
+   */
   public function setShowWhen($showWhen) {
     $this->showWhen = $showWhen;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getUsesChronometer() {
     return $this->usesChronometer;
   }
 
+  /**
+   * @param boolean $usesChronometer
+   * @return $this
+   */
   public function setUsesChronometer($usesChronometer) {
     $this->usesChronometer = $usesChronometer;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getVisibility() {
     return $this->visibility;
   }
 
+  /**
+   * @param string $visibility
+   * @return $this
+   */
   public function setVisibility($visibility) {
     $this->visibility = $visibility;
     return $this;
   }
 
+  /**
+   * @return boolean|array `{color: string, on: integer, off: integer}`
+   */
   public function getLights() {
     return $this->lights;
   }
 
+  /**
+   *
+   * @param boolean|array $lights `{color: string, on: integer, off: integer}`
+   * @return $this
+   */
   public function setLights($lights) {
     $this->lights = $lights;
     return $this;
   }
 
+  /**
+   * @return boolean|integer[]
+   */
   public function getVibrate() {
     return $this->vibrate;
   }
 
+  /**
+   * @param boolean|integer[] $vibrate
+   * @return $this
+   */
   public function setVibrate($vibrate) {
     $this->vibrate = $vibrate;
     return $this;
   }
 
+  /**
+   * @return boolean|string
+   */
   public function getSound() {
     return $this->sound;
   }
 
+  /**
+   * @param boolean|string $sound
+   * @return $this
+   */
   public function setSound($sound) {
     $this->sound = $sound;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getOngoing() {
     return $this->ongoing;
   }
 
+  /**
+   * @param boolean $ongoing
+   * @return $this
+   */
   public function setOngoing($ongoing) {
     $this->ongoing = $ongoing;
     return $this;
   }
 
+  /**
+   * @return boolean|integer
+   */
   public function getProgress() {
     return $this->progress;
   }
 
+  /**
+   * @param boolean|integer $progress
+   * @return $this
+   */
   public function setProgress($progress) {
     $this->progress = $progress;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getSmallIcon() {
     return $this->smallIcon;
   }
 
+  /**
+   * @param string $smallIcon
+   * @return $this
+   */
   public function setSmallIcon($smallIcon) {
     $this->smallIcon = $smallIcon;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getLargeIcon() {
     return $this->largeIcon;
   }
 
+  /**
+   * @param string $largeIcon
+   * @return $this
+   */
   public function setLargeIcon($largeIcon) {
     $this->largeIcon = $largeIcon;
     return $this;
   }
 
+  /**
+   * @return NotificationAlertAndroidButton[]
+   */
   public function getButtons() {
     return $this->buttons;
   }
 
+  /**
+   * @param NotificationAlertAndroidButton[] $buttons
+   * @return $this
+   */
   public function setButtons($buttons) {
     $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroidButton[]', $buttons);
     return $this;
@@ -1456,55 +1681,109 @@ class NotificationAlertAndroid extends NotificationAlert {
     return $this;
   }
 
+  /**
+   * Valid for types: `bigText`, `bigPicture`, `inbox`.
+   * @return string
+   */
   public function getBigTitle() {
     return $this->bigTitle;
   }
 
+  /**
+   * Valid for types: `bigText`, `bigPicture`, `inbox`.
+   * @param string $bigTitle
+   * @return $this
+   */
   public function setBigTitle($bigTitle) {
     $this->bigTitle = $bigTitle;
     return $this;
   }
 
+  /**
+   * Valid for types: `bigText`.
+   * @return string
+   */
   public function getBigText() {
     return $this->bigText;
   }
 
+  /**
+   * Valid for types: `bigText`.
+   * @param string $bigText
+   * @return $this
+   */
   public function setBigText($bigText) {
     $this->bigText = $bigText;
     return $this;
   }
 
+  /**
+   * Valid for types: `bigText`, `bigPicture`, `inbox`.
+   * @return string
+   */
   public function getSummaryText() {
     return $this->summaryText;
   }
 
+  /**
+   * Valid for types: `bigText`, `bigPicture`, `inbox`.
+   * @param string $summaryText
+   * @return $this
+   */
   public function setSummaryText($summaryText) {
     $this->summaryText = $summaryText;
     return $this;
   }
 
+  /**
+   * Valid for types: `bigPicture`.
+   * @return string
+   */
   public function getBigLargeIcon() {
     return $this->bigLargeIcon;
   }
 
+  /**
+   * Valid for types: `bigPicture`.
+   * @param string $bigLargeIcon
+   * @return $this
+   */
   public function setBigLargeIcon($bigLargeIcon) {
     $this->bigLargeIcon = $bigLargeIcon;
     return $this;
   }
 
+  /**
+   * Valid for types: `bigPicture`.
+   * @return string
+   */
   public function getBigPicture() {
     return $this->bigPicture;
   }
 
+  /**
+   * Valid for types: `bigPicture`.
+   * @param string $bigPicture
+   * @return $this
+   */
   public function setBigPicture($bigPicture) {
     $this->bigPicture = $bigPicture;
     return $this;
   }
 
+  /**
+   * Valid for types: `inbox`.
+   * @return string[]
+   */
   public function getLines() {
     return $this->lines;
   }
 
+  /**
+   * Valid for types: `inbox`.
+   * @param string[] $lines
+   * @return $this
+   */
   public function setLines($lines) {
     $this->lines = $lines;
     return $this;
@@ -1530,7 +1809,7 @@ class NotificationAlertAndroidButton extends NotificationButton {
 
   /**
    * @param string $icon
-   * @return NotificationAlertAndroidButton
+   * @return $this
    */
   public function setIcon($icon) {
     $this->icon = $icon;
@@ -1579,145 +1858,257 @@ class NotificationAlertWeb extends NotificationAlert {
   /** @var NotificationAlertWebButton[] */
   private $buttons; // actual name is `actions`, but it clashes with "on click background actions"
 
+  /**
+   * @return string
+   */
   public function getDir() {
     return $this->dir;
   }
 
+  /**
+   * @param string $dir
+   * @return $this
+   */
   public function setDir($dir) {
     $this->dir = $dir;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getLang() {
     return $this->lang;
   }
 
+  /**
+   * @param string $lang
+   * @return $this
+   */
   public function setLang($lang) {
     $this->lang = $lang;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getBody() {
     return $this->body;
   }
 
+  /**
+   * @param string $body
+   * @return $this
+   */
   public function setBody($body) {
     $this->body = $body;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getTag() {
     return $this->tag;
   }
 
+  /**
+   * @param string $tag
+   * @return $this
+   */
   public function setTag($tag) {
     $this->tag = $tag;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getIcon() {
     return $this->icon;
   }
 
+  /**
+   * @param string $icon
+   * @return $this
+   */
   public function setIcon($icon) {
     $this->icon = $icon;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getBadge() {
     return $this->badge;
   }
 
+  /**
+   * @param string $badge
+   * @return $this
+   */
   public function setBadge($badge) {
     $this->badge = $badge;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getImage() {
     return $this->image;
   }
 
+  /**
+   * @param string $image
+   * @return $this
+   */
   public function setImage($image) {
     $this->image = $image;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getSound() {
     return $this->sound;
   }
 
+  /**
+   * @param string $sound
+   * @return $this
+   */
   public function setSound($sound) {
     $this->sound = $sound;
     return $this;
   }
 
+  /**
+   * @return integer[]
+   */
   public function getVibrate() {
     return $this->vibrate;
   }
 
+  /**
+   * @param integer[] $vibrate
+   * @return $this
+   */
   public function setVibrate($vibrate) {
     $this->vibrate = $vibrate;
     return $this;
   }
 
+  /**
+   * @return long Timestamp in milliseconds
+   */
   public function getTimestamp() {
     return $this->timestamp;
   }
 
+  /**
+   * @param long $timestamp Timestamp in milliseconds
+   * @return $this
+   */
   public function setTimestamp($timestamp) {
     $this->timestamp = $timestamp;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getRenotify() {
     return $this->renotify;
   }
 
+  /**
+   * @param boolean $renotify
+   * @return $this
+   */
   public function setRenotify($renotify) {
     $this->renotify = $renotify;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getSilent() {
     return $this->silent;
   }
 
+  /**
+   * @param boolean $silent
+   * @return $this
+   */
   public function setSilent($silent) {
     $this->silent = $silent;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getNoscreen() {
     return $this->noscreen;
   }
 
+  /**
+   * @param boolean $noscreen
+   * @return $this
+   */
   public function setNoscreen($noscreen) {
     $this->noscreen = $noscreen;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getRequireInteraction() {
     return $this->requireInteraction;
   }
 
+  /**
+   * @param boolean $requireInteraction
+   * @return $this
+   */
   public function setRequireInteraction($requireInteraction) {
     $this->requireInteraction = $requireInteraction;
     return $this;
   }
 
+  /**
+   * @return boolean
+   */
   public function getSticky() {
     return $this->sticky;
   }
 
+  /**
+   * @param boolean $sticky
+   * @return $this
+   */
   public function setSticky($sticky) {
     $this->sticky = $sticky;
     return $this;
   }
 
+  /**
+   * @return NotificationAlertWebButton[]
+   */
   public function getButtons() {
     return $this->buttons;
   }
 
+  /**
+   * @param NotificationAlertWebButton[] $buttons
+   * @return $this
+   */
   public function setButtons($buttons) {
     $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertWebButton[]', $buttons);
     return $this;
@@ -2205,28 +2596,49 @@ class NotificationPushAndroid extends NotificationPush {
   /** @var string */
   private $restrictedPackageName;
 
+  /**
+   * @return boolean
+   */
   public function getDelayWhileIdle() {
     return $this->delayWhileIdle;
   }
 
+  /**
+   * @param boolean $delayWhileIdle
+   * @return $this
+   */
   public function setDelayWhileIdle($delayWhileIdle) {
     $this->delayWhileIdle = $delayWhileIdle;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getCollapseKey() {
     return $this->collapseKey;
   }
 
+  /**
+   * @param string $collapseKey
+   * @return $this
+   */
   public function setCollapseKey($collapseKey) {
     $this->collapseKey = $collapseKey;
     return $this;
   }
 
+  /**
+   * @return string
+   */
   public function getRestrictedPackageName() {
     return $this->restrictedPackageName;
   }
 
+  /**
+   * @param string $restrictedPackageName
+   * @return $this
+   */
   public function setRestrictedPackageName($restrictedPackageName) {
     $this->restrictedPackageName = $restrictedPackageName;
     return $this;

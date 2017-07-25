@@ -7,25 +7,47 @@ namespace WonderPush\Util;
  */
 class StringUtil {
 
-  public static function beginsWith($subject, $sub) {
-    return substr($subject, 0, strlen($sub)) === $sub;
+  /**
+   * Returns whether a given string is prefixed by another.
+   * @param string $subject The string to be tested
+   * @param string $prefix The prefix to be detected
+   * @return boolean
+   */
+  public static function beginsWith($subject, $prefix) {
+    return substr($subject, 0, strlen($prefix)) === $prefix;
   }
 
-  public static function endsWith($haystack, $needle) {
-    if ($needle === '') return true;
-    return substr($haystack, -strlen($needle)) === $needle;
+  /**
+   * Returns whether a given string is suffixed by another.
+   * @param string $subject The string to be tested
+   * @param string $suffix The suffix to be detected
+   * @return boolean
+   */
+  public static function endsWith($subject, $suffix) {
+    if ($suffix === '') return true;
+    return substr($subject, -strlen($suffix)) === $suffix;
   }
 
+  /**
+   * Returns whether a given string contains another.
+   * @param string $haystack The string to be tested
+   * @param string $needle The substring to be detected
+   * @return type
+   */
   public static function contains($haystack, $needle) {
     return strpos($haystack, $needle) !== false;
   }
 
   /**
-   * replace instances of {0} by the second arg, {1} by the third arg ...
-   * If the second argument is an associative array, we will use the values
-   * in the array to replace {key} 's occurences in the string $s
-   * @param string $format
-   * @param string[] $args
+   * Performs string replacement of placeholders using the given replacements.
+   *
+   * If the second argument is an array, occurrences of each `{key}` in the format string will be replaced.
+   * Otherwise, instances of `{0}`, `{1}`, etc… in the format string will be replaced by the value of the following arguments.
+   *
+   * The following two calls are identical: `format("{0}-{1}-{2}", "2001", "12", "31")` and `format("{0}-{1}-{2}", array("2001", "12", "31"))`.
+   *
+   * @param string $format The format string with `{key}` occurrences to be replaced.
+   * @param string[]|...string $args The values used for replacement.
    */
   public static function format($format, $args) {
     $vars = func_get_args();
