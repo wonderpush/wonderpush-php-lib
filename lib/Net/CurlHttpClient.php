@@ -71,6 +71,15 @@ class CurlHttpClient implements HttpClientInterface {
       $url = \WonderPush\Util\UrlUtil::replaceQueryStringInUrl($url, $qsParams);
     }
 
+    if (!isset($headers['User-Agent'])) {
+      $curlVersion = curl_version();
+      $headers['User-Agent'] = 'WonderPushApi/' . \WonderPush\WonderPush::API_VERSION
+          . ' WonderPushPhpLib/' . \WonderPush\WonderPush::VERSION
+          . ' curl/' . \WonderPush\Util\ArrayUtil::getIfSet($curlVersion, 'version', 'na')
+          . ' ' . \WonderPush\Util\ArrayUtil::getIfSet($curlVersion, 'ssl_version', 'curlssl/na')
+          ;
+    }
+
     // Serialize headers for cURL
     if (empty($headers)) {
       $headers = null;
