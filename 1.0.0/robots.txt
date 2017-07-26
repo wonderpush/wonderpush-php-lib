@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://wonderpush.github.io/wonderpush-php-lib/latest/sitemap.xml
