@@ -25,6 +25,6 @@
     "phpunit/phpunit": "~4.8"
   },
   "autoload": {
-    "classmap": [ "lib/" ]
+    "psr-4": { "WonderPush\\" : "lib/" }
   }
 }
