@@ -9,14 +9,47 @@ class TimeUnit {
 
   // Constants are defined by the multiple of seconds they represent
   // or the negative power of ten they are expressed in.
+
+  /**
+   * Nanoseconds unit.
+   */
   const NANOSECONDS = -9;  // 10⁻⁹ seconds
+
+  /**
+   * Microseconds unit.
+   */
   const MICROSECONDS = -6; // 10⁻⁶ seconds
+
+  /**
+   * Milliseconds unit.
+   */
   const MILLISECONDS = -3; // 10⁻³ seconds
+
+  /**
+   * Seconds unit.
+   */
   const SECONDS = 1;       // 1 second exactly
+
+  /**
+   * Minutes unit.
+   */
   const MINUTES = 60;      // 60 seconds
+
+  /**
+   * Hours unit.
+   */
   const HOURS = 3600;      // 60 minutes
+
+  /**
+   * Days unit.
+   */
   const DAYS = 86400;      // 24 hours
+
+  /**
+   * Weeks unit.
+   */
   const WEEKS = 604800;    // 7 days
+
   // other typical constants (month, year) don't convert to a constant number of seconds
 
   /**

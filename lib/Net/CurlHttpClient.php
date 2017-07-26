@@ -7,7 +7,14 @@ namespace WonderPush\Net;
  */
 class CurlHttpClient implements HttpClientInterface {
 
+  /**
+   * The fake HTTP header that will hold the output of `curl_errno()`.
+   */
   const HEADER_CURL_ERRNO = 'curl_errno';
+
+  /**
+   * The fake HTTP header that will hold the output of `curl_error()`.
+   */
   const HEADER_CURL_ERROR = 'curl_error';
 
   /**

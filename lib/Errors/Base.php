@@ -10,6 +10,9 @@ namespace WonderPush\Errors;
  */
 abstract class Base extends \Exception {
 
+  /**
+   * The default error message to use when none has been provided at construct time.
+   */
   const DEFAULT_MESSAGE = '';
 
   protected $codeStr;

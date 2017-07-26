@@ -7,10 +7,29 @@ namespace WonderPush\Net;
  */
 class Request extends \WonderPush\Obj\Object {
 
+  /**
+   * HTTP GET method.
+   */
   const GET    = 'GET';
+
+  /**
+   * HTTP POST method.
+   */
   const POST   = 'POST';
+
+  /**
+   * HTTP PUT method.
+   */
   const PUT    = 'PUT';
+
+  /**
+   * HTTP DELETE method.
+   */
   const DELETE = 'DELETE';
+
+  /**
+   * HTTP PATCH method.
+   */
   const PATCH  = 'PATCH';
 
   /**

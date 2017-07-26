@@ -7,10 +7,32 @@ namespace WonderPush;
  */
 class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
+  /**
+   * API base URL.
+   *
+   * Must contain scheme, host and optional port.
+   * Can contain an additional path.
+   * Must not end with a slash.
+   * @see getApiBase()
+   * @see getApiRoot()
+   */
   const API_BASE = 'https://api.wonderpush.com'; // DO NOT END WITH SLASH
+
+  /**
+   * API version.
+   * @see getApiRoot()
+   */
   const API_VERSION = 'v1'; // "vX", NO SLASH
+
+  /**
+   * API prefix.
+   * @see getApiRoot()
+   */
   const API_PREFIX = '/management'; // DO NOT END WITH SLASH
 
+  /**
+   * WonderPush PHP library version.
+   */
   const VERSION = '0.1.0';
 
   /** @var string */

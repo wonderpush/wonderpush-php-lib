@@ -9,8 +9,6 @@ namespace WonderPush\Obj;
  */
 class User extends Object {
 
-  const INVALID_USER_ID = '@INVALID';
-
   /** @var string */
   private $id;
   /** @var string */

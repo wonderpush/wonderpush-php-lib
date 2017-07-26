@@ -7,6 +7,9 @@ namespace WonderPush\RequestBuilders;
  */
 class DeliveriesCreate extends Base {
 
+  /**
+   * The endpoint of this API.
+   */
   const PATH = '/deliveries';
 
   private $viewId;
