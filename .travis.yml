@@ -1,5 +1,9 @@
 language: php
 sudo: false
+# As of 2017-07-18 trusty is progressively replacing the default of precise.
+# Until 2017-09-01, let's use this new default explicitly already.
+# https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
+dist: trusty
 
 matrix:
   include:
@@ -28,10 +32,8 @@ matrix:
     - php: 7.1
       env: AUTOLOAD=0
     - php: hhvm
-      dist: trusty
       env: AUTOLOAD=1
     - php: hhvm
-      dist: trusty
       env: AUTOLOAD=0
 
 cache:
