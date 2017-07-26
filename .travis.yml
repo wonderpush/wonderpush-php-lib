@@ -8,8 +8,10 @@ dist: trusty
 matrix:
   include:
     - php: 5.3
+      dist: precise
       env: AUTOLOAD=1
     - php: 5.3
+      dist: precise
       env: AUTOLOAD=0
     - php: 5.4
       env: AUTOLOAD=1
