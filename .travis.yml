@@ -39,3 +39,4 @@ cache:
     - $HOME/.composer/cache/files
 
 script: ./test
+after_script: ./vendor/bin/coveralls -v
