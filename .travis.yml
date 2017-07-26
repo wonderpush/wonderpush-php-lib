@@ -34,4 +34,8 @@ matrix:
       dist: trusty
       env: AUTOLOAD=0
 
+cache:
+  directories:
+    - $HOME/.cache/composer/files
+
 script: ./test
