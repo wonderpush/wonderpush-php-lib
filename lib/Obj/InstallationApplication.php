@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `installation.application`.
  * @see Installation
+ * @codeCoverageIgnore
  */
 class InstallationApplication extends Object {
 

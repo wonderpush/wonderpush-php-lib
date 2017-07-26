@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `notification.push.android`.
  * @see NotificationPush
+ * @codeCoverageIgnore
  */
 class NotificationPushAndroid extends NotificationPush {
 

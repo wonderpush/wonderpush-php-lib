@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `notification.alert.android.buttons` items.
  * @see NotificationAlertAndroid
+ * @codeCoverageIgnore
  */
 class NotificationAlertAndroidButton extends NotificationButton {
 

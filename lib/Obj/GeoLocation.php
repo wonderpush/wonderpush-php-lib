@@ -4,6 +4,7 @@ namespace WonderPush\Obj;
 
 /**
  * DTO part for `location` fields.
+ * @codeCoverageIgnore
  */
 class GeoLocation extends Object {
 

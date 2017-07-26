@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for notification button action `event` field.
  * @see NotificationButtonAction
+ * @codeCoverageIgnore
  */
 class NotificationButtonActionEvent extends Object {
 

@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `installation.application.apple`.
  * @see InstallationApplication
+ * @codeCoverageIgnore
  */
 class InstallationApplicationApple extends Object {
 

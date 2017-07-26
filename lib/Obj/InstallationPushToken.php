@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `installation.pushToken`.
  * @see Installation
+ * @codeCoverageIgnore
  */
 class InstallationPushToken extends Object {
 

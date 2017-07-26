@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `notification.inApp.map`.
  * @see NotificationInApp
+ * @codeCoverageIgnore
  */
 class NotificationInAppMap extends Object {
 

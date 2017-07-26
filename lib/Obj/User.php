@@ -6,6 +6,7 @@ namespace WonderPush\Obj;
  * DTO for users.
  *
  * See {@link https://www.wonderpush.com/docs/concepts/user}
+ * @codeCoverageIgnore
  */
 class User extends Object {
 

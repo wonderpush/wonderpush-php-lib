@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part base for notification button action reusability.
  * @see NotificationButton
+ * @codeCoverageIgnore
  */
 class NotificationButtonAction extends Object {
 

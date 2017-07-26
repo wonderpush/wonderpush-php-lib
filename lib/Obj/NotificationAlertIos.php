@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `notification.alert.ios`.
  * @see NotificationAlert
+ * @codeCoverageIgnore
  */
 class NotificationAlertIos extends NotificationAlert {
 

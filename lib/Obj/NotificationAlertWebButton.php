@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `notification.alert.web.buttons` items.
  * @see NotificationAlertWeb
+ * @codeCoverageIgnore
  */
 class NotificationAlertWebButton extends NotificationButton {
 

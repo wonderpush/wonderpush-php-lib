@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `notification.push`.
  * @see Notification
+ * @codeCoverageIgnore
  */
 class NotificationPush extends Object {
 

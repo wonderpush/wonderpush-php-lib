@@ -6,6 +6,7 @@ namespace WonderPush\Obj;
  * DTO for installation's events.
  *
  * See {@link https://www.wonderpush.com/docs/concepts/event}
+ * @codeCoverageIgnore
  */
 class Event extends Object {
 

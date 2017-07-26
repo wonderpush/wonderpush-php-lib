@@ -5,6 +5,7 @@ namespace WonderPush\Obj;
 /**
  * DTO part for `installation.preferences`.
  * @see Installation
+ * @codeCoverageIgnore
  */
 class InstallationPreferences extends Object {
 
