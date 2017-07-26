@@ -2009,16 +2009,16 @@
         },
         {
             "name": "wonderpush/apigen-theme-bootstrap",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wonderpush/ThemeBootstrap.git",
-                "reference": "366c57b50fecbe135d904256a7a4c91f0522899d"
+                "reference": "a6390dfc28475c1042d3c1a2ae5f0aad7b1249a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wonderpush/ThemeBootstrap/zipball/366c57b50fecbe135d904256a7a4c91f0522899d",
-                "reference": "366c57b50fecbe135d904256a7a4c91f0522899d",
+                "url": "https://api.github.com/repos/wonderpush/ThemeBootstrap/zipball/a6390dfc28475c1042d3c1a2ae5f0aad7b1249a6",
+                "reference": "a6390dfc28475c1042d3c1a2ae5f0aad7b1249a6",
                 "shasum": ""
             },
             "require": {
@@ -2044,7 +2044,7 @@
                 }
             ],
             "description": "Twitter Bootstrap theme for ApiGen 4 with overview",
-            "time": "2017-07-21 16:07:52"
+            "time": "2017-07-26 10:45:27"
         }
     ],
     "aliases": [],
