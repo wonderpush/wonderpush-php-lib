@@ -33,7 +33,7 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
   /**
    * WonderPush PHP library version.
    */
-  const VERSION = '0.1.0';
+  const VERSION = '1.0.0';
 
   /** @var string */
   private $accessToken;
