@@ -93,7 +93,7 @@ abstract class Base extends \WonderPush\Obj\Object {
     $errorMessage = null;
     $errorCode = null;
 
-    if ($body instanceof \Exception) { // essentially for handling \WonderPush\Errors\JsonError
+    if ($body instanceof \Exception) { // essentially for handling \WonderPush\Errors\Json
 
       $error = $body;
       $errorCode = $body->getCode();
