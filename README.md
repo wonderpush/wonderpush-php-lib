@@ -7,7 +7,7 @@ WonderPush PHP library
 [![Coverage Status](https://coveralls.io/repos/github/wonderpush/wonderpush-php-lib/badge.svg?branch=master)](https://coveralls.io/github/wonderpush/wonderpush-php-lib?branch=master)
 
 Find the full WonderPush services documentation at:
-https://www.wonderpush.com/docs/.
+https://docs.wonderpush.com/docs.
 
 
 
@@ -27,7 +27,7 @@ This tool helps you performing calls to the Management API.
 #### Management API Reference
 
 All references for the WonderPush Management API are available on the WonderPush documentation pages:
-https://wonderpush-management-api.readme.io/v1/docs.
+https://docs.wonderpush.com/reference.
 
 
 
