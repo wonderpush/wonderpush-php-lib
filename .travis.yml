@@ -33,10 +33,6 @@ matrix:
       env: AUTOLOAD=1
     - php: 7.1
       env: AUTOLOAD=0
-    - php: hhvm
-      env: AUTOLOAD=1
-    - php: hhvm
-      env: AUTOLOAD=0
 
 cache:
   directories:
