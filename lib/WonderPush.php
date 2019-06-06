@@ -5,7 +5,7 @@ namespace WonderPush;
 /**
  * **WonderPush library entry class.**
  */
-class WonderPush implements \Psr\Log\LoggerAwareInterface {
+class WonderPush {
 
   /**
    * API base URL.
@@ -44,13 +44,13 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   /**
    * The logger to which the library will produce messages.
-   * @var \Psr\Log\LoggerInterface
+   * @var Util\Logger
    */
   private static $globalLogger;
 
   /**
    * The logger to which the library will produce messages.
-   * @var \Psr\Log\LoggerInterface
+   * @var Util\Logger
    */
   private $logger;
 
@@ -110,7 +110,7 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   /**
    * The logger to which the library will produce messages, when used outside the scope of a WonderPush instance.
-   * @return \Psr\Log\LoggerInterface
+   * @return Util\Logger
    */
   public static function getGlobalLogger() {
     return self::$globalLogger;
@@ -118,15 +118,15 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   /**
    * Set the logger to which the library will produce messages, when used outside the scope of a WonderPush instance.
-   * @param \Psr\Log\LoggerInterface $logger
+   * @param Util\Logger $logger
    */
-  public static function setGlobalLogger(\Psr\Log\LoggerInterface $logger) {
+  public static function setGlobalLogger(Util\Logger $logger) {
     self::$globalLogger = $logger;
   }
 
   /**
    * The logger to which the library will produce messages.
-   * @return \Psr\Log\LoggerInterface
+   * @return Util\Logger
    */
   public function getLogger() {
     return $this->logger ?: self::getGlobalLogger();
@@ -134,9 +134,9 @@ class WonderPush implements \Psr\Log\LoggerAwareInterface {
 
   /**
    * Set the logger to which the library will produce messages.
-   * @param \Psr\Log\LoggerInterface $logger
+   * @param Util\Logger $logger
    */
-  public function setLogger(\Psr\Log\LoggerInterface $logger) {
+  public function setLogger(Util\Logger $logger) {
     $this->logger = $logger;
   }
 

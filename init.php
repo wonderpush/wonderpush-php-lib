@@ -2,7 +2,8 @@
 
 // WonderPush\Util
 require(dirname(__FILE__) . '/lib/Util/JsonSerializable.php');
-require(dirname(__FILE__) . '/lib/Util/DefaultLogger.php');
+require(dirname(__FILE__) . '/lib/Util/Logger.php');
+grequire(dirname(__FILE__) . '/lib/Util/DefaultLogger.php');
 require(dirname(__FILE__) . '/lib/Util/ArrayUtil.php');
 require(dirname(__FILE__) . '/lib/Util/StringUtil.php');
 require(dirname(__FILE__) . '/lib/Util/TimeUnit.php');

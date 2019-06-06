@@ -5,7 +5,7 @@ namespace WonderPush\Util;
 /**
  * A logger that dumps to `error_log()`.
  */
-class DefaultLogger extends \Psr\Log\AbstractLogger {
+class DefaultLogger implements Logger {
 
   public function log($level, $message, array $context = array()) {
     if (!empty($context) && is_string($message)) {
