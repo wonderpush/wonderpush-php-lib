@@ -203,4 +203,58 @@ class Response extends \WonderPush\Obj\Object {
     return $this->parsedBody;
   }
 
+  /**
+   * Returns an exception when there was an error making the call, or if the server returned an error response.
+   * @return null|\WonderPush\Errors\Net
+   */
+  public function exception() {
+    $this->parseBody();
+    $statusCode = $this->getStatusCode();
+    $body = $this->parsedBody();
+
+    $error = false; // false if no exception, true to return one, or an actual \Exception for chaining
+    $errorMessage = null;
+    $errorCode = null;
+
+    if ($body instanceof \Exception) { // essentially for handling \WonderPush\Errors\Json
+
+      $error = $body;
+      $errorCode = $body->getCode();
+      $errorMessage = $body->getMessage();
+
+    } else if (isset($body->error) && is_object($body->error)) {
+
+      $error = true;
+      if (isset($body->error->message)) $errorMessage = $body->error->message;
+      if (isset($body->error->code   )) $errorCode    = $body->error->code;
+      //if (isset($body->error->status )) $statusCode   = $body->error->status;
+
+    }
+
+    if ($statusCode < 200 || $statusCode >= 300) {
+      $error = true;
+      if ($errorMessage === null) {
+        $errorMessage = 'Non 2xx status code';
+      }
+    }
+
+    if ($error !== false) {
+      return new \WonderPush\Errors\Net($this->request, $this, $errorMessage, $errorCode, $error instanceof \Throwable ? $error : null);
+    }
+    return null;
+  }
+
+  /**
+   * Returns the result instantiated with provided $cls or throws when request had error.
+   * @param $cls
+   * @return mixed
+   * @throws \WonderPush\Errors\Net
+   */
+  public function checkedResult($cls) {
+    $exception = $this->exception();
+    if ($exception) throw $exception;
+    $this->parseBody();
+    $body = $this->parsedBody();
+    return new $cls($body);
+  }
 }
