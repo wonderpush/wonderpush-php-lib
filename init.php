@@ -14,6 +14,10 @@ require(dirname(__FILE__) . '/lib/Util/UrlUtil.php');
 // WonderPush
 require(dirname(__FILE__) . '/lib/WonderPush.php');
 
+// WonderPush\Params
+require(dirname(__FILE__) . '/lib/Params/Params.php');
+require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
+
 // WonderPush\Obj
 require(dirname(__FILE__) . '/lib/Obj/Object.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
