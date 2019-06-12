@@ -17,6 +17,7 @@ require(dirname(__FILE__) . '/lib/WonderPush.php');
 // WonderPush\Obj
 require(dirname(__FILE__) . '/lib/Obj/Object.php');
 require(dirname(__FILE__) . '/lib/Obj/DeliveriesCreateResponse.php');
+require(dirname(__FILE__) . '/lib/Obj/Pagination.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
 require(dirname(__FILE__) . '/lib/Obj/Application.php');
 require(dirname(__FILE__) . '/lib/Obj/GeoLocation.php');
