@@ -8,6 +8,11 @@ namespace WonderPush\Net;
 class Response extends \WonderPush\Obj\Object {
 
   /**
+   * The request
+   * @var Request
+   */
+  private $request;
+  /**
    * HTTP Status code.
    * @var integer
    */
@@ -51,6 +56,16 @@ class Response extends \WonderPush\Obj\Object {
    * @var int
    */
   private $parseErrorMsg;
+
+  /**
+   * Response constructor.
+   * @param Request $request
+   */
+  public function __construct(Request $request) {
+    parent::__construct();
+    $this->request = $request;
+  }
+
 
   /**
    * The HTTP Status code.

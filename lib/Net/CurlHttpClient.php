@@ -123,7 +123,7 @@ class CurlHttpClient implements HttpClientInterface {
     $rawResponse = curl_exec($ch);
 
     // Parse response
-    $response = new Response();
+    $response = new Response($request);
     $response->setRawBody($rawResponse);
 
     if (curl_errno($ch)) {
