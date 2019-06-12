@@ -21,12 +21,12 @@ class Applications {
 
   /**
    * List applications associated with the access token used to initialize the WonderPush object.
-   * @param CollectionParams $collectionParams
+   * @param array|CollectionParams $collectionParams
    * @return ApplicationCollection
    * @throws \WonderPush\Errors\Net
    */
-  public function all($collectionParams = null) {
-    $response = $this->wp->rest()->get('/applications', $collectionParams ? $collectionParams->toArray() : array());
+  public function all($collectionParams = array()) {
+    $response = $this->wp->rest()->get('/applications', is_array($collectionParams) ? $collectionParams : $collectionParams->toArray());
     return $response->checkedResult(ApplicationCollection::class);
   }
 
