@@ -16,7 +16,7 @@ class WonderPush {
    * @see getApiBase()
    * @see getApiRoot()
    */
-  const API_BASE = 'https://api.wonderpush.com'; // DO NOT END WITH SLASH
+  const API_BASE = 'https://management-api.wonderpush.com'; // DO NOT END WITH SLASH
 
   /**
    * API version.
@@ -28,7 +28,7 @@ class WonderPush {
    * API prefix.
    * @see getApiRoot()
    */
-  const API_PREFIX = '/management'; // DO NOT END WITH SLASH
+  const API_PREFIX = ''; // DO NOT END WITH SLASH
 
   /**
    * WonderPush PHP library version.
