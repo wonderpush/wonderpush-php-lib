@@ -1,7 +1,9 @@
 <?php
 namespace WonderPush\Params;
 
-class CollectionParams implements Params {
+use WonderPush\Obj\Object;
+
+class CollectionParams extends Object {
 
   /** @var int */
   private $limit;
@@ -15,6 +17,7 @@ class CollectionParams implements Params {
    * @param int $offset
    */
   public function __construct($limit = null, $offset = null) {
+    parent::__construct();
     $this->limit = $limit;
     $this->offset = $offset;
   }
@@ -49,13 +52,5 @@ class CollectionParams implements Params {
   public function setOffset($offset) {
     $this->offset = $offset;
     return $this;
-  }
-
-  /** @var mixed */
-  public function toArray() {
-    $result = array();
-    if ($this->limit !== null) $result['limit'] = $this->limit;
-    if ($this->offset !== null) $result['offset'] = $this->offset;
-    return $result;
   }
 }

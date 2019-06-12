@@ -1,7 +1,9 @@
 <?php
 namespace WonderPush\Params;
 
-class DeliveriesCreateParams implements Params {
+use WonderPush\Obj\Object;
+
+class DeliveriesCreateParams extends Object {
 
 
   /**
@@ -19,8 +21,8 @@ class DeliveriesCreateParams implements Params {
   private $notificationParams;
   private $notificationId;
 
-  public function toArray() {
-    return \WonderPush\Util\ArrayUtil::filterNulls(array(
+  protected function buildDataFromFields() {
+    return (object) \WonderPush\Util\ArrayUtil::filterNulls(array(
       'viewId' => $this->viewId,
       'campaignId' => $this->campaignId,
       $this->targetType => $this->targetValues,
