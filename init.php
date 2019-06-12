@@ -14,12 +14,9 @@ require(dirname(__FILE__) . '/lib/Util/UrlUtil.php');
 // WonderPush
 require(dirname(__FILE__) . '/lib/WonderPush.php');
 
-// WonderPush\Params
-require(dirname(__FILE__) . '/lib/Params/Params.php');
-require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
-
 // WonderPush\Obj
 require(dirname(__FILE__) . '/lib/Obj/Object.php');
+require(dirname(__FILE__) . '/lib/Obj/DeliveriesCreateResponse.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
 require(dirname(__FILE__) . '/lib/Obj/Application.php');
 require(dirname(__FILE__) . '/lib/Obj/GeoLocation.php');
@@ -56,6 +53,11 @@ require(dirname(__FILE__) . '/lib/Obj/NotificationPushAndroid.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushIos.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushWeb.php');
 
+// WonderPush\Params
+require(dirname(__FILE__) . '/lib/Params/Params.php');
+require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
+require(dirname(__FILE__) . '/lib/Params/DeliveriesCreateParams.php');
+
 // WonderPush\Net
 require(dirname(__FILE__) . '/lib/Net/Request.php');
 require(dirname(__FILE__) . '/lib/Net/Response.php');
@@ -67,15 +69,6 @@ require(dirname(__FILE__) . '/lib/Errors/Base.php');
 require(dirname(__FILE__) . '/lib/Errors/Json.php');
 require(dirname(__FILE__) . '/lib/Errors/Net.php');
 require(dirname(__FILE__) . '/lib/Errors/Unsuccessful.php');
-
-// WonderPush\RequestBuilders
-require(dirname(__FILE__) . '/lib/RequestBuilders/Base.php');
-require(dirname(__FILE__) . '/lib/RequestBuilders/DeliveriesCreate.php');
-
-// WonderPush\ResponseParsers
-require(dirname(__FILE__) . '/lib/ResponseParsers/Base.php');
-require(dirname(__FILE__) . '/lib/ResponseParsers/BaseSuccess.php');
-require(dirname(__FILE__) . '/lib/ResponseParsers/DeliveriesCreate.php');
 
 // WonderPush\Api
 require(dirname(__FILE__) . '/lib/Api/Rest.php');

@@ -1,11 +1,8 @@
 <?php
+namespace WonderPush\Params;
 
-namespace WonderPush\RequestBuilders;
+class DeliveriesCreateParams implements Params {
 
-/**
- * `POST /deliveries` request builder.
- */
-class DeliveriesCreate extends Base {
 
   /**
    * The endpoint of this API.
@@ -22,25 +19,17 @@ class DeliveriesCreate extends Base {
   private $notificationParams;
   private $notificationId;
 
-  public function request() {
-    return $this->wp->rest()->request(\WonderPush\Net\Request::POST, self::PATH, \WonderPush\Util\ArrayUtil::filterNulls(array(
-        'viewId' => $this->viewId,
-        'campaignId' => $this->campaignId,
-        $this->targetType => $this->targetValues,
-        'segmentParams' => $this->segmentParams,
-        'notification' => $this->notification,
-        'notificationOverride' => $this->notificationOverride,
-        'notificationParams' => $this->notificationParams,
-        'notificationId' => $this->notificationId,
-    )));
-  }
-
-  /**
-   * Executes the corresponding request and returns the parsed response.
-   * @return \WonderPush\ResponseParsers\DeliveriesCreate
-   */
-  public function execute() {
-    return parent::execute();
+  public function toArray() {
+    return \WonderPush\Util\ArrayUtil::filterNulls(array(
+      'viewId' => $this->viewId,
+      'campaignId' => $this->campaignId,
+      $this->targetType => $this->targetValues,
+      'segmentParams' => $this->segmentParams,
+      'notification' => $this->notification,
+      'notificationOverride' => $this->notificationOverride,
+      'notificationParams' => $this->notificationParams,
+      'notificationId' => $this->notificationId,
+    ));
   }
 
   /**
@@ -181,5 +170,4 @@ class DeliveriesCreate extends Base {
     $this->notificationParams = $notificationParams;
     return $this;
   }
-
 }

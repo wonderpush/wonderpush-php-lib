@@ -2,6 +2,8 @@
 
 namespace WonderPush\Api;
 
+use WonderPush\Obj\DeliveriesCreateResponse;
+
 /**
  * Deliveries API.
  *
@@ -19,12 +21,9 @@ class Deliveries {
     $this->wp = $wp;
   }
 
-  /**
-   * Prepare a call to `POST /deliveries`, to send push notifications.
-   * @return \WonderPush\RequestBuilders\DeliveriesCreate
-   */
-  public function prepareCreate() {
-    return new \WonderPush\RequestBuilders\DeliveriesCreate($this->wp);
-  }
+  public function create($params) {
+    $response = $this->wp->rest()->post('/deliveries', is_array($params) ? $params : $params->toArray());
+    return $response->checkedResult(DeliveriesCreateResponse::class);
 
+  }
 }
