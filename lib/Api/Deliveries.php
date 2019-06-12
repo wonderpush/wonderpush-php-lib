@@ -3,6 +3,7 @@
 namespace WonderPush\Api;
 
 use WonderPush\Obj\DeliveriesCreateResponse;
+use WonderPush\Params\DeliveriesCreateParams;
 
 /**
  * Deliveries API.
@@ -21,6 +22,12 @@ class Deliveries {
     $this->wp = $wp;
   }
 
+  /**
+   * Sends notifications.
+   * @param DeliveriesCreateParams|array $params
+   * @return DeliveriesCreateResponse
+   * @throws \WonderPush\Errors\Net
+   */
   public function create($params) {
     $response = $this->wp->rest()->post('/deliveries', is_array($params) ? $params : $params->toArray());
     return $response->checkedResult(DeliveriesCreateResponse::class);
