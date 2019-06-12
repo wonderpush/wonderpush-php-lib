@@ -21,8 +21,11 @@ require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
 // WonderPush\Obj
 require(dirname(__FILE__) . '/lib/Obj/Object.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
+require(dirname(__FILE__) . '/lib/Obj/Application.php');
 require(dirname(__FILE__) . '/lib/Obj/GeoLocation.php');
 require(dirname(__FILE__) . '/lib/Obj/User.php');
+require(dirname(__FILE__) . '/lib/Obj/Collection.php');
+require(dirname(__FILE__) . '/lib/Obj/ApplicationCollection.php');
 require(dirname(__FILE__) . '/lib/Obj/Installation.php');
 require(dirname(__FILE__) . '/lib/Obj/InstallationApplicationApple.php');
 require(dirname(__FILE__) . '/lib/Obj/InstallationApplication.php');
@@ -77,3 +80,4 @@ require(dirname(__FILE__) . '/lib/ResponseParsers/DeliveriesCreate.php');
 // WonderPush\Api
 require(dirname(__FILE__) . '/lib/Api/Rest.php');
 require(dirname(__FILE__) . '/lib/Api/Deliveries.php');
+require(dirname(__FILE__) . '/lib/Api/Applications.php');

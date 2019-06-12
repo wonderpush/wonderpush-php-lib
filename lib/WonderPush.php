@@ -73,6 +73,12 @@ class WonderPush {
   private $deliveries;
 
   /**
+   * Lazily initialized Applications endpoints.
+   * @var Api\Applications
+   */
+  private $applications;
+
+  /**
    * Constructs the library instance that you can use to send API calls against WonderPush.
    *
    * This is the library entry-point.
@@ -216,6 +222,17 @@ class WonderPush {
       $this->deliveries = new Api\Deliveries($this);
     }
     return $this->deliveries;
+  }
+
+  /**
+   * Application endpoints
+   * @return Api\Applications
+   */
+  public function applications() {
+    if ($this->applications === null) {
+      $this->applications = new Api\Applications($this);
+    }
+    return $this->applications;
   }
 
 }
