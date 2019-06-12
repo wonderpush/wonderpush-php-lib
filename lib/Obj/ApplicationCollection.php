@@ -28,9 +28,7 @@ class ApplicationCollection extends Collection {
    * @return ApplicationCollection
    */
   public function setData($data) {
-    $this->data = array_map(function ($item) {
-      return is_array($item) ? new Application($item) : $item;
-    }, $data);
+    $this->data = Object::instantiateForSetter('\WonderPush\Obj\Application[]', $data);
     return $this;
   }
 

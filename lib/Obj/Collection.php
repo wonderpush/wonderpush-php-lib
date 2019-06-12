@@ -58,7 +58,7 @@ abstract class Collection extends Object {
    * @return Collection
    */
   public function setPagination($pagination) {
-    $this->pagination = is_array($pagination) ? new Pagination($pagination) : $pagination;
+    $this->pagination = Object::instantiateForSetter('\WonderPush\Obj\Pagination', $pagination);
     return $this;
   }
 
