@@ -133,45 +133,57 @@ class Response extends \WonderPush\Obj\Object {
    */
   private function parseBody() {
     if ($this->isParsed) return;
+
+    // false body means no answer from server
+    if ($this->rawBody === false) {
+      $this->parsedBody = null;
+      $this->parseError = new \WonderPush\Errors\Network($this->request, $this);
+      $this->isParsed = true;
+      return;
+    }
+
+    // Try json_decode
     $this->parsedBody = json_decode($this->rawBody);
-    $this->parseError = json_last_error();
+
+    // Manage json parsing errors
+    $jsonParseError = json_last_error();
     if (function_exists('json_last_error_msg')) {
-      $this->parseErrorMsg = json_last_error_msg();
+      $jsonParseErrorMsg = json_last_error_msg();
     } else {
       switch ($this->parseError) {
         case JSON_ERROR_NONE:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
-          $this->parseErrorMsg = 'No error';
+          $jsonParseErrorMsg = 'No error';
           break;
         case JSON_ERROR_DEPTH:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
-          $this->parseErrorMsg = 'Maximum stack depth exceeded';
+          $jsonParseErrorMsg = 'Maximum stack depth exceeded';
           break;
         case JSON_ERROR_STATE_MISMATCH:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
-          $this->parseErrorMsg = 'State mismatch (invalid or malformed JSON)';
+          $jsonParseErrorMsg = 'State mismatch (invalid or malformed JSON)';
           break;
         case JSON_ERROR_CTRL_CHAR:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
-          $this->parseErrorMsg = 'Control character error, possibly incorrectly encoded';
+          $jsonParseErrorMsg = 'Control character error, possibly incorrectly encoded';
           break;
         case JSON_ERROR_SYNTAX:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
-          $this->parseErrorMsg = 'Syntax error';
+          $jsonParseErrorMsg = 'Syntax error';
           break;
         case JSON_ERROR_UTF8:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/bug54058.phpt
-          $this->parseErrorMsg = 'Malformed UTF-8 characters, possibly incorrectly encoded';
+          $jsonParseErrorMsg = 'Malformed UTF-8 characters, possibly incorrectly encoded';
           break;
         default:
           // On PHP 5.5.0 there were other codes, but fortunately, the json_last_error_msg() function exists
           // so we won't end up here.
-          $this->parseErrorMsg = 'Unknown error';
+          $jsonParseErrorMsg = 'Unknown error';
           break;
       }
     }
-    if ($this->parseError !== JSON_ERROR_NONE) {
-      $this->parsedBody = new \WonderPush\Errors\Json($this->parseErrorMsg, $this->parseError);
+    if ($jsonParseError !== JSON_ERROR_NONE) {
+      $this->parseError = new \WonderPush\Errors\Parsing($jsonParseErrorMsg, "0", $jsonParseError);
     }
     $this->isParsed = true;
   }
@@ -195,8 +207,8 @@ class Response extends \WonderPush\Obj\Object {
   }
 
   /**
-   * The parsed body, or a {@link \WonderPush\Errors\Json}.
-   * @return mixed|\WonderPush\Errors\Json
+   * The parsed body, or a {@link \WonderPush\Errors\Parsing}.
+   * @return mixed
    */
   public function parsedBody() {
     $this->parseBody();
@@ -205,10 +217,13 @@ class Response extends \WonderPush\Obj\Object {
 
   /**
    * Returns an exception when there was an error making the call, or if the server returned an error response.
-   * @return null|\WonderPush\Errors\Net
+   * @return null|\WonderPush\Errors\Base
    */
   public function exception() {
     $this->parseBody();
+
+    if ($this->parseError) return $this->parseError;
+
     $statusCode = $this->getStatusCode();
     $body = $this->parsedBody();
 
@@ -216,13 +231,7 @@ class Response extends \WonderPush\Obj\Object {
     $errorMessage = null;
     $errorCode = null;
 
-    if ($body instanceof \Exception) { // essentially for handling \WonderPush\Errors\Json
-
-      $error = $body;
-      $errorCode = $body->getCode();
-      $errorMessage = $body->getMessage();
-
-    } else if (isset($body->error) && is_object($body->error)) {
+    if (isset($body->error) && is_object($body->error)) {
 
       $error = true;
       if (isset($body->error->message)) $errorMessage = $body->error->message;
@@ -239,7 +248,7 @@ class Response extends \WonderPush\Obj\Object {
     }
 
     if ($error !== false) {
-      return new \WonderPush\Errors\Net($this->request, $this, $errorMessage, $errorCode, $error instanceof \Throwable ? $error : null);
+      return new \WonderPush\Errors\Server($this->request, $this, $errorMessage, $errorCode, $error instanceof \Throwable ? $error : null);
     }
     return null;
   }
@@ -248,7 +257,7 @@ class Response extends \WonderPush\Obj\Object {
    * Returns the result instantiated with provided $cls or throws when request had error.
    * @param $cls
    * @return mixed
-   * @throws \WonderPush\Errors\Net
+   * @throws \WonderPush\Errors\Base
    */
   public function checkedResult($cls) {
     $exception = $this->exception();

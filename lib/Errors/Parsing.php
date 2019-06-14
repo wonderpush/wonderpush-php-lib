@@ -5,6 +5,6 @@ namespace WonderPush\Errors;
 /**
  * JSON related errors.
  */
-class Json extends Base {
+class Parsing extends Base {
 
 }

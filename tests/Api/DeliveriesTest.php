@@ -36,7 +36,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
     $response = $this->api->prepareCreate()
         ->execute();
     $this->assertEquals(400, $response->netResponse()->getStatusCode());
-    $this->assertInstanceOf('\WonderPush\Errors\Net', $response->exception());
+    $this->assertInstanceOf('\WonderPush\Errors\Server', $response->exception());
     $exception = null;
     try {
       $response->checked();
@@ -44,8 +44,8 @@ class DeliveriesTest extends \WonderPush\TestCase {
     } catch (\Exception $ex) {
       $exception = $ex;
     }
-    $this->assertInstanceOf('\WonderPush\Errors\Net', $exception);
-    /* @var $exception \WonderPush\Errors\Net */
+    $this->assertInstanceOf('\WonderPush\Errors\Server', $exception);
+    /* @var $exception \WonderPush\Errors\Server */
     $this->assertInstanceOf('\WonderPush\Net\Request', $exception->getRequest());
     $this->assertInstanceOf('\WonderPush\Net\Response', $exception->getResponse());
     $this->assertEquals('10002', $exception->getCodeStr());

@@ -59,7 +59,7 @@ class ResponseTest extends \WonderPush\TestCase {
         ->setRawBody('#');
     $this->assertEquals(JSON_ERROR_SYNTAX, $response->parseError());
     $this->assertInternalType('string', $response->parseErrorMsg()); // "Syntax error" / "unexpected character"
-    $this->assertInstanceOf('\WonderPush\Errors\Json', $response->parsedBody());
+    $this->assertInstanceOf('\WonderPush\Errors\Parsing', $response->parsedBody());
   }
 
   public function testParseJsonObject() {

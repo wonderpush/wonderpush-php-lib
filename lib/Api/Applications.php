@@ -23,7 +23,7 @@ class Applications {
    * List applications associated with the access token used to initialize the WonderPush object.
    * @param array|CollectionParams $collectionParams
    * @return ApplicationCollection
-   * @throws \WonderPush\Errors\Net
+   * @throws \WonderPush\Errors\Base
    */
   public function all($collectionParams = array()) {
     $response = $this->wp->rest()->get('/applications', is_array($collectionParams) ? $collectionParams : $collectionParams->toArray());

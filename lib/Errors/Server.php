@@ -5,7 +5,7 @@ namespace WonderPush\Errors;
 /**
  * Network related errors, and API error responses.
  */
-class Net extends Base {
+class Server extends Base {
 
   /** @var Request */
   protected $request;

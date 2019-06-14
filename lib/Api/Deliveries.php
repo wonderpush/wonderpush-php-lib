@@ -26,7 +26,7 @@ class Deliveries {
    * Sends notifications.
    * @param DeliveriesCreateParams|array $params
    * @return DeliveriesCreateResponse
-   * @throws \WonderPush\Errors\Net
+   * @throws \WonderPush\Errors\Base
    */
   public function create($params) {
     $response = $this->wp->rest()->post('/deliveries', is_array($params) ? $params : $params->toArray());

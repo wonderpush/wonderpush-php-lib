@@ -66,9 +66,9 @@ require(dirname(__FILE__) . '/lib/Net/CurlHttpClient.php');
 
 // WonderPush\Errors
 require(dirname(__FILE__) . '/lib/Errors/Base.php');
-require(dirname(__FILE__) . '/lib/Errors/Json.php');
-require(dirname(__FILE__) . '/lib/Errors/Net.php');
-require(dirname(__FILE__) . '/lib/Errors/Unsuccessful.php');
+require(dirname(__FILE__) . '/lib/Errors/Parsing.php');
+require(dirname(__FILE__) . '/lib/Errors/Server.php');
+require(dirname(__FILE__) . '/lib/Errors/Network.php');
 
 // WonderPush\Api
 require(dirname(__FILE__) . '/lib/Api/Rest.php');
