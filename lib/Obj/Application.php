@@ -16,6 +16,8 @@ class Application extends Object {
   private $creationDate;
   /** @var long */
   private $updateDate;
+  /** @var string */
+  private $webKey;
 
   public function __construct($data = null) {
     parent::__construct($data);
@@ -66,6 +68,22 @@ class Application extends Object {
    */
   public function setUpdateDate($updateDate) {
     $this->updateDate = $updateDate;
+    return $this;
+  }
+
+  /**
+   * @return string
+   */
+  public function getWebKey() {
+    return $this->webKey;
+  }
+
+  /**
+   * @param string $webKey
+   * @return Application
+   */
+  public function setWebKey($webKey) {
+    $this->webKey = $webKey;
     return $this;
   }
 }
