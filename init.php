@@ -25,6 +25,7 @@ require(dirname(__FILE__) . '/lib/Obj/User.php');
 require(dirname(__FILE__) . '/lib/Obj/Collection.php');
 require(dirname(__FILE__) . '/lib/Obj/ApplicationCollection.php');
 require(dirname(__FILE__) . '/lib/Obj/Installation.php');
+require(dirname(__FILE__) . '/lib/Obj/InstallationCollection.php');
 require(dirname(__FILE__) . '/lib/Obj/InstallationApplicationApple.php');
 require(dirname(__FILE__) . '/lib/Obj/InstallationApplication.php');
 require(dirname(__FILE__) . '/lib/Obj/InstallationDeviceCapabilities.php');
@@ -57,6 +58,7 @@ require(dirname(__FILE__) . '/lib/Obj/NotificationPushWeb.php');
 // WonderPush\Params
 require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
 require(dirname(__FILE__) . '/lib/Params/DeliveriesCreateParams.php');
+require(dirname(__FILE__) . '/lib/Params/AllInstallationsParams.php');
 
 // WonderPush\Net
 require(dirname(__FILE__) . '/lib/Net/Request.php');
@@ -74,3 +76,4 @@ require(dirname(__FILE__) . '/lib/Errors/Network.php');
 require(dirname(__FILE__) . '/lib/Api/Rest.php');
 require(dirname(__FILE__) . '/lib/Api/Deliveries.php');
 require(dirname(__FILE__) . '/lib/Api/Applications.php');
+require(dirname(__FILE__) . '/lib/Api/Installations.php');

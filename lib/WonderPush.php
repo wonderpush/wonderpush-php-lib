@@ -235,6 +235,17 @@ class WonderPush {
     return $this->applications;
   }
 
+  /**
+   * Installation endpoints
+   * @return Api\Installations
+   */
+  public function installations() {
+    if ($this->installations === null) {
+      $this->installations = new Api\Installations($this);
+    }
+    return $this->installations;
+  }
+
 }
 
 WonderPush::setGlobalLogger(new Util\DefaultLogger());

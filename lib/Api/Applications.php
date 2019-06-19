@@ -29,11 +29,4 @@ class Applications {
     $response = $this->wp->rest()->get('/applications', is_array($collectionParams) ? $collectionParams : $collectionParams->toArray());
     return $response->checkedResult(ApplicationCollection::class);
   }
-
-  public function get($id) {
-
-  }
-
-
-
 }
