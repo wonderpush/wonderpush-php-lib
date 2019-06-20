@@ -79,6 +79,12 @@ class WonderPush {
   private $applications;
 
   /**
+   * Lazily initialized Installations endpoints.
+   * @var Api\Installations
+   */
+  private $installations;
+
+  /**
    * Constructs the library instance that you can use to send API calls against WonderPush.
    *
    * This is the library entry-point.
