@@ -14,7 +14,7 @@ class Network extends Base {
   protected $response;
 
   public function __construct(\WonderPush\Net\Request $request, \WonderPush\Net\Response $response) {
-    parent::__construct("Network", 0, null);
+    parent::__construct('Network');
     $this->request = $request;
     $this->response = $response;
   }

@@ -86,7 +86,7 @@ class TimeValue {
    * @return \WonderPush\Util\TimeValue|null
    */
   public static function parse($value, $defaultUnit = TimeUnit::MILLISECONDS) {
-    if (is_string($value) && preg_match("/^\s*([+-]?[0-9\.]+([eE][+-]?[0-9]+)?)\s*([a-zA-Z]*)?\s*$/", $value, $matches)) {
+    if (is_string($value) && preg_match('/^\s*([+-]?[\d\.]+([eE][+-]?[\d]+)?)\s*([a-zA-Z]*)?\s*$/', $value, $matches)) {
       $value = floatval($matches[1]);
       $label = $matches[3];
       $unit  = TimeUnit::labelToUnit($label);
