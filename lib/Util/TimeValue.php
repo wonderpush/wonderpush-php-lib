@@ -40,7 +40,7 @@ class TimeValue {
 
   /**
    * Construct a new amount of time representation.
-   * @param type $value The amount of time.
+   * @param integer|float $value The amount of time.
    * @param integer $unit A `\WonderPush\Util\TimeUnit` unit constant.
    */
   public function __construct($value, $unit) {
@@ -206,7 +206,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in nanoseconds.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toNanoseconds() {
     return $this->to(TimeUnit::NANOSECONDS);
@@ -214,7 +214,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in microseconds.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toMicroseconds() {
     return $this->to(TimeUnit::MICROSECONDS);
@@ -222,7 +222,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in milliseconds.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toMilliseconds() {
     return $this->to(TimeUnit::MILLISECONDS);
@@ -230,7 +230,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in seconds.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toSeconds() {
     return $this->to(TimeUnit::SECONDS);
@@ -238,7 +238,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in minutes.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toMinutes() {
     return $this->to(TimeUnit::MINUTES);
@@ -246,7 +246,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in hours.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toHours() {
     return $this->to(TimeUnit::HOURS);
@@ -254,7 +254,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in days.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toDays() {
     return $this->to(TimeUnit::DAYS);
@@ -262,7 +262,7 @@ class TimeValue {
 
   /**
    * Returns the time value amount expressed in weeks.
-   * @return TimeValue
+   * @return integer|float
    */
   public function toWeeks() {
     return $this->to(TimeUnit::WEEKS);
