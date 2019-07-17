@@ -22,8 +22,7 @@
   },
   "require-dev": {
     "phpunit/phpunit": "~4.8",
-    "satooshi/php-coveralls": "^1.0",
-    "overtrue/phplint": "^1.1"
+    "satooshi/php-coveralls": "^1.0"
   },
   "autoload": {
     "psr-4": { "WonderPush\\" : "lib/" }

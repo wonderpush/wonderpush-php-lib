@@ -3,8 +3,4 @@ set -e
 
 tests/check-missing-classes-in-init-php.sh
 
-# Run unit tests
 ./build.php ${AUTOLOAD-0}
-
-# Lint source against current version of the PHP interpreter
-vendor/bin/phplint --no-cache --no-interaction -- lib/ tests/
