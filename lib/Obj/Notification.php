@@ -96,7 +96,7 @@ class Notification extends BaseObject {
   }
 
   /**
-   * @return $string
+   * @return string
    */
   public function getName() {
    return $this->name;

@@ -48,7 +48,7 @@ class StringUtil {
    * The following two calls are identical: `format("{0}-{1}-{2}", "2001", "12", "31")` and `format("{0}-{1}-{2}", array("2001", "12", "31"))`.
    *
    * @param string $format The format string with `{key}` occurrences to be replaced.
-   * @param string[]|...string $args The values used for replacement.
+   * @param string[] $args The values used for replacement. Can also be multiple separate parameters.
    */
   public static function format($format, $args) {
     $vars = func_get_args();
