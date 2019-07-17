@@ -1,4 +1,15 @@
 #!/bin/sh
 cd "$(dirname "$0")"
 rm -Rf ./generated
-php56 vendor/bin/apigen generate --no-source-code --debug
+
+# Find a php 5 executable
+if [[ -z "$PHP" ]]; then
+    # Default
+    PHP=php
+    # Debian
+    which php5 >/dev/null 2>&1 && PHP=php5
+    # Fedora with remi repo
+    which php56 >/dev/null 2>&1 && PHP=php56
+fi
+
+$PHP vendor/bin/apigen generate --no-source-code --debug
