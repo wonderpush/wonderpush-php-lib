@@ -133,6 +133,7 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
 
   public function __toString() {
     if (defined('JSON_UNESCAPED_SLASHES')) {
+      // @codingStandardsIgnoreLine
       return '<' . get_class($this) . '>' . json_encode($this, JSON_UNESCAPED_SLASHES);
     }
     return '<' . get_class($this) . '>' . json_encode($this);

@@ -58,6 +58,7 @@ class CurlHttpClient implements HttpClientInterface {
         } else {
           $headers['Content-Type'] = 'application/json';
           if (defined('JSON_UNESCAPED_SLASHES')) {
+            // @codingStandardsIgnoreLine
             $body = json_encode($body, JSON_UNESCAPED_SLASHES);
           } else {
             $body = json_encode($body);

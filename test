@@ -8,7 +8,7 @@ tests/check-missing-classes-in-init-php.sh
 
 # Lint source against current version of the PHP interpreter
 # (Can't use overtrue/phplint before PHP 5.5.9, let's do it by hand)
-echo Linting files
+echo Linting files with PHP interpretor
 (
     find lib -type f
     find tests -type f
@@ -34,4 +34,9 @@ echo Linting files
     fi
 )
 
+# Lint source using PHP_CodeSniffer with PHPCompatibility rules
+echo Linting files with PHP_CodeSniffer with PHPCompatibility rules
+vendor/bin/phpcs -p --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ruleset.xml --runtime-set testVersion 5.3 lib/ tests/
+
+# We're done
 echo Tests ran successfully

@@ -148,6 +148,7 @@ class Response extends \WonderPush\Obj\BaseObject {
     // Manage json parsing errors
     $jsonParseError = json_last_error();
     if (function_exists('json_last_error_msg')) {
+      // @codingStandardsIgnoreLine
       $jsonParseErrorMsg = json_last_error_msg();
     } else {
       switch ($this->parseError) {
@@ -171,6 +172,7 @@ class Response extends \WonderPush\Obj\BaseObject {
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/007.phpt
           $jsonParseErrorMsg = 'Syntax error';
           break;
+        // @codingStandardsIgnoreLine
         case JSON_ERROR_UTF8:
           // https://github.com/php/php-src/blob/6053987bc27e8dede37f437193a5cad448f99bce/ext/json/tests/bug54058.phpt
           $jsonParseErrorMsg = 'Malformed UTF-8 characters, possibly incorrectly encoded';

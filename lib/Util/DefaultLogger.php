@@ -14,6 +14,7 @@ class DefaultLogger implements Logger {
 
     if ($message instanceof \stdClass) {
       if (defined('JSON_UNESCAPED_SLASHES')) {
+        // @codingStandardsIgnoreLine
         $message = json_encode($message, JSON_UNESCAPED_SLASHES);
       } else {
         $message = json_encode($message);
