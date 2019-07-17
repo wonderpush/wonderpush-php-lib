@@ -27,7 +27,7 @@ $config = $autoload ? 'phpunit.xml' : 'phpunit.no_autoload.xml';
 passthru("./vendor/bin/phpunit -c $config", $returnStatus);
 if (!$autoload) {
   // Revert autoloader modifications made earlier
-  passthru('composer dump-autoload', $returnStatus);
+  passthru('composer dump-autoload');
 }
 if ($returnStatus !== 0) {
   exit(1);
