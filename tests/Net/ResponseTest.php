@@ -32,7 +32,8 @@ class ResponseTest extends \WonderPush\TestCase {
 
     $response->setRawBody('#');
     $this->assertAttributeEquals(null, 'isParsed', $response);
-    $this->assertEquals(JSON_ERROR_SYNTAX, $response->parseError());
+    $this->assertInstanceOf('\WonderPush\Errors\Parsing', $response->parseError());
+    $this->assertEquals(JSON_ERROR_SYNTAX, $response->parseError()->getJsonErrorCode());
     $this->assertAttributeEquals(true, 'isParsed', $response);
   }
 
@@ -41,25 +42,13 @@ class ResponseTest extends \WonderPush\TestCase {
     $this->assertAttributeEquals(null, 'isParsed', $response);
     $response->setRawBody('{"foo":"bar"}');
     $this->assertAttributeEquals(null, 'isParsed', $response);
-    $firstErrorMsg = $response->parseErrorMsg();
-    $this->assertInternalType('string', $firstErrorMsg); // "No error"
+    $this->assertNull($response->parseError());
     $this->assertAttributeEquals(true, 'isParsed', $response);
 
     $response->setRawBody('#');
     $this->assertAttributeEquals(null, 'isParsed', $response);
-    $secondErrorMsg = $response->parseErrorMsg();
-    $this->assertInternalType('string', $secondErrorMsg); // "Syntax error" / "unexpected character"
+    $this->assertInstanceOf('\WonderPush\Errors\Parsing', $response->parseError()); // "Syntax error" / "unexpected character"
     $this->assertAttributeEquals(true, 'isParsed', $response);
-
-    $this->assertNotEquals($firstErrorMsg, $secondErrorMsg);
-  }
-
-  public function testParseJsonError() {
-    $response = Response::_new()
-        ->setRawBody('#');
-    $this->assertEquals(JSON_ERROR_SYNTAX, $response->parseError());
-    $this->assertInternalType('string', $response->parseErrorMsg()); // "Syntax error" / "unexpected character"
-    $this->assertInstanceOf('\WonderPush\Errors\Parsing', $response->parsedBody());
   }
 
   public function testParseJsonObject() {

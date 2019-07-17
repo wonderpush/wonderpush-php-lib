@@ -46,16 +46,9 @@ class Response extends \WonderPush\Obj\BaseObject {
   private $parsedBody;
 
   /**
-   * The output of json_last_error();
-   * @var int
+   * @var \WonderPush\Errors\Base
    */
   private $parseError;
-
-  /**
-   * The output of json_last_error_msg();
-   * @var int
-   */
-  private $parseErrorMsg;
 
   /**
    * @return Request
@@ -189,27 +182,18 @@ class Response extends \WonderPush\Obj\BaseObject {
       }
     }
     if ($jsonParseError !== JSON_ERROR_NONE) {
-      $this->parseError = new \WonderPush\Errors\Parsing($jsonParseErrorMsg, "0", $jsonParseError);
+      $this->parseError = new \WonderPush\Errors\Parsing($jsonParseError, $jsonParseErrorMsg);
     }
     $this->isParsed = true;
   }
 
   /**
    * The error code encountered while parsing the body, if any.
-   * @return int One of `json_last_error()` returned constants. `JSON_ERROR_NONE` if there were no error.
+   * @return \WonderPush\Errors\Base
    */
   public function parseError() {
     $this->parseBody();
     return $this->parseError;
-  }
-
-  /**
-   * The error message encountered while parsing the body, if any.
-   * @return string The output of `json_last_error_msg()`.
-   */
-  public function parseErrorMsg() {
-    $this->parseBody();
-    return $this->parseErrorMsg;
   }
 
   /**
