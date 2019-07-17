@@ -7,12 +7,19 @@ class ArrayUtilTest extends \WonderPush\TestCase {
   public function testFlattenNonArrayValues() {
     $nonArrayReturnValue = array();
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(null));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(true));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(false));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(0));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(3.14));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(''));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten('foo'));
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals($nonArrayReturnValue, ArrayUtil::flatten(new \stdClass()));
   }
 

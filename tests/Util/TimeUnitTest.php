@@ -15,11 +15,11 @@ class TimeUnitTest extends \WonderPush\TestCase {
   }
 
   public function testGetLabelsToUnits() {
-    $this->assertArrayHasKey("seconds", TimeUnit::getLabelsToUnits());
+    $this->assertArrayHasKey('seconds', TimeUnit::getLabelsToUnits());
   }
 
   public function testLabelToUnit() {
-    $this->assertEquals(TimeUnit::SECONDS, TimeUnit::labelToUnit("seconds"));
+    $this->assertEquals(TimeUnit::SECONDS, TimeUnit::labelToUnit('seconds'));
   }
 
   public function testConvert() {

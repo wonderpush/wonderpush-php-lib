@@ -41,4 +41,5 @@ class Pagination extends BaseObject {
     $this->next = $next;
     return $this;
   }
+
 }

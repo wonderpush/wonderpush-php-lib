@@ -15,10 +15,6 @@ class InstallationPreferences extends BaseObject {
   /** @var string */
   private $subscriptionStatus;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return string
    */

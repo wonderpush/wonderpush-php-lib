@@ -108,7 +108,7 @@ class WonderPush {
    * The Management API access token used to perform API calls.
    * @return string
    */
-  function getAccessToken() {
+  public function getAccessToken() {
     return $this->accessToken;
   }
 
@@ -116,7 +116,7 @@ class WonderPush {
    * The application id corresponding to the access token.
    * @return string
    */
-  function getApplicationId() {
+  public function getApplicationId() {
     return $this->applicationId;
   }
 

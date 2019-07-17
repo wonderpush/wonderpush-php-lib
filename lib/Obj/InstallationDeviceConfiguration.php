@@ -20,10 +20,6 @@ class InstallationDeviceConfiguration extends BaseObject {
   /** @var string */
   private $carrier;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return string
    */

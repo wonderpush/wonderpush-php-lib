@@ -40,7 +40,7 @@ class StringUtilTest extends \WonderPush\TestCase {
   }
   
   /**
-   * @expectedException PHPUnit_Framework_Error_Warning
+   * @expectedException \PHPUnit_Framework_Error_Warning
    */
   public function testContainsEmptyNeedle() {
     StringUtil::contains('', '');
@@ -68,6 +68,7 @@ class StringUtilTest extends \WonderPush\TestCase {
     $this->assertEquals('foobarbazqux', StringUtil::format('foo{BAR}baz{QUX}',         array('BAR' => 'bar', 'QUX' => 'qux')));
     $this->assertEquals('foobarbazqux', StringUtil::format('foo{BAR}baz{QUX}', (object)array('BAR' => 'bar', 'QUX' => 'qux')));
 
+    /** @noinspection PhpParamsInspection */
     $this->assertEquals('foobarbaz{1}', StringUtil::format('foo{0}baz{1}', 'bar'));
     $this->assertEquals('foobarbazqux{qux}', StringUtil::format('foo{BAR}baz{QUX}{qux}',         array('BAR' => 'bar', 'QUX' => 'qux')));
     $this->assertEquals('foobarbazqux{qux}', StringUtil::format('foo{BAR}baz{QUX}{qux}', (object)array('BAR' => 'bar', 'QUX' => 'qux')));

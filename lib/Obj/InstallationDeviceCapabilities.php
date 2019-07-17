@@ -70,10 +70,6 @@ class InstallationDeviceCapabilities extends BaseObject {
   /** @var boolean */
   private $usbHost;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return boolean
    */

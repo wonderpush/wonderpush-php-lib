@@ -68,11 +68,6 @@ class CurlHttpClient implements HttpClientInterface {
 
     // Incorporate query string into URL
     if (!empty($qsParams)) {
-      if (defined('PHP_QUERY_RFC3986')) {
-        $qs = http_build_query($qsParams, null, '&', PHP_QUERY_RFC3986);
-      } else {
-        $qs = http_build_query($qsParams);
-      }
       $prevQs = \WonderPush\Util\UrlUtil::parseQueryString(parse_url($url, PHP_URL_QUERY));
       $qsParams = array_merge($prevQs, $qsParams);
       $url = \WonderPush\Util\UrlUtil::replaceQueryStringInUrl($url, $qsParams);
@@ -94,15 +89,14 @@ class CurlHttpClient implements HttpClientInterface {
       $headers = array_map(function($key, $value) {
         if (is_int($key)) {
           return $value;
-        } else {
-          return $key . ': ' . $value;
         }
+        return $key . ': ' . $value;
       }, array_keys($headers), $headers);
     }
 
     // Prepare other cURL options: Response headers reader
     $responseHeaders = array();
-    $readHeaderCallback = function ($ch, $headerLine) use (&$responseHeaders) {
+    $readHeaderCallback = function (/** @noinspection PhpUnusedParameterInspection */ $ch, $headerLine) use (&$responseHeaders) {
       if (\WonderPush\Util\StringUtil::contains($headerLine, ':')) {
         list($key, $value) = explode(':', trim($headerLine), 2);
         $responseHeaders[trim($key)] = trim($value);
@@ -117,7 +111,9 @@ class CurlHttpClient implements HttpClientInterface {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADERFUNCTION, $readHeaderCallback);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-    if ($headers !== null) curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    if ($headers !== null) {
+      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    }
 
     // Execute cURL request
     $rawResponse = curl_exec($ch);

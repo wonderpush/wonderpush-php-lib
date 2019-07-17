@@ -64,16 +64,19 @@ class TimeUtilTest extends \WonderPush\TestCase {
   }
 
   public function testGetMillisecondTimestampFromDateTime() {
+    /** @noinspection PhpUnhandledExceptionInspection */
     $dt = new \DateTime('', new \DateTimeZone('UTC'));
     $dt->setDate(1970, 1, 1);
-    $dt->setTime(0, 0, 0);
+    $dt->setTime(0, 0);
     $this->assertEquals(0, TimeUtil::getMillisecondTimestampFromDateTime($dt));
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     $dt = new \DateTime('', new \DateTimeZone('CET'));
     $dt->setDate(1970, 1, 1);
-    $dt->setTime(0, 0, 0);
+    $dt->setTime(0, 0);
     $this->assertEquals(-3600000, TimeUtil::getMillisecondTimestampFromDateTime($dt));
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     $dt = new \DateTime('', new \DateTimeZone('UTC'));
     $dt->setTimestamp(0);
     $this->assertEquals(0, TimeUtil::getMillisecondTimestampFromDateTime($dt));

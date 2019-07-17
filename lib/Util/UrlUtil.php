@@ -12,7 +12,7 @@ class UrlUtil {
    *
    * PHP syntax and duplicated arguments are not supported (`foo[bar]=`, `foo[]=`, etc.).
    *
-   * @param string $queryString
+   * @param string|null|string[] $queryString
    * @return string[] String parameter values by parameter name.
    * @throws \InvalidArgumentException
    */
@@ -24,7 +24,7 @@ class UrlUtil {
       return array();
     }
     if (!is_string($queryString)) {
-      throw new \InvalidArgumentException();
+      throw new \InvalidArgumentException('Query string must be a string, null, or already parsed array');
     }
     return call_user_func_array('array_merge', array_map(function($queryPart) {
       $keyValue = explode('=', $queryPart, 2);
@@ -47,14 +47,9 @@ class UrlUtil {
       $url = substr($url, 0, $hashPos);
     }
     $questionMarkPos = strpos($url, '?');
-    if ($questionMarkPos === false) {
-      $qs = null;
-    } else {
-      $qs = substr($url, $questionMarkPos + 1);
+    if ($questionMarkPos !== false) {
       $url = substr($url, 0, $questionMarkPos);
     }
-    //$qs = self::parseQueryString($qs);
-    // We could easily permit merging here
     $qs = $newQueryString;
     if (!is_string($qs) && $qs !== null) {
       if (defined('PHP_QUERY_RFC3986')) {

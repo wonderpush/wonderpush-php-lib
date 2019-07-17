@@ -13,10 +13,6 @@ class GeoLocation extends BaseObject {
   /** @var double */
   private $lon;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return double
    */

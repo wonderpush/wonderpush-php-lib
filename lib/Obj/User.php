@@ -14,16 +14,12 @@ class User extends BaseObject {
   private $id;
   /** @var string */
   private $applicationId;
-  /** @var long */
+  /** @var integer */
   private $creationDate;
-  /** @var long */
+  /** @var integer */
   private $updateDate;
   /** @var array */
   private $custom;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   /**
    * @return string
@@ -58,14 +54,14 @@ class User extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getCreationDate() {
     return $this->creationDate;
   }
 
   /**
-   * @param long $creationDate
+   * @param integer $creationDate
    * @return User
    */
   public function setCreationDate($creationDate) {
@@ -74,14 +70,14 @@ class User extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getUpdateDate() {
     return $this->updateDate;
   }
 
   /**
-   * @param long $updateDate
+   * @param integer $updateDate
    * @return User
    */
   public function setUpdateDate($updateDate) {

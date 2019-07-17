@@ -28,7 +28,7 @@ class NotificationAlertWeb extends NotificationAlert {
   private $sound;
   /** @var integer[] */
   private $vibrate;
-  /** @var long */
+  /** @var integer */
   private $timestamp;
   /** @var boolean */
   private $renotify;
@@ -188,14 +188,14 @@ class NotificationAlertWeb extends NotificationAlert {
   }
 
   /**
-   * @return long Timestamp in milliseconds
+   * @return integer Timestamp in milliseconds
    */
   public function getTimestamp() {
     return $this->timestamp;
   }
 
   /**
-   * @param long $timestamp Timestamp in milliseconds
+   * @param integer $timestamp Timestamp in milliseconds
    * @return $this
    */
   public function setTimestamp($timestamp) {

@@ -9,15 +9,12 @@ namespace WonderPush\Obj;
  * @codeCoverageIgnore
  */
 abstract class Collection extends BaseObject {
+
   /** @var int */
   private $count;
 
   /** @var Pagination */
   private $pagination;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   /**
    * @return int

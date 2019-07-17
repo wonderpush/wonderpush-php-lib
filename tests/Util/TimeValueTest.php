@@ -17,44 +17,44 @@ class TimeValueTest extends \WonderPush\TestCase {
   }
 
   public function testToString() {
-    $this->assertEquals("42ns", strval(new TimeValue(42, TimeUnit::NANOSECONDS)));
-    $this->assertEquals("42us", strval(new TimeValue(42, TimeUnit::MICROSECONDS)));
-    $this->assertEquals("42ms", strval(new TimeValue(42, TimeUnit::MILLISECONDS)));
-    $this->assertEquals("42s", strval(new TimeValue(42, TimeUnit::SECONDS)));
-    $this->assertEquals("42m", strval(new TimeValue(42, TimeUnit::MINUTES)));
-    $this->assertEquals("42h", strval(new TimeValue(42, TimeUnit::HOURS)));
-    $this->assertEquals("42d", strval(new TimeValue(42, TimeUnit::DAYS)));
-    $this->assertEquals("42w", strval(new TimeValue(42, TimeUnit::WEEKS)));
-    $this->assertEquals("-1s", strval(new TimeValue(-1, TimeUnit::SECONDS)));
+    $this->assertEquals('42ns', (string)new TimeValue(42, TimeUnit::NANOSECONDS));
+    $this->assertEquals('42us', (string)new TimeValue(42, TimeUnit::MICROSECONDS));
+    $this->assertEquals('42ms', (string)new TimeValue(42, TimeUnit::MILLISECONDS));
+    $this->assertEquals('42s', (string)new TimeValue(42, TimeUnit::SECONDS));
+    $this->assertEquals('42m', (string)new TimeValue(42, TimeUnit::MINUTES));
+    $this->assertEquals('42h', (string)new TimeValue(42, TimeUnit::HOURS));
+    $this->assertEquals('42d', (string)new TimeValue(42, TimeUnit::DAYS));
+    $this->assertEquals('42w', (string)new TimeValue(42, TimeUnit::WEEKS));
+    $this->assertEquals('-1s', (string)new TimeValue(-1, TimeUnit::SECONDS));
   }
 
   public function testParse() {
     $this->assertEquals(null, TimeValue::parse(null));
-    $this->assertEquals(null, TimeValue::parse(""));
-    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse("0"));
-    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse("0."));
-    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse("."));
-    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse(".0"));
+    $this->assertEquals(null, TimeValue::parse(''));
+    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse('0'));
+    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse('0.'));
+    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse('.'));
+    $this->assertEquals(new TimeValue(0, TimeUnit::MILLISECONDS), TimeValue::parse('.0'));
 
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse("42s"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse("42 s"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse("42seconds"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse("42 seconds"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse(" 42 seconds"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse("42 seconds "));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse(" 42 seconds "));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse('42s'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse('42 s'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse('42seconds'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse('42 seconds'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse(' 42 seconds'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse('42 seconds '));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse(' 42 seconds '));
 
-    $this->assertEquals(new TimeValue(42, TimeUnit::NANOSECONDS), TimeValue::parse("42ns"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::MICROSECONDS), TimeValue::parse("42us"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::MILLISECONDS), TimeValue::parse("42ms"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse("42s"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::MINUTES), TimeValue::parse("42m"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::HOURS), TimeValue::parse("42h"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::DAYS), TimeValue::parse("42d"));
-    $this->assertEquals(new TimeValue(42, TimeUnit::WEEKS), TimeValue::parse("42w"));
+    $this->assertEquals(new TimeValue(42, TimeUnit::NANOSECONDS), TimeValue::parse('42ns'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::MICROSECONDS), TimeValue::parse('42us'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::MILLISECONDS), TimeValue::parse('42ms'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::SECONDS), TimeValue::parse('42s'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::MINUTES), TimeValue::parse('42m'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::HOURS), TimeValue::parse('42h'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::DAYS), TimeValue::parse('42d'));
+    $this->assertEquals(new TimeValue(42, TimeUnit::WEEKS), TimeValue::parse('42w'));
 
-    $this->assertEquals(new TimeValue(+42, TimeUnit::SECONDS), TimeValue::parse("+42s"));
-    $this->assertEquals(new TimeValue(-42, TimeUnit::SECONDS), TimeValue::parse("-42s"));
+    $this->assertEquals(new TimeValue(+42, TimeUnit::SECONDS), TimeValue::parse('+42s'));
+    $this->assertEquals(new TimeValue(-42, TimeUnit::SECONDS), TimeValue::parse('-42s'));
   }
 
   public function testNanoseconds() {

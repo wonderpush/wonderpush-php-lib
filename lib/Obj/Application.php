@@ -12,16 +12,12 @@ class Application extends BaseObject {
 
   /** @var string */
   private $id;
-  /** @var long */
+  /** @var integer */
   private $creationDate;
-  /** @var long */
+  /** @var integer */
   private $updateDate;
   /** @var string */
   private $webKey;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   /**
    * @return string
@@ -40,14 +36,14 @@ class Application extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getCreationDate() {
     return $this->creationDate;
   }
 
   /**
-   * @param long $creationDate
+   * @param integer $creationDate
    * @return Application
    */
   public function setCreationDate($creationDate) {
@@ -56,14 +52,14 @@ class Application extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getUpdateDate() {
     return $this->updateDate;
   }
 
   /**
-   * @param long $updateDate
+   * @param integer $updateDate
    * @return Application
    */
   public function setUpdateDate($updateDate) {
@@ -86,4 +82,5 @@ class Application extends BaseObject {
     $this->webKey = $webKey;
     return $this;
   }
+
 }

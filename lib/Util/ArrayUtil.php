@@ -53,7 +53,7 @@ class ArrayUtil {
    * @see filterNulls()
    */
   public static function is_not_null($var) {
-    return !is_null($var);
+    return $var !== null;
   }
 
   /**

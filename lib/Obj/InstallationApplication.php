@@ -20,10 +20,6 @@ class InstallationApplication extends BaseObject {
   /** @var InstallationApplicationApple */
   private $apple;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return string
    */

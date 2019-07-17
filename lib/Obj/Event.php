@@ -28,9 +28,9 @@ class Event extends BaseObject {
   protected $type;
   /** @var string */
   protected $collapsing;
-  /** @var long */
+  /** @var integer */
   protected $creationDate;
-  /** @var long */
+  /** @var integer */
   protected $actionDate;
   /** @var string */
   protected $geoid;
@@ -38,11 +38,11 @@ class Event extends BaseObject {
   protected $location;
   /** @var array */
   protected $custom;
-  /** @var long - milliseconds */
+  /** @var integer */
   protected $openedTime;
-  /** @var long - milliseconds */
+  /** @var integer */
   protected $reactionTime;
-  /** @var long - milliseconds */
+  /** @var integer */
   protected $lastReceivedNotificationTime;
 
   // For @LOGIN events
@@ -50,10 +50,6 @@ class Event extends BaseObject {
   protected $linkedUserId;
   /** @var string */
   protected $linkedInstallationId;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   /**
    * @return string
@@ -200,14 +196,14 @@ class Event extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getCreationDate() {
     return $this->creationDate;
   }
 
   /**
-   * @param long $creationDate
+   * @param integer $creationDate
    * @return Event
    */
   public function setCreationDate($creationDate) {
@@ -216,14 +212,14 @@ class Event extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getActionDate() {
     return $this->actionDate;
   }
 
   /**
-   * @param long $actionDate
+   * @param integer $actionDate
    * @return Event
    */
   public function setActionDate($actionDate) {
@@ -312,14 +308,14 @@ class Event extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getOpenedTime() {
     return $this->openedTime;
   }
 
   /**
-   * @param long $time
+   * @param integer $time
    * @return Event
    */
   public function setOpenedTime($time) {
@@ -328,14 +324,14 @@ class Event extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getReactionTime() {
     return $this->reactionTime;
   }
 
   /**
-   * @param long $time
+   * @param integer $time
    * @return Event
    */
   public function setReactionTime($time) {
@@ -344,14 +340,14 @@ class Event extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getLastReceivedNotificationTime() {
     return $this->lastReceivedNotificationTime;
   }
 
   /**
-   * @param long $time
+   * @param integer $time
    * @return Event
    */
   public function setLastReceivedNotificationTime($time) {

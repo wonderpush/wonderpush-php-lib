@@ -9,12 +9,9 @@ namespace WonderPush\Obj;
  * @codeCoverageIgnore
  */
 class ApplicationCollection extends Collection {
+
   /** @var Application[] */
   private $data;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   /**
    * @return Application[]

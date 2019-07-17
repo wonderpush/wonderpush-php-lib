@@ -52,7 +52,7 @@ class TimeValue {
 
   /**
    * Compares the object to another time value.
-   * @param \WonderPush\Util\TimeValue $other The other time value to compare to
+   * @param TimeValue $other The other time value to compare to
    * @return integer `-1`, `0` or `1` respectively if the object is less, equal or greater than the given argument.
    */
   public function compareTo(TimeValue $other) {
@@ -64,7 +64,10 @@ class TimeValue {
       $cmp = $this->to($other->unit) - $other->value;
     }
 
-    return $cmp == 0 ? 0 : ($cmp < 0 ? -1 : 1);
+    if ($cmp === 0) {
+      return 0;
+    }
+    return $cmp < 0 ? -1 : 1;
   }
 
   /**
@@ -75,7 +78,9 @@ class TimeValue {
   public function __toString() {
     $labels = TimeUnit::getUnitLabels($this->unit);
     $label = $labels[0];
-    if (strlen($label) > 2) $label = ' ' . $label;
+    if (strlen($label) > 2) {
+      $label = ' ' . $label;
+    }
     return $this->value . $label;
   }
 
@@ -83,11 +88,11 @@ class TimeValue {
    * Parses a number with an optional unit into a time value.
    * @param string|integer|float|TimeValue $value
    * @param integer $defaultUnit A `\WonderPush\Util\TimeUnit` unit constant.
-   * @return \WonderPush\Util\TimeValue|null
+   * @return TimeValue|null
    */
   public static function parse($value, $defaultUnit = TimeUnit::MILLISECONDS) {
     if (is_string($value) && preg_match('/^\s*([+-]?[\d\.]+([eE][+-]?[\d]+)?)\s*([a-zA-Z]*)?\s*$/', $value, $matches)) {
-      $value = floatval($matches[1]);
+      $value = (float)$matches[1];
       $label = $matches[3];
       $unit  = TimeUnit::labelToUnit($label);
       if (null === $unit) {
@@ -97,13 +102,14 @@ class TimeValue {
         $unit = $defaultUnit;
       }
       return new TimeValue($value, $unit);
-    } else if (is_numeric($value)) {
-      return new TimeValue($value, $defaultUnit);
-    } else if ($value instanceof TimeValue) {
-      return $value;
-    } else {
-      return null;
     }
+    if (is_numeric($value)) {
+      return new TimeValue($value, $defaultUnit);
+    }
+    if ($value instanceof self) {
+      return $value;
+    }
+    return null;
   }
 
   ///
@@ -113,7 +119,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of nanoseconds.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Nanoseconds($value) {
     return new TimeValue($value, TimeUnit::NANOSECONDS);
@@ -122,7 +128,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of microseconds.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Microseconds($value) {
     return new TimeValue($value, TimeUnit::MICROSECONDS);
@@ -131,7 +137,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of milliseconds.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Milliseconds($value) {
     return new TimeValue($value, TimeUnit::MILLISECONDS);
@@ -140,7 +146,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of seconds.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Seconds($value) {
     return new TimeValue($value, TimeUnit::SECONDS);
@@ -149,7 +155,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of minutes.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Minutes($value) {
     return new TimeValue($value, TimeUnit::MINUTES);
@@ -158,7 +164,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of hours.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Hours($value) {
     return new TimeValue($value, TimeUnit::HOURS);
@@ -167,7 +173,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of days.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Days($value) {
     return new TimeValue($value, TimeUnit::DAYS);
@@ -176,7 +182,7 @@ class TimeValue {
   /**
    * Returns a time value with the given amount of weeks.
    * @param integer|float $value
-   * @return \WonderPush\Util\TimeValue
+   * @return TimeValue
    */
   public static function Weeks($value) {
     return new TimeValue($value, TimeUnit::WEEKS);
@@ -276,42 +282,42 @@ class TimeValue {
     $seconds = $this->toSeconds();
     if ($seconds >= TimeUnit::WEEKS) {
       $weeks = $this->toWeeks();
-      if (self::isIntegerValue($weeks) || $weeks > 1) {
+      if ($weeks > 1 || self::isIntegerValue($weeks)) {
         return TimeUnit::WEEKS;
       }
     }
     if ($seconds >= TimeUnit::DAYS) {
       $days = $this->toDays();
-      if (self::isIntegerValue($days) || $days > 1) {
+      if ($days > 1 || self::isIntegerValue($days)) {
         return TimeUnit::DAYS;
       }
     }
     if ($seconds >= TimeUnit::HOURS) {
       $hours = $this->toHours();
-      if (self::isIntegerValue($hours) || $hours > 1) {
+      if ($hours > 1 || self::isIntegerValue($hours)) {
         return TimeUnit::HOURS;
       }
     }
     if ($seconds >= TimeUnit::MINUTES) {
       $min = $this->toMinutes();
-      if (self::isIntegerValue($min) || $min > 1) {
+      if ($min > 1 || self::isIntegerValue($min)) {
         return TimeUnit::MINUTES;
       }
     }
     if ($seconds >= TimeUnit::SECONDS) {
-      if (self::isIntegerValue($seconds) || $seconds > 1) {
+      if ($seconds > 1 || self::isIntegerValue($seconds)) {
         return TimeUnit::SECONDS;
       }
     }
     if ($seconds >= TimeUnit::MILLISECONDS) {
       $ms = $this->toMilliseconds();
-      if (self::isIntegerValue($ms) || $ms > 1) {
+      if ($ms > 1 || self::isIntegerValue($ms)) {
         return TimeUnit::MILLISECONDS;
       }
     }
     if ($seconds >= TimeUnit::MICROSECONDS) {
       $us = $this->toMicroseconds();
-      if (self::isIntegerValue($us) || $us > 1) {
+      if ($us > 1 || self::isIntegerValue($us)) {
         return TimeUnit::MICROSECONDS;
       }
     }
@@ -334,42 +340,42 @@ class TimeValue {
     $seconds = $this->toSeconds();
     if ($seconds >= TimeUnit::WEEKS) {
       $weeks = $this->toWeeks();
-      if (self::isIntegerValue($weeks) || ($rounded && $weeks > 1)) {
+      if (($rounded && $weeks > 1) || self::isIntegerValue($weeks)) {
         return round($weeks).($short ? 'w' : ' weeks');
       }
     }
     if ($seconds >= TimeUnit::DAYS) {
       $days = $this->toDays();
-      if (self::isIntegerValue($days) || ($rounded && $days > 1)) {
+      if (($rounded && $days > 1) || self::isIntegerValue($days)) {
         return round($days).($short ? 'd' : ' days');
       }
     }
     if ($seconds >= TimeUnit::HOURS) {
       $hours = $this->toHours();
-      if (self::isIntegerValue($hours) || ($rounded && $hours > 1)) {
+      if (($rounded && $hours > 1) || self::isIntegerValue($hours)) {
         return round($hours).($short ? 'h' : ' hours');
       }
     }
     if ($seconds >= TimeUnit::MINUTES) {
       $min = $this->toMinutes();
-      if (self::isIntegerValue($min) || ($rounded && $min > 1)) {
+      if (($rounded && $min > 1) || self::isIntegerValue($min)) {
         return round($min).($short ? 'm' : ' min');
       }
     }
     if ($seconds >= TimeUnit::SECONDS) {
-      if (self::isIntegerValue($seconds) || ($rounded && $seconds > 1)) {
+      if (($rounded && $seconds > 1) || self::isIntegerValue($seconds)) {
         return round($seconds).($short ? 's' : ' sec');
       }
     }
     if ($seconds >= 10e-3) {
       $ms = $this->toMilliseconds();
-      if (self::isIntegerValue($ms) || ($rounded && $ms > 1)) {
+      if (($rounded && $ms > 1) || self::isIntegerValue($ms)) {
         return round($ms).($short ? 'ms' : ' ms');
       }
     }
     if ($seconds >= 10e-6) {
       $us = $this->toMicroseconds();
-      if (self::isIntegerValue($us) || ($rounded && $us > 1)) {
+      if (($rounded && $us > 1) || self::isIntegerValue($us)) {
         return round($us).($short ? 'us' : ' us');
       }
     }

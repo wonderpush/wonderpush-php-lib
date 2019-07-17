@@ -16,9 +16,9 @@ class NotificationPush extends BaseObject {
   protected $custom;
   /** @var array **/
   protected $payload;
-  /** @var long */
+  /** @var integer */
   protected $expirationDate;
-  /** @var long */
+  /** @var integer */
   protected $expirationTime;
   /** @var string */
   protected $priority;
@@ -62,20 +62,20 @@ class NotificationPush extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getExpirationDate() {
     return $this->expirationDate;
   }
 
   /**
-   * @param long|string|\DateTime $expirationDate
+   * @param integer|string|\DateTime $expirationDate
    * @return NotificationPush
    */
   public function setExpirationDate($expirationDate) {
     if ($expirationDate === null) {
       $this->expirationDate = null;
-    } else if (is_long($expirationDate)) {
+    } else if (is_int($expirationDate)) {
       $this->expirationDate = $expirationDate;
     } else if (is_string($expirationDate)) {
       $this->expirationDate = \WonderPush\Util\TimeUtil::getMillisecondTimestampFromDateTime(
@@ -90,14 +90,14 @@ class NotificationPush extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getExpirationTime() {
     return $this->expirationTime;
   }
 
   /**
-   * @param long|string $expirationTime
+   * @param integer|string $expirationTime
    * @return NotificationPush
    */
   public function setExpirationTime($expirationTime) {

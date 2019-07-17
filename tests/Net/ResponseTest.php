@@ -32,8 +32,10 @@ class ResponseTest extends \WonderPush\TestCase {
 
     $response->setRawBody('#');
     $this->assertAttributeEquals(null, 'isParsed', $response);
-    $this->assertInstanceOf('\WonderPush\Errors\Parsing', $response->parseError());
-    $this->assertEquals(JSON_ERROR_SYNTAX, $response->parseError()->getJsonErrorCode());
+    $parseError = $response->parseError();
+    $this->assertInstanceOf('\WonderPush\Errors\Parsing', $parseError);
+    /** @var $parseError \WonderPush\Errors\Parsing */
+    $this->assertEquals(JSON_ERROR_SYNTAX, $parseError->getJsonErrorCode());
     $this->assertAttributeEquals(true, 'isParsed', $response);
   }
 

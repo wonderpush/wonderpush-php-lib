@@ -1,4 +1,5 @@
 <?php
+
 namespace WonderPush\Params;
 
 class AllInstallationsParams extends CollectionParams {
@@ -33,12 +34,12 @@ class AllInstallationsParams extends CollectionParams {
   }
 
   /**
-   * @param string|string[] $segmentId A single id, an array of ids, or multiple id parameters.
+   * @param string|string[] $segmentIds A single id, an array of ids, or multiple id parameters.
    * @return $this
    */
   public function setSegmentIds($segmentIds) {
     $this->segmentIds = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;
   }
-}
 
+}

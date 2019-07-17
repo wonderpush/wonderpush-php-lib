@@ -15,7 +15,9 @@ class TimeUtil {
   public static function parseISO8601DateOptionalTime($str) {
     // Parse parts
     $rtn = preg_match('/^(\d\d\d\d(?:-\d\d(?:-\d\d)?)?)(?:T(\d\d(?::\d\d(?::\d\d(?:.\d\d\d)?)?)?))?(Z|[+-]\d\d(?::\d\d(?::\d\d(?:.\d\d\d)?)?)?)?$/', $str, $matches);
-    if ($rtn !== 1) return null;
+    if ($rtn !== 1) {
+      return null;
+    }
     $date = $matches[1];
     $time = ArrayUtil::getIfSet($matches, 2, '');
     $offset = ArrayUtil::getIfSet($matches, 3, '');
@@ -29,7 +31,9 @@ class TimeUtil {
     $str = $date . 'T' . $time . $offset;
     // Parse the date
     $parsed = \DateTime::createFromFormat('Y-m-d\TH:i:s.uP', $str);
-    if ($parsed === false) $parsed = null;
+    if ($parsed === false) {
+      $parsed = null;
+    }
     return $parsed;
   }
 
@@ -39,8 +43,10 @@ class TimeUtil {
    * @return integer|null
    */
   public static function getMillisecondTimestampFromDateTime($dt) {
-    if (!($dt instanceof \DateTime)) return null;
-    return $dt->getTimestamp() * 1000 + round(intval($dt->format('u')) / 1000);
+    if (!($dt instanceof \DateTime)) {
+      return null;
+    }
+    return $dt->getTimestamp() * 1000 + round((int)$dt->format('u') / 1000);
   }
 
 }

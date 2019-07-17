@@ -9,8 +9,8 @@ interface HttpClientInterface {
 
   /**
    * Perform an HTTP call and return the response.
-   * @param \WonderPush\Net\Request $request
-   * @return \WonderPush\Net\Response
+   * @param Request $request
+   * @return Response
    */
   public function execute(Request $request);
 

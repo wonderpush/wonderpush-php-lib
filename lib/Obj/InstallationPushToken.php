@@ -24,10 +24,6 @@ class InstallationPushToken extends BaseObject {
   /** @var array */
   private $meta;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return string
    */
@@ -52,11 +48,13 @@ class InstallationPushToken extends BaseObject {
   }
 
   /**
-   * @param string[] $senderIds
+   * @param string[]|string $senderIds
    * @return InstallationPushToken
    */
   public function setSenderIds($senderIds) {
-    if (is_string($senderIds)) $senderIds = explode(',', $senderIds); // transform "foo" into ["foo"] as well as comma-separated values into an array
+    if (is_string($senderIds)) {
+      $senderIds = explode(',', $senderIds); // transform "foo" into ["foo"] as well as comma-separated values into an array
+    }
     $this->senderIds = $senderIds;
     return $this;
   }

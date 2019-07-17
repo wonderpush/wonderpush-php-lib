@@ -71,7 +71,7 @@ class TimeUnit {
       self::WEEKS
   );
 
-  private static $unitsLabels = array( // (prefered label first) (full label last)
+  private static $unitsLabels = array( // (preferred label first) (full label last)
       self::NANOSECONDS  => array('ns', 'nanos', 'nanosecond', 'nanoseconds'),
       self::MICROSECONDS => array('us', 'micros', 'microsecond', 'microseconds'),
       self::MILLISECONDS => array('ms', 'millis', 'millisecond', 'milliseconds'),
@@ -82,7 +82,7 @@ class TimeUnit {
       self::WEEKS        => array('w', 'week', 'weeks')
   );
 
-  private static $labelsToUnits = null; // lazily initialized
+  private static $labelsToUnits; // lazily initialized
 
   /**
    * Returns a list of predefined units.
@@ -94,16 +94,15 @@ class TimeUnit {
 
   /**
    * Returns the labels of a given unit, or of all units.
-   * @param integer $unit
-   * @return string|null
+   * @param integer|null $unit
+   * @return string|null|string[]
    */
   public static function getUnitLabels($unit = null) {
     if (null === $unit) {
       return self::$unitsLabels;
-    } else {
-      self::assertValidUnit($unit);
-      return ArrayUtil::getIfSet(self::$unitsLabels, $unit);
     }
+    self::assertValidUnit($unit);
+    return ArrayUtil::getIfSet(self::$unitsLabels, $unit);
   }
 
   /**
@@ -150,34 +149,23 @@ class TimeUnit {
     }
 
     // Normalize 1 second to 10⁰ seconds
-    if ($fromUnit === 1) $fromUnit = 0;
-    if ($toUnit === 1) $toUnit = 0;
+    if ($fromUnit === 1) {
+      $fromUnit = 0;
+    }
+    if ($toUnit === 1) {
+      $toUnit = 0;
+    }
 
     if ($fromUnit <= 0) {
-
       if ($toUnit <= 0) {
-
         return $value * pow(10, $fromUnit - $toUnit);
-
-      } else {
-
-        return $value * pow(10, $fromUnit) / $toUnit;
-
       }
-
-    } else {
-
-      if ($toUnit <= 0) {
-
-        return $value * $fromUnit / pow(10, $toUnit);
-
-      } else {
-
-        return $value * ((float)$fromUnit / $toUnit);
-
-      }
-
+      return $value * pow(10, $fromUnit) / $toUnit;
     }
+    if ($toUnit <= 0) {
+      return $value * $fromUnit / pow(10, $toUnit);
+    }
+    return $value * ((float)$fromUnit / $toUnit);
   }
 
 }

@@ -4,6 +4,7 @@ namespace WonderPush\Obj;
 
 /**
  * Base class for DTO objects.
+ * @noinspection PhpUndefinedClassInspection
  */
 class BaseObject implements \WonderPush\Util\JsonSerializable {
 
@@ -24,7 +25,13 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
   }
 
   public function clearAllFields() {
-    $class = new \ReflectionClass($this);
+    try {
+      $class = new \ReflectionClass($this);
+    } catch (\ReflectionException $ex) {
+      /** @noinspection ForgottenDebugOutputInspection */
+      error_log('[' . __METHOD__ . "()] Unexpected reflection exception\n" . $ex->getTraceAsString());
+      return;
+    }
     $methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
       /* @var $method \ReflectionMethod */
@@ -34,6 +41,7 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
       try {
         $this->{$method->getName()}(null);
       } catch (\Exception $ex) {
+        /** @noinspection ForgottenDebugOutputInspection */
         error_log('[' . __METHOD__ . '()] Exception caught while invoking ' . $method->getName() . "(null)\n" . $ex->getTraceAsString());
       }
     }
@@ -41,52 +49,60 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
 
   /**
    * Updates the fields present in $data.
-   * @param array $data
+   * @param array|\stdClass $data
    */
   protected function updateFieldsFromData($data) {
     if (!is_array($data) && !is_object($data)) {
       $ex = new \Exception();
+      /** @noinspection ForgottenDebugOutputInspection */
       error_log('[' . __METHOD__ . '] Not an array or object: ' . json_encode($data) . "\n" . $ex->getTraceAsString());
     }
     foreach ($data as $key => $value) {
       $methodName = 'set' . ucfirst($key);
       if (method_exists($this, $methodName)) {
-        if ($value === null) $value = NullObject::getInstance();
+        if ($value === null) {
+          $value = NullObject::getInstance();
+        }
         $this->{$methodName}($value);
       }
     }
   }
 
   protected function buildDataFromField($value) {
-    if ($value instanceof BaseObject) {
+    if ($value instanceof self) {
       return $value->buildDataFromFields();
-    } else if ($value instanceof JsonSerializable) {
+    }
+    if ($value instanceof \JsonSerializable) {
       return $value->jsonSerialize();
-    } else if (is_array($value)) {
+    }
+    if (is_array($value)) {
       $newValues = array();
       foreach ($value as $k => $v) {
-	$newValues[$k] = $this->buildDataFromField($v);
+        $newValues[$k] = $this->buildDataFromField($v);
       }
       return $newValues;
-    } else {
-      return $value;
     }
+    return $value;
   }
 
   protected function buildDataFromFields() {
     $data = new \stdClass();
 
-    $x = new \ReflectionClass(get_class($this));
+    try {
+      $x = new \ReflectionClass(get_class($this));
+    } catch (\ReflectionException $ex) {
+      /** @noinspection ForgottenDebugOutputInspection */
+      error_log('[' . __METHOD__ . "()] Unexpected reflection exception\n" . $ex->getTraceAsString());
+      return null;
+    }
     $methods = $x->getMethods(\ReflectionMethod::IS_PUBLIC);
     foreach ($methods as $method) {
-      if (!$method->isStatic()) {
-        if (\WonderPush\Util\StringUtil::beginsWith($method->name, 'get')) {
-          $field = substr($method->name, 3);
-          $field{0} = strtolower($field{0});
-          $value = $method->invoke($this);
-          if ($value !== null) {
-            $data->{$field} = $this->buildDataFromField($value);
-          }
+      if (!$method->isStatic() && \WonderPush\Util\StringUtil::beginsWith($method->name, 'get')) {
+        $field = substr($method->name, 3);
+        $field{0} = strtolower($field{0});
+        $value = $method->invoke($this);
+        if ($value !== null) {
+          $data->{$field} = $this->buildDataFromField($value);
         }
       }
     }
@@ -98,18 +114,18 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
     if (\WonderPush\Util\StringUtil::endsWith($type, '[]')) {
       $type = substr($type, 0, -2);
       return array_map(function($item) use ($type) {
-        return self::instantiateForSetter($type, $item);
+        return BaseObject::instantiateForSetter($type, $item);
       }, $data);
-    } else if (is_array($data) || $data instanceof \stdClass) {
-      return new $type($data);
-    } else {
-      return $data;
     }
+    if (is_array($data) || $data instanceof \stdClass) {
+      return new $type($data);
+    }
+    return $data;
   }
 
   /**
    * Implements JsonSerializable
-   * @return array
+   * @return \stdClass
    */
   public function jsonSerialize() {
     return $this->toData();
@@ -118,9 +134,8 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
   public function __toString() {
     if (defined('JSON_UNESCAPED_SLASHES')) {
       return '<' . get_class($this) . '>' . json_encode($this, JSON_UNESCAPED_SLASHES);
-    } else {
-      return '<' . get_class($this) . '>' . json_encode($this);
     }
+    return '<' . get_class($this) . '>' . json_encode($this);
   }
 
   /**

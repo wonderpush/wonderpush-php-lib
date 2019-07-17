@@ -16,10 +16,6 @@ class InstallationApplicationApple extends BaseObject {
   /** @var string[] */
   private $backgroundModes;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return string
    */

@@ -3,7 +3,7 @@
 
 const VERSION_FILENAME = 'lib/WonderPush.php';
 const VERSION_REGEX = '/^(?P<prefix>\s*const\s*VERSION\s*=\s*(?P<quotes>[\'"]))(?P<version>[^(?P=quotes)]+)(?P<suffix>(?P=quotes)\s*;.*)$/m';
-$root = dirname(__FILE__);
+$root = __DIR__;
 
 //
 // Check git status
@@ -41,6 +41,7 @@ echo "Current version: $currentVersion\n";
 // Ask new version
 //
 
+/** @noinspection PhpComposerExtensionStubsInspection */
 $newVersion = readline('Enter new version: ');
 echo "New version: $newVersion\n";
 echo "\n";
@@ -70,14 +71,14 @@ echo "\n";
 echo "Updating documentation site…\n";
 
 passthru("$root/doc/generate");
-passthru("git checkout gh-pages");
+passthru('git checkout gh-pages');
 rename("$root/doc/generated", "$root/$newVersion");
 copy("$root/latest/api.html", "$root/$newVersion/api.html");
 unlink("$root/latest");
 symlink($newVersion, "$root/latest");
 passthru("git add latest $newVersion");
 passthru("git commit -m \"Documentation site for v$newVersion\"");
-passthru("git checkout master");
+passthru('git checkout master');
 
 echo "\n";
 
@@ -88,10 +89,11 @@ echo "\n";
 echo "Preparing next release…\n";
 
 if (strpos($newVersion, '-') !== FALSE) {
+  /** @noinspection PhpComposerExtensionStubsInspection */
   $nextVersion = readline('Enter next version: ');
 } else {
   $nextVersion = explode('.', $newVersion);
-  $nextVersion[count($nextVersion)-1] = intval($nextVersion[count($nextVersion)-1]) + 1;
+  $nextVersion[count($nextVersion)-1] = (int)$nextVersion[count($nextVersion) - 1] + 1;
   $nextVersion = implode('.', $nextVersion);
   $nextVersion .= '-dev';
 }

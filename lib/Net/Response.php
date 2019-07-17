@@ -130,7 +130,9 @@ class Response extends \WonderPush\Obj\BaseObject {
    * Parses the raw HTML body into JSON, and notes any parsing error.
    */
   private function parseBody() {
-    if ($this->isParsed) return;
+    if ($this->isParsed) {
+      return;
+    }
 
     // false body means no answer from server
     if ($this->rawBody === false) {
@@ -141,7 +143,7 @@ class Response extends \WonderPush\Obj\BaseObject {
     }
 
     // Try json_decode
-    $this->parsedBody = json_decode($this->rawBody);
+    $this->parsedBody = json_decode($this->rawBody, false);
 
     // Manage json parsing errors
     $jsonParseError = json_last_error();
@@ -211,7 +213,9 @@ class Response extends \WonderPush\Obj\BaseObject {
   public function exception() {
     $this->parseBody();
 
-    if ($this->parseError) return $this->parseError;
+    if ($this->parseError) {
+      return $this->parseError;
+    }
 
     $statusCode = $this->getStatusCode();
     $body = $this->parsedBody();
@@ -223,9 +227,15 @@ class Response extends \WonderPush\Obj\BaseObject {
     if (isset($body->error) && is_object($body->error)) {
 
       $error = true;
-      if (isset($body->error->message)) $errorMessage = $body->error->message;
-      if (isset($body->error->code   )) $errorCode    = $body->error->code;
-      //if (isset($body->error->status )) $statusCode   = $body->error->status;
+      if (isset($body->error->message)) {
+        $errorMessage = $body->error->message;
+      }
+      if (isset($body->error->code   )) {
+        $errorCode    = $body->error->code;
+      }
+      //if (isset($body->error->status )) {
+      //  $statusCode   = $body->error->status;
+      //}
 
     }
 
@@ -237,7 +247,10 @@ class Response extends \WonderPush\Obj\BaseObject {
     }
 
     if ($error !== false) {
-      return new \WonderPush\Errors\Server($this->request, $this, $errorMessage, $errorCode, $error instanceof \Throwable ? $error : null);
+      if ($error instanceof \Throwable) {
+        return new \WonderPush\Errors\Server($this->request, $this, $errorMessage, $errorCode, $error);
+      }
+      return new \WonderPush\Errors\Server($this->request, $this, $errorMessage, $errorCode);
     }
     return null;
   }
@@ -250,7 +263,9 @@ class Response extends \WonderPush\Obj\BaseObject {
    */
   public function checkedResult($cls) {
     $exception = $this->exception();
-    if ($exception) throw $exception;
+    if ($exception) {
+      throw $exception;
+    }
     $this->parseBody();
     $body = $this->parsedBody();
     return new $cls($body);

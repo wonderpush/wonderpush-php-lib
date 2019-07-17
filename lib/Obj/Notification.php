@@ -14,9 +14,9 @@ class Notification extends BaseObject {
   private $id;
   /** @var string */
   private $applicationId;
-  /** @var long */
+  /** @var integer */
   private $creationDate;
-  /** @var long */
+  /** @var integer */
   private $updateDate;
   /** @var string */
   private $name;
@@ -26,10 +26,6 @@ class Notification extends BaseObject {
   private $inApp;
   /** @var NotificationPush */
   private $push;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   /**
    * @return string
@@ -64,14 +60,14 @@ class Notification extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getCreationDate() {
     return $this->creationDate;
   }
 
   /**
-   * @param long $creationDate
+   * @param integer $creationDate
    * @return Notification
    */
   public function setCreationDate($creationDate) {
@@ -80,14 +76,14 @@ class Notification extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getUpdateDate() {
     return $this->updateDate;
   }
 
   /**
-   * @param long $updateDate
+   * @param integer $updateDate
    * @return Notification
    */
   public function setUpdateDate($updateDate) {

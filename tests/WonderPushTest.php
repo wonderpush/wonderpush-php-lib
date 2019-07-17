@@ -9,6 +9,9 @@ class WonderPushTest extends TestCase {
 
   protected $wp;
 
+  /**
+   * @return WonderPush
+   */
   public static function getWonderPush() {
     return new WonderPush(self::WONDERPUSHDEMO_ACCESS_TOKEN, self::WONDERPUSHDEMO_APPLICATION_ID);
   }

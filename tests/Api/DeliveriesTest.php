@@ -6,7 +6,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
 
   /** @var \WonderPush\WonderPush */
   protected $wp;
-  /** @var \WonderPush\Api\Deliveries */
+  /** @var Deliveries */
   protected $api;
 
   protected function setUp() {
@@ -22,6 +22,7 @@ class DeliveriesTest extends \WonderPush\TestCase {
             ->setAlert(\WonderPush\Obj\NotificationAlert::_new()
                 ->setText('Test PHP lib')
             ));
+    /** @noinspection PhpUnhandledExceptionInspection */
     $response = $this->api->create($params);
     $this->assertTrue($response->isSuccess());
     $this->assertSame(\WonderPush\Obj\NullObject::getInstance(), $response->getCampaignId());

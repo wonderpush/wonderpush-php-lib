@@ -1,4 +1,5 @@
 <?php
+
 namespace WonderPush\Params;
 
 use WonderPush\Obj\BaseObject;
@@ -53,4 +54,5 @@ class CollectionParams extends BaseObject {
     $this->offset = $offset;
     return $this;
   }
+
 }

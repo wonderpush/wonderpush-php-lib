@@ -32,10 +32,6 @@ class InstallationDevice extends BaseObject {
   /** @var InstallationDeviceConfiguration */
   private $configuration;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
    * @return string
    */

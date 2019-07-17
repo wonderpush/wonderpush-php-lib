@@ -20,6 +20,7 @@ class DefaultLogger implements Logger {
       }
     }
 
+    /** @noinspection ForgottenDebugOutputInspection */
     error_log($message);
   }
 

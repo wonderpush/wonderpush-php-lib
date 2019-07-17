@@ -13,7 +13,7 @@ namespace WonderPush\Obj;
  */
 class NullObject extends BaseObject {
 
-  private static $_instance = null;
+  private static $_instance;
 
   /**
    * DO NOT CALL.
@@ -24,7 +24,7 @@ class NullObject extends BaseObject {
     if (self::$_instance !== null) {
       throw new \LogicException('You should not instantiate \WonderPush\Obj\NullObject, use \WonderPush\Obj\NullObject::getInstance() instead.');
     }
-    parent::__construct(null);
+    parent::__construct();
   }
 
   public static function getInstance() {

@@ -7,10 +7,10 @@ namespace WonderPush\Errors;
  */
 class Network extends Base {
 
-  /** @var Request */
+  /** @var \WonderPush\Net\Request */
   protected $request;
 
-  /** @var Response */
+  /** @var \WonderPush\Net\Response */
   protected $response;
 
   public function __construct(\WonderPush\Net\Request $request, \WonderPush\Net\Response $response) {

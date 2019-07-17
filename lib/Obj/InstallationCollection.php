@@ -9,15 +9,12 @@ namespace WonderPush\Obj;
  * @codeCoverageIgnore
  */
 class InstallationCollection extends Collection {
+
   /** @var Installation[] */
   private $data;
 
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
-
   /**
-   * @return Application[]
+   * @return Installation[]
    */
   public function getData() {
     return $this->data;

@@ -15,10 +15,10 @@ class NotificationAlertAndroid extends NotificationAlert {
   protected $channel;
   /** @var boolean */
   protected $html;
-  /** @var string */
-  protected $title;
-  /** @var string */
-  protected $text;
+  ///** @var string */
+  //protected $title; // already defined in the parent class
+  ///** @var string */
+  //protected $text; // already defined in the parent class
   /** @var string */
   protected $subText;
   /** @var string */
@@ -49,7 +49,7 @@ class NotificationAlertAndroid extends NotificationAlert {
   protected $number;
   /** @var boolean */
   protected $onlyAlertOnce;
-  /** @var timestampMS */
+  /** @var integer - timestamp in ms */
   protected $when;
   /** @var boolean */
   protected $showWhen;
@@ -135,38 +135,6 @@ class NotificationAlertAndroid extends NotificationAlert {
    */
   public function setHtml($html) {
     $this->html = $html;
-    return $this;
-  }
-
-  /**
-   * @return string
-   */
-  public function getTitle() {
-    return $this->title;
-  }
-
-  /**
-   * @param string $title
-   * @return $this
-   */
-  public function setTitle($title) {
-    $this->title = $title;
-    return $this;
-  }
-
-  /**
-   * @return string
-   */
-  public function getText() {
-    return $this->text;
-  }
-
-  /**
-   * @param string $text
-   * @return $this
-   */
-  public function setText($text) {
-    $this->text = $text;
     return $this;
   }
 
@@ -411,14 +379,14 @@ class NotificationAlertAndroid extends NotificationAlert {
   }
 
   /**
-   * @return long Timestamp in milliseconds
+   * @return integer Timestamp in milliseconds
    */
   public function getWhen() {
     return $this->when;
   }
 
   /**
-   * @param long $when Timestamp in milliseconds
+   * @param integer $when Timestamp in milliseconds
    * @return $this
    */
   public function setWhen($when) {
@@ -616,7 +584,7 @@ class NotificationAlertAndroid extends NotificationAlert {
    */
   public function setForeground($foreground) {
     $this->foreground = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $foreground);
-    if ($this->foreground instanceof NotificationAlertAndroid) {
+    if ($this->foreground instanceof self) {
       $this->foreground->setForeground(null);
     }
     return $this;

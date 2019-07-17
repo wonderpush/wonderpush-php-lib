@@ -4,6 +4,7 @@ namespace WonderPush\Api;
 
 class RestTest extends \WonderPush\TestCase {
 
+  /** @var \WonderPush\WonderPush */
   protected $wp;
 
   protected function setUp() {
@@ -22,7 +23,7 @@ class RestTest extends \WonderPush\TestCase {
     $this->assertEquals(404, $resp->error->status);
     $this->assertObjectHasAttribute('code', $resp->error);
     $this->assertInternalType('string', $resp->error->code);
-    $this->assertEquals("10000", $resp->error->code);
+    $this->assertEquals('10000', $resp->error->code);
     $this->assertObjectHasAttribute('message', $resp->error);
     $this->assertInternalType('string', $resp->error->message);
   }

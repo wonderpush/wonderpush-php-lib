@@ -14,7 +14,10 @@ class StringUtil {
    * @return boolean
    */
   public static function beginsWith($subject, $prefix) {
-    if ($subject === '') return $prefix === ''; // substr() returns FALSE if the start arguments equals the string length prior to PHP 7.0.0
+    if ($subject === '') {
+      return $prefix === ''; // substr() returns FALSE if the start arguments equals the string length prior to PHP 7.0.0
+    }
+    /** @noinspection SubStrUsedAsStrPosInspection */
     return substr($subject, 0, strlen($prefix)) === $prefix;
   }
 
@@ -25,7 +28,9 @@ class StringUtil {
    * @return boolean
    */
   public static function endsWith($subject, $suffix) {
-    if ($suffix === '') return true;
+    if ($suffix === '') {
+      return true;
+    }
     return substr($subject, -strlen($suffix)) === $suffix;
   }
 
@@ -33,7 +38,7 @@ class StringUtil {
    * Returns whether a given string contains another.
    * @param string $haystack The string to be tested
    * @param string $needle The substring to be detected
-   * @return type
+   * @return boolean
    */
   public static function contains($haystack, $needle) {
     return strpos($haystack, $needle) !== false;
@@ -48,10 +53,10 @@ class StringUtil {
    * The following two calls are identical: `format("{0}-{1}-{2}", "2001", "12", "31")` and `format("{0}-{1}-{2}", array("2001", "12", "31"))`.
    *
    * @param string $format The format string with `{key}` occurrences to be replaced.
-   * @param string[] $args The values used for replacement. Can also be multiple separate parameters.
+   * @param string[]|\stdClass|mixed... $args The values used for replacement. Can also be multiple separate parameters.
+   * @return string
    */
   public static function format($format, $args) {
-    $vars = func_get_args();
     $search = array();
     $replace = array();
 

@@ -1,10 +1,10 @@
 <?php
+
 namespace WonderPush\Params;
 
 use WonderPush\Obj\BaseObject;
 
 class DeliveriesCreateParams extends BaseObject {
-
 
   /**
    * The endpoint of this API.
@@ -57,7 +57,6 @@ class DeliveriesCreateParams extends BaseObject {
    * @return $this
    */
   public function setTargetSegmentIds($segmentId) {
-    ($segmentId); // unused
     $this->targetType = 'targetSegmentIds';
     $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;
@@ -78,7 +77,6 @@ class DeliveriesCreateParams extends BaseObject {
    * @return $this
    */
   public function setTargetUserIds($userId) {
-    ($userId); // unused
     $this->targetType = 'targetUserIds';
     $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;
@@ -89,7 +87,6 @@ class DeliveriesCreateParams extends BaseObject {
    * @return $this
    */
   public function setTargetInstallationIds($installationId) {
-    ($installationId); // unused
     $this->targetType = 'targetInstallationIds';
     $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;
@@ -100,7 +97,6 @@ class DeliveriesCreateParams extends BaseObject {
    * @return $this
    */
   public function setTargetDeviceIds($deviceIds) {
-    ($deviceIds); // unused
     $this->targetType = 'targetDeviceIds';
     $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;
@@ -111,7 +107,6 @@ class DeliveriesCreateParams extends BaseObject {
    * @return $this
    */
   public function setTargetPushTokens($pushTokens) {
-    ($pushTokens); // unused
     $this->targetType = 'targetPushTokens';
     $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;
@@ -122,7 +117,6 @@ class DeliveriesCreateParams extends BaseObject {
    * @return $this
    */
   public function setTargetAccessTokens($accessTokens) {
-    ($accessTokens); // unused
     $this->targetType = 'targetAccessTokens';
     $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
     return $this;

@@ -18,9 +18,9 @@ class Installation extends BaseObject {
   private $applicationId;
   /** @var string */
   private $accessToken;
-  /** @var long */
+  /** @var integer */
   private $creationDate;
-  /** @var long */
+  /** @var integer */
   private $updateDate;
   /** @var InstallationPushToken */
   private $pushToken;
@@ -32,10 +32,6 @@ class Installation extends BaseObject {
   private $preferences;
   /** @var array */
   private $custom;
-
-  public function __construct($data = null) {
-    parent::__construct($data);
-  }
 
   public static function computeId($applicationId, $devicePlatform, $deviceId, $userId) {
     $id = $applicationId . ':' . $devicePlatform . ':' . $deviceId;
@@ -62,15 +58,15 @@ class Installation extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getCreationDate() {
     return $this->creationDate;
   }
 
   /**
-   * @param long $creationDate
-   * @return Staff
+   * @param integer $creationDate
+   * @return Installation
    */
   public function setCreationDate($creationDate) {
     $this->creationDate = $creationDate;
@@ -78,15 +74,15 @@ class Installation extends BaseObject {
   }
 
   /**
-   * @return long
+   * @return integer
    */
   public function getUpdateDate() {
     return $this->updateDate;
   }
 
   /**
-   * @param long $updateDate
-   * @return Staff
+   * @param integer $updateDate
+   * @return Installation
    */
   public function setUpdateDate($updateDate) {
     $this->updateDate = $updateDate;
