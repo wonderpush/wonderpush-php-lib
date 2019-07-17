@@ -15,15 +15,15 @@ class DeliveriesTest extends \WonderPush\TestCase {
   }
 
   public function testSendNotification() {
-    $params = new \WonderPush\Params\DeliveriesCreateParams();
-    $params
+    /** @noinspection PhpUnhandledExceptionInspection */
+    $response = $this->api->create(
+      \WonderPush\Params\DeliveriesCreateParams::_new()
         ->setTargetSegmentIds('@NOBODY')
         ->setNotification(\WonderPush\Obj\Notification::_new()
-            ->setAlert(\WonderPush\Obj\NotificationAlert::_new()
-                ->setText('Test PHP lib')
-            ));
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $response = $this->api->create($params);
+          ->setAlert(\WonderPush\Obj\NotificationAlert::_new()
+            ->setText('Test PHP lib')
+          ))
+    );
     $this->assertTrue($response->isSuccess());
     $this->assertSame(\WonderPush\Obj\NullObject::getInstance(), $response->getCampaignId());
     $this->assertNotNull($response->getNotificationId());

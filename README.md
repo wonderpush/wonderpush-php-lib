@@ -87,15 +87,15 @@ Simple usage looks like:
 
 ```php
 $wonderpush = new \WonderPush\WonderPush(WONDERPUSH_ACCESS_TOKEN, WONDERPUSH_APPLICATION_ID);
-$response = $wonderpush->deliveries()->prepareCreate()
-    ->setTargetSegmentIds('@ALL')
-    ->setNotification(\WonderPush\Notification::_new()
-        ->setAlert(\WonderPush\NotificationAlert::_new()
-            ->setTitle('Using the PHP library')
-            ->setText('Hello, WonderPush!')
-        ))
-    ->execute()
-    ->checked();
+$response = $this->api->create(
+    \WonderPush\Params\DeliveriesCreateParams::_new()
+        ->setTargetSegmentIds('@ALL')
+        ->setNotification(\WonderPush\Notification::_new()
+            ->setAlert(\WonderPush\NotificationAlert::_new()
+                ->setTitle('Using the PHP library')
+                ->setText('Hello, WonderPush!')
+            ))
+);
 echo $response->getNotificationId();
 ```
 
