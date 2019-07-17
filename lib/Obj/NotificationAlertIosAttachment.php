@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationAlertIos
  * @codeCoverageIgnore
  */
-class NotificationAlertIosAttachment extends Object {
+class NotificationAlertIosAttachment extends BaseObject {
 
   /** @var string */
   protected $id;

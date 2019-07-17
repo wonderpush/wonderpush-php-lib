@@ -2,7 +2,7 @@
 
 namespace WonderPush\Obj;
 
-class Pagination extends Object {
+class Pagination extends BaseObject {
 
   /** @var string */
   private $previous;

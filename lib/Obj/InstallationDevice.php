@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Installation
  * @codeCoverageIgnore
  */
-class InstallationDevice extends Object {
+class InstallationDevice extends BaseObject {
 
   /** @var string */
   private $id;
@@ -192,7 +192,7 @@ class InstallationDevice extends Object {
    * @return InstallationDevice
    */
   public function setCapabilities($capabilities) {
-    $this->capabilities = Object::instantiateForSetter('\WonderPush\Obj\InstallationDeviceCapabilities', $capabilities);
+    $this->capabilities = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationDeviceCapabilities', $capabilities);
     return $this;
   }
 
@@ -208,7 +208,7 @@ class InstallationDevice extends Object {
    * @return InstallationDevice
    */
   public function setConfiguration($configuration) {
-    $this->configuration = Object::instantiateForSetter('\WonderPush\Obj\InstallationDeviceConfiguration', $configuration);
+    $this->configuration = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationDeviceConfiguration', $configuration);
     return $this;
   }
 

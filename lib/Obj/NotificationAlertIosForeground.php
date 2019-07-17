@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationAlertIos
  * @codeCoverageIgnore
  */
-class NotificationAlertIosForeground extends Object {
+class NotificationAlertIosForeground extends BaseObject {
 
   /** @var boolean */
   protected $autoOpen;

@@ -8,7 +8,7 @@ namespace WonderPush\Obj;
  * See {@link https://www.wonderpush.com/docs/concepts/installation}
  * @codeCoverageIgnore
  */
-abstract class Collection extends Object {
+abstract class Collection extends BaseObject {
   /** @var int */
   private $count;
 
@@ -58,7 +58,7 @@ abstract class Collection extends Object {
    * @return Collection
    */
   public function setPagination($pagination) {
-    $this->pagination = Object::instantiateForSetter('\WonderPush\Obj\Pagination', $pagination);
+    $this->pagination = BaseObject::instantiateForSetter('\WonderPush\Obj\Pagination', $pagination);
     return $this;
   }
 

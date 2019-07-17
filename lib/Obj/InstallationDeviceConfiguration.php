@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see InstallationDevice
  * @codeCoverageIgnore
  */
-class InstallationDeviceConfiguration extends Object {
+class InstallationDeviceConfiguration extends BaseObject {
 
   /** @var string */
   private $timeZone;

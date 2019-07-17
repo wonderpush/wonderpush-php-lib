@@ -8,7 +8,7 @@ namespace WonderPush\Obj;
  * See {@link https://www.wonderpush.com/docs/concepts/installation}
  * @codeCoverageIgnore
  */
-class Installation extends Object {
+class Installation extends BaseObject {
 
   /** @var string */
   private $id;
@@ -153,7 +153,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setPushToken($pushToken) {
-    $this->pushToken = Object::instantiateForSetter('\WonderPush\Obj\InstallationPushToken', $pushToken);
+    $this->pushToken = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationPushToken', $pushToken);
     return $this;
   }
 
@@ -169,7 +169,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setApplication($application) {
-    $this->application = Object::instantiateForSetter('\WonderPush\Obj\InstallationApplication', $application);
+    $this->application = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationApplication', $application);
     return $this;
   }
 
@@ -185,7 +185,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setDevice($device) {
-    $this->device = Object::instantiateForSetter('\WonderPush\Obj\InstallationDevice', $device);
+    $this->device = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationDevice', $device);
     return $this;
   }
 
@@ -201,7 +201,7 @@ class Installation extends Object {
    * @return Installation
    */
   public function setPreferences($preferences) {
-    $this->preferences = Object::instantiateForSetter('\WonderPush\Obj\InstallationPreferences', $preferences);
+    $this->preferences = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationPreferences', $preferences);
     return $this;
   }
 

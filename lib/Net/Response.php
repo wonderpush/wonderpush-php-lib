@@ -5,7 +5,7 @@ namespace WonderPush\Net;
 /**
  * Represents an HTTP response, with JSON parsing facility.
  */
-class Response extends \WonderPush\Obj\Object {
+class Response extends \WonderPush\Obj\BaseObject {
 
   /**
    * The request

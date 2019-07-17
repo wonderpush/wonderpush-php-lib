@@ -8,7 +8,7 @@ namespace WonderPush\Obj;
  * See {@link https://www.wonderpush.com/docs/concepts/installation}
  * @codeCoverageIgnore
  */
-class Application extends Object {
+class Application extends BaseObject {
 
   /** @var string */
   private $id;

@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationInApp
  * @codeCoverageIgnore
  */
-class NotificationInAppMap extends Object {
+class NotificationInAppMap extends BaseObject {
 
   /** @var NotificationInAppMapPlace */
   private $place;
@@ -24,7 +24,7 @@ class NotificationInAppMap extends Object {
    * @return NotificationInAppMap
    */
   public function setPlace($place) {
-    $this->place = Object::instantiateForSetter('\WonderPush\Obj\NotificationInAppMapPlace', $place);
+    $this->place = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationInAppMapPlace', $place);
     return $this;
   }
 

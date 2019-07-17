@@ -8,7 +8,7 @@ namespace WonderPush\Obj;
  * See {@link https://www.wonderpush.com/docs/concepts/user}
  * @codeCoverageIgnore
  */
-class User extends Object {
+class User extends BaseObject {
 
   /** @var string */
   private $id;

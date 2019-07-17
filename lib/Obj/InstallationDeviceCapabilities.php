@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see InstallationDevice
  * @codeCoverageIgnore
  */
-class InstallationDeviceCapabilities extends Object {
+class InstallationDeviceCapabilities extends BaseObject {
 
   /** @var boolean */
   private $bluetooth;

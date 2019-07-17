@@ -5,7 +5,7 @@ namespace WonderPush\Net;
 /**
  * Represents an HTTP request.
  */
-class Request extends \WonderPush\Obj\Object {
+class Request extends \WonderPush\Obj\BaseObject {
 
   /**
    * HTTP GET method.

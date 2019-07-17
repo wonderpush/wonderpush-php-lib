@@ -243,7 +243,7 @@ class NotificationAlertIos extends NotificationAlert {
    * @return NotificationAlertIos
    */
   public function setForeground($foreground) {
-    $this->foreground = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertIosForeground', $foreground);
+    $this->foreground = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertIosForeground', $foreground);
     return $this;
   }
 
@@ -259,7 +259,7 @@ class NotificationAlertIos extends NotificationAlert {
    * @return NotificationAlertIos
    */
   public function setAttachments($attachments) {
-    $this->attachments = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertIosAttachment[]', $attachments);
+    $this->attachments = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertIosAttachment[]', $attachments);
     return $this;
   }
 

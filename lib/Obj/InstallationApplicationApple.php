@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see InstallationApplication
  * @codeCoverageIgnore
  */
-class InstallationApplicationApple extends Object {
+class InstallationApplicationApple extends BaseObject {
 
   /** @var string */
   private $apsEnvironment;

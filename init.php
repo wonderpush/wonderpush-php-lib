@@ -15,7 +15,7 @@ require(dirname(__FILE__) . '/lib/Util/UrlUtil.php');
 require(dirname(__FILE__) . '/lib/WonderPush.php');
 
 // WonderPush\Obj
-require(dirname(__FILE__) . '/lib/Obj/Object.php');
+require(dirname(__FILE__) . '/lib/Obj/BaseObject.php');
 require(dirname(__FILE__) . '/lib/Obj/DeliveriesCreateResponse.php');
 require(dirname(__FILE__) . '/lib/Obj/Pagination.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');

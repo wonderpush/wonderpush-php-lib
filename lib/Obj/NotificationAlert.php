@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Notification
  * @codeCoverageIgnore
  */
-class NotificationAlert extends Object {
+class NotificationAlert extends BaseObject {
 
   /** @var string */
   protected $text;
@@ -86,7 +86,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setActions($actions) {
-    $this->actions = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $actions);
+    $this->actions = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $actions);
     return $this;
   }
 
@@ -102,7 +102,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setReceiveActions($receiveActions) {
-    $this->receiveActions = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $receiveActions);
+    $this->receiveActions = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $receiveActions);
     return $this;
   }
 
@@ -118,7 +118,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setIos($ios) {
-    $this->ios = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertIos', $ios);
+    $this->ios = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertIos', $ios);
     return $this;
   }
 
@@ -134,7 +134,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setAndroid($android) {
-    $this->android = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $android);
+    $this->android = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $android);
     return $this;
   }
 
@@ -150,7 +150,7 @@ class NotificationAlert extends Object {
    * @return NotificationAlert
    */
   public function setWeb($web) {
-    $this->web = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertWeb', $web);
+    $this->web = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertWeb', $web);
     return $this;
   }
 

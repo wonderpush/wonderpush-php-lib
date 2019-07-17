@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Installation
  * @codeCoverageIgnore
  */
-class InstallationPreferences extends Object {
+class InstallationPreferences extends BaseObject {
 
   const SUBSCRIPTION_STATUS_OPTIN = 'optIn';
   const SUBSCRIPTION_STATUS_OPTOUT = 'optOut'; // soft opt-out: we have a push token (and don't want to loose it), but the user wished to disable push notifications

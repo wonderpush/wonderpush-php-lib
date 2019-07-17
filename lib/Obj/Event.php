@@ -8,7 +8,7 @@ namespace WonderPush\Obj;
  * See {@link https://www.wonderpush.com/docs/concepts/event}
  * @codeCoverageIgnore
  */
-class Event extends Object {
+class Event extends BaseObject {
 
   /** @var string */
   protected $id;
@@ -259,7 +259,7 @@ class Event extends Object {
    * @return Event
    */
   public function setLocation($location) {
-    $this->location = Object::instantiateForSetter('\WonderPush\Obj\GeoLocation', $location);
+    $this->location = BaseObject::instantiateForSetter('\WonderPush\Obj\GeoLocation', $location);
     return $this;
   }
 

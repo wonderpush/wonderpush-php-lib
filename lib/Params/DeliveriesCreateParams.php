@@ -1,9 +1,9 @@
 <?php
 namespace WonderPush\Params;
 
-use WonderPush\Obj\Object;
+use WonderPush\Obj\BaseObject;
 
-class DeliveriesCreateParams extends Object {
+class DeliveriesCreateParams extends BaseObject {
 
 
   /**

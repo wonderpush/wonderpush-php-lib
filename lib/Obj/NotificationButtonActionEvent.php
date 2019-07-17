@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationButtonAction
  * @codeCoverageIgnore
  */
-class NotificationButtonActionEvent extends Object {
+class NotificationButtonActionEvent extends BaseObject {
 
   /** @var string */
   protected $type;

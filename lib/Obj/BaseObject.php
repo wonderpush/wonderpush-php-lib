@@ -5,7 +5,7 @@ namespace WonderPush\Obj;
 /**
  * Base class for DTO objects.
  */
-class Object implements \WonderPush\Util\JsonSerializable {
+class BaseObject implements \WonderPush\Util\JsonSerializable {
 
   public function __construct($data = null) {
     if ($data !== null) {
@@ -58,7 +58,7 @@ class Object implements \WonderPush\Util\JsonSerializable {
   }
 
   protected function buildDataFromField($value) {
-    if ($value instanceof Object) {
+    if ($value instanceof BaseObject) {
       return $value->buildDataFromFields();
     } else if ($value instanceof JsonSerializable) {
       return $value->jsonSerialize();

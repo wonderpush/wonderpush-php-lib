@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Installation
  * @codeCoverageIgnore
  */
-class InstallationPushToken extends Object {
+class InstallationPushToken extends BaseObject {
 
   /** @var string */
   private $data;

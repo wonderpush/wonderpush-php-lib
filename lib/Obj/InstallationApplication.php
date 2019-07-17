@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Installation
  * @codeCoverageIgnore
  */
-class InstallationApplication extends Object {
+class InstallationApplication extends BaseObject {
 
   /** @var string */
   private $id;
@@ -100,7 +100,7 @@ class InstallationApplication extends Object {
    * @return InstallationApplication
    */
   public function setApple($apple) {
-    $this->apple = Object::instantiateForSetter('\WonderPush\Obj\InstallationApplicationApple', $apple);
+    $this->apple = BaseObject::instantiateForSetter('\WonderPush\Obj\InstallationApplicationApple', $apple);
     return $this;
   }
 

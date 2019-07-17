@@ -28,7 +28,7 @@ class InstallationCollection extends Collection {
    * @return InstallationCollection
    */
   public function setData($data) {
-    $this->data = Object::instantiateForSetter('\WonderPush\Obj\Installation[]', $data);
+    $this->data = BaseObject::instantiateForSetter('\WonderPush\Obj\Installation[]', $data);
     return $this;
   }
 

@@ -1,9 +1,9 @@
 <?php
 namespace WonderPush\Params;
 
-use WonderPush\Obj\Object;
+use WonderPush\Obj\BaseObject;
 
-class CollectionParams extends Object {
+class CollectionParams extends BaseObject {
 
   /** @var int */
   private $limit;

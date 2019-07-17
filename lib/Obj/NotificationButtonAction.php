@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationButton
  * @codeCoverageIgnore
  */
-class NotificationButtonAction extends Object {
+class NotificationButtonAction extends BaseObject {
 
   const TYPE_CLOSE = 'close';
   const TYPE_METHOD = 'method';
@@ -130,7 +130,7 @@ class NotificationButtonAction extends Object {
    * @return NotificationButtonAction
    */
   public function setEvent($event) {
-    $this->event = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonActionEvent', $event);
+    $this->event = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationButtonActionEvent', $event);
     return $this;
   }
 
@@ -162,7 +162,7 @@ class NotificationButtonAction extends Object {
    * @return NotificationButtonAction
    */
   public function setInstallation($installation) {
-    $this->installation = Object::instantiateForSetter('\WonderPush\Obj\Installation', $installation);
+    $this->installation = BaseObject::instantiateForSetter('\WonderPush\Obj\Installation', $installation);
     return $this;
   }
 

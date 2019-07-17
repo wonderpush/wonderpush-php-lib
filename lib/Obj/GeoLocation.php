@@ -6,7 +6,7 @@ namespace WonderPush\Obj;
  * DTO part for `location` fields.
  * @codeCoverageIgnore
  */
-class GeoLocation extends Object {
+class GeoLocation extends BaseObject {
 
   /** @var double */
   private $lat;

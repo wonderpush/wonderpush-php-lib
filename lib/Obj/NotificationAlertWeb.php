@@ -295,7 +295,7 @@ class NotificationAlertWeb extends NotificationAlert {
    * @return $this
    */
   public function setButtons($buttons) {
-    $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertWebButton[]', $buttons);
+    $this->buttons = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertWebButton[]', $buttons);
     return $this;
   }
 

@@ -8,7 +8,7 @@ namespace WonderPush\Obj;
  * See {@link https://www.wonderpush.com/docs/concepts/notifications}
  * @codeCoverageIgnore
  */
-class Notification extends Object {
+class Notification extends BaseObject {
 
   /** @var string */
   private $id;
@@ -123,7 +123,7 @@ class Notification extends Object {
    * @return Notification
    */
   public function setAlert($alert) {
-    $this->alert = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlert', $alert);
+    $this->alert = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlert', $alert);
     return $this;
   }
 
@@ -139,7 +139,7 @@ class Notification extends Object {
    * @return Notification
    */
   public function setInApp($inApp) {
-    $this->inApp = Object::instantiateForSetter('\WonderPush\Obj\NotificationInApp', $inApp);
+    $this->inApp = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationInApp', $inApp);
     return $this;
   }
 
@@ -155,7 +155,7 @@ class Notification extends Object {
    * @return Notification
    */
   public function setPush($push) {
-    $this->push = Object::instantiateForSetter('\WonderPush\Obj\NotificationPush', $push);
+    $this->push = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationPush', $push);
     return $this;
   }
 

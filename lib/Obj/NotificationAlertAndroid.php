@@ -57,7 +57,7 @@ class NotificationAlertAndroid extends NotificationAlert {
   protected $usesChronometer;
   /** @var string */
   protected $visibility;
-  /** @var boolean|object {color: string, on: integer, off: integer} */
+  /** @var boolean|BaseObject {color: string, on: integer, off: integer} */
   protected $lights;
   /** @var boolean|integer[] */
   protected $vibrate;
@@ -599,7 +599,7 @@ class NotificationAlertAndroid extends NotificationAlert {
    * @return $this
    */
   public function setButtons($buttons) {
-    $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroidButton[]', $buttons);
+    $this->buttons = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroidButton[]', $buttons);
     return $this;
   }
 
@@ -615,7 +615,7 @@ class NotificationAlertAndroid extends NotificationAlert {
    * @return NotificationAlertAndroid
    */
   public function setForeground($foreground) {
-    $this->foreground = Object::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $foreground);
+    $this->foreground = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationAlertAndroid', $foreground);
     if ($this->foreground instanceof NotificationAlertAndroid) {
       $this->foreground->setForeground(null);
     }

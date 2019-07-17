@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationInAppMap
  * @codeCoverageIgnore
  */
-class NotificationInAppMapPlace extends Object {
+class NotificationInAppMapPlace extends BaseObject {
 
   /** @var GeoLocation */
   private $point;
@@ -28,7 +28,7 @@ class NotificationInAppMapPlace extends Object {
    * @return NotificationInAppMapPlace
    */
   public function setPoint($point) {
-    $this->point = Object::instantiateForSetter('\WonderPush\Obj\GeoLocation', $point);
+    $this->point = BaseObject::instantiateForSetter('\WonderPush\Obj\GeoLocation', $point);
     return $this;
   }
 

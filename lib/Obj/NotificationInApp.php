@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Notification
  * @codeCoverageIgnore
  */
-class NotificationInApp extends Object {
+class NotificationInApp extends BaseObject {
 
   const TYPE_TEXT = 'text';
   const TYPE_HTML = 'html';
@@ -96,7 +96,7 @@ class NotificationInApp extends Object {
    * @return NotificationInApp
    */
   public function setMap($map) {
-    $this->map = Object::instantiateForSetter('\WonderPush\Obj\NotificationInAppMap', $map);
+    $this->map = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationInAppMap', $map);
     return $this;
   }
 
@@ -128,7 +128,7 @@ class NotificationInApp extends Object {
    * @return NotificationInApp
    */
   public function setButtons($buttons) {
-    $this->buttons = Object::instantiateForSetter('\WonderPush\Obj\NotificationInAppButton[]', $buttons);
+    $this->buttons = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationInAppButton[]', $buttons);
     return $this;
   }
 

@@ -2,7 +2,7 @@
 
 namespace WonderPush\Obj;
 
-class DeliveriesCreateResponse extends Object {
+class DeliveriesCreateResponse extends BaseObject {
 
   /** @var boolean */
   private $success;

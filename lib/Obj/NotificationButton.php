@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see NotificationButton
  * @codeCoverageIgnore
  */
-class NotificationButton extends Object {
+class NotificationButton extends BaseObject {
 
   /** @var string */
   protected $label;
@@ -60,7 +60,7 @@ class NotificationButton extends Object {
    * @return NotificationButton
    */
   public function setActions($actions) {
-    $this->actions = Object::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $actions);
+    $this->actions = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationButtonAction[]', $actions);
     return $this;
   }
 

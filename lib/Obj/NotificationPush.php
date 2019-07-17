@@ -7,7 +7,7 @@ namespace WonderPush\Obj;
  * @see Notification
  * @codeCoverageIgnore
  */
-class NotificationPush extends Object {
+class NotificationPush extends BaseObject {
 
   const PRIORITY_NORMAL = 'normal';
   const PRIORITY_HIGH   = 'high';
@@ -136,7 +136,7 @@ class NotificationPush extends Object {
    * @return NotificationPush
    */
   public function setAndroid($android) {
-    $this->android = Object::instantiateForSetter('\WonderPush\Obj\NotificationPushAndroid', $android);
+    $this->android = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationPushAndroid', $android);
     return $this;
   }
 
@@ -152,7 +152,7 @@ class NotificationPush extends Object {
    * @return NotificationPush
    */
   public function setIos($ios) {
-    $this->ios = Object::instantiateForSetter('\WonderPush\Obj\NotificationPushIos', $ios);
+    $this->ios = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationPushIos', $ios);
     return $this;
   }
 
@@ -168,7 +168,7 @@ class NotificationPush extends Object {
    * @return NotificationPush
    */
   public function setWeb($web) {
-    $this->web = Object::instantiateForSetter('\WonderPush\Obj\NotificationPushWeb', $web);
+    $this->web = BaseObject::instantiateForSetter('\WonderPush\Obj\NotificationPushWeb', $web);
     return $this;
   }
 
