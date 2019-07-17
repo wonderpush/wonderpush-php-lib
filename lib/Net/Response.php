@@ -58,14 +58,20 @@ class Response extends \WonderPush\Obj\BaseObject {
   private $parseErrorMsg;
 
   /**
-   * Response constructor.
-   * @param Request $request
+   * @return Request
    */
-  public function __construct(Request $request) {
-    parent::__construct();
-    $this->request = $request;
+  public function getRequest() {
+    return $this->request;
   }
 
+  /**
+   * @param Request $request
+   * @return Response
+   */
+  public function setRequest($request) {
+    $this->request = $request;
+    return $this;
+  }
 
   /**
    * The HTTP Status code.
@@ -266,4 +272,5 @@ class Response extends \WonderPush\Obj\BaseObject {
     $body = $this->parsedBody();
     return new $cls($body);
   }
+
 }
