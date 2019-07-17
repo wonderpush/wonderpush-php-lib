@@ -247,7 +247,7 @@ class Response extends \WonderPush\Obj\BaseObject {
     }
 
     if ($error !== false) {
-      if ($error instanceof \Throwable) {
+      if ($error instanceof \Exception) {
         return new \WonderPush\Errors\Server($this->request, $this, $errorMessage, $errorCode, $error);
       }
       return new \WonderPush\Errors\Server($this->request, $this, $errorMessage, $errorCode);
