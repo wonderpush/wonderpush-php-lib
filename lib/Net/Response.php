@@ -122,7 +122,6 @@ class Response extends \WonderPush\Obj\BaseObject {
     $this->isParsed = null;
     $this->parsedBody = null;
     $this->parseError = null;
-    $this->parseErrorMsg = null;
 
     return $this;
   }
