@@ -3,4 +3,35 @@ set -e
 
 tests/check-missing-classes-in-init-php.sh
 
+# Run unit tests
 ./build.php ${AUTOLOAD-0}
+
+# Lint source against current version of the PHP interpreter
+# (Can't use overtrue/phplint before PHP 5.5.9, let's do it by hand)
+echo Linting files
+(
+    find lib -type f
+    find tests -type f
+) | (
+    # Allow errors in this subshell or the if grep will abort on errors
+    # This won't influence the parent shell and will abort if this step found any error
+    set +e
+    error=0
+    while read file; do
+        output="$(php -d error_reporting=E_ALL -d display_errors=On -l "$file" 2>&1)"
+        if ! echo "$output" | grep -q 'No syntax errors detected'; then
+            echo
+            echo "$output"
+            echo
+            error=1
+        else
+            echo -n .
+        fi
+    done
+    echo
+    if [ "$error" -ne 0 ]; then
+        exit 1
+    fi
+)
+
+echo Tests ran successfully
