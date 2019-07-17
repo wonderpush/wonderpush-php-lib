@@ -1,6 +1,11 @@
 {
   "require-dev": {
     "apigen/apigen": "~4.1",
-    "wonderpush/apigen-theme-bootstrap": "~2.1"
+    "wonderpush/apigen-theme-bootstrap": "~2.1",
+    "nette/di": "2.4.14",
+    "nette/component-model": "2.3.1",
+    "nette/utils": "2.4.10",
+    "kdyby/events": "2.3.1",
+    "doctrine/common": "2.7.3"
   }
 }
