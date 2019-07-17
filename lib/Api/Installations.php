@@ -27,7 +27,7 @@ class Installations {
    */
   public function all($params = array()) {
     $response = $this->wp->rest()->get('/installations', is_array($params) ? $params : $params->toArray());
-    return $response->checkedResult(InstallationCollection::class);
+    return $response->checkedResult('\WonderPush\Obj\InstallationCollection');
   }
 
 }

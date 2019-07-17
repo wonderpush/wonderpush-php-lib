@@ -27,6 +27,6 @@ class Applications {
    */
   public function all($collectionParams = array()) {
     $response = $this->wp->rest()->get('/applications', is_array($collectionParams) ? $collectionParams : $collectionParams->toArray());
-    return $response->checkedResult(ApplicationCollection::class);
+    return $response->checkedResult('\WonderPush\Obj\ApplicationCollection');
   }
 }

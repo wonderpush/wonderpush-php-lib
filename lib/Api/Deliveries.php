@@ -30,7 +30,7 @@ class Deliveries {
    */
   public function create($params) {
     $response = $this->wp->rest()->post('/deliveries', is_array($params) ? $params : $params->toArray());
-    return $response->checkedResult(DeliveriesCreateResponse::class);
+    return $response->checkedResult('\WonderPush\Obj\DeliveriesCreateResponse');
 
   }
 }
