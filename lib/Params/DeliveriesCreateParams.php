@@ -27,8 +27,10 @@ class DeliveriesCreateParams extends BaseObject {
       'campaignId' => $this->campaignId,
       $this->targetType => $this->targetValues,
       'segmentParams' => $this->segmentParams,
-      'notification' => $this->notification,
-      'notificationOverride' => $this->notificationOverride,
+      // With PHP 5.3.x, json_encode strips protected and private properties
+      // Transforming to array to avoid this
+      'notification' => $this->notification ? (object)$this->notification->toArray() : null,
+      'notificationOverride' => $this->notificationOverride ? (is_array($this->notificationOverride) ? $this->notificationOverride : (object)$this->notificationOverride->toArray()) : null,
       'notificationParams' => $this->notificationParams,
       'notificationId' => $this->notificationId,
     ));
