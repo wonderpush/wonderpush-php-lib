@@ -54,6 +54,7 @@ require(dirname(__FILE__) . '/lib/Obj/NotificationPush.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushAndroid.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushIos.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushWeb.php');
+require(dirname(__FILE__) . '/lib/Obj/WebSdkInitOptions.php');
 
 // WonderPush\Params
 require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');

@@ -18,6 +18,8 @@ class Application extends BaseObject {
   private $updateDate;
   /** @var string */
   private $webKey;
+  /** @var WebSdkInitOptions */
+  private $webSdkInitOptions;
 
   /**
    * @return string
@@ -83,4 +85,18 @@ class Application extends BaseObject {
     return $this;
   }
 
+  /**
+   * @return WebSdkInitOptions
+   */
+  public function getWebSdkInitOptions() {
+    return $this->webSdkInitOptions;
+  }
+
+  /**
+   * @param WebSdkInitOptions $webSdkInitOptions
+   */
+  public function setWebSdkInitOptions($webSdkInitOptions) {
+    $this->webSdkInitOptions = BaseObject::instantiateForSetter('\WonderPush\Obj\WebSdkInitOptions', $webSdkInitOptions);
+    return $this;
+  }
 }
