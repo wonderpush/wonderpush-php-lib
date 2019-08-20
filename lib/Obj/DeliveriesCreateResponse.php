@@ -2,32 +2,13 @@
 
 namespace WonderPush\Obj;
 
-class DeliveriesCreateResponse extends BaseObject {
-
-  /** @var boolean */
-  private $success;
+class DeliveriesCreateResponse extends SuccessResponse {
 
   /** @var string */
   private $notificationId;
 
   /** @var string */
   private $campaignId;
-
-  /**
-   * @return bool
-   */
-  public function isSuccess() {
-    return $this->success;
-  }
-
-  /**
-   * @param bool $success
-   * @return DeliveriesCreateResponse
-   */
-  public function setSuccess($success) {
-    $this->success = $success;
-    return $this;
-  }
 
   /**
    * @return string

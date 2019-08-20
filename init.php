@@ -16,6 +16,7 @@ require(dirname(__FILE__) . '/lib/WonderPush.php');
 
 // WonderPush\Obj
 require(dirname(__FILE__) . '/lib/Obj/BaseObject.php');
+require(dirname(__FILE__) . '/lib/Obj/SuccessResponse.php');
 require(dirname(__FILE__) . '/lib/Obj/DeliveriesCreateResponse.php');
 require(dirname(__FILE__) . '/lib/Obj/Pagination.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
@@ -60,6 +61,7 @@ require(dirname(__FILE__) . '/lib/Obj/WebSdkInitOptions.php');
 require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
 require(dirname(__FILE__) . '/lib/Params/DeliveriesCreateParams.php');
 require(dirname(__FILE__) . '/lib/Params/AllInstallationsParams.php');
+require(dirname(__FILE__) . '/lib/Params/PatchInstallationParams.php');
 
 // WonderPush\Net
 require(dirname(__FILE__) . '/lib/Net/Request.php');
