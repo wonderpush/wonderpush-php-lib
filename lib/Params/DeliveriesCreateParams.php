@@ -20,6 +20,23 @@ class DeliveriesCreateParams extends BaseObject {
   private $notificationOverride;
   private $notificationParams;
   private $notificationId;
+  private $deliveryDate;
+
+  /**
+   * @return string|null
+   */
+  public function getDeliveryDate() {
+    return $this->deliveryDate;
+  }
+
+  /**
+   * @param string $deliveryDate
+   * @return DeliveriesCreateParams
+   */
+  public function setDeliveryDate($deliveryDate) {
+    $this->deliveryDate = $deliveryDate;
+    return $this;
+  }
 
   protected function buildDataFromFields() {
     return (object) \WonderPush\Util\ArrayUtil::filterNulls(array(
@@ -33,6 +50,7 @@ class DeliveriesCreateParams extends BaseObject {
       'notificationOverride' => $this->notificationOverride ? (is_array($this->notificationOverride) ? $this->notificationOverride : (object)$this->notificationOverride->toArray()) : null,
       'notificationParams' => $this->notificationParams,
       'notificationId' => $this->notificationId,
+      'deliveryDate' => $this->deliveryDate ? $this->deliveryDate : null,
     ));
   }
 
