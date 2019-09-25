@@ -2,7 +2,7 @@
 <?php
 
 const VERSION_FILENAME = 'lib/WonderPush.php';
-const VERSION_REGEX = '/^(?P<prefix>\s*const\s*VERSION\s*=\s*(?P<quotes>[\'"]))(?P<version>[^(?P=quotes)]+)(?P<suffix>(?P=quotes)\s*;.*)$/m';
+const VERSION_REGEX = '/^(?P<prefix>\s*const\s*VERSION\s*=\s*(?P<quotes>[\'"]))(?P<version>.+)(?P<suffix>(?P=quotes)\s*;.*)$/m';
 $root = __DIR__;
 
 //
