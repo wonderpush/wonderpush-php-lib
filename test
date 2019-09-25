@@ -36,7 +36,7 @@ echo Linting files with PHP interpretor
 
 # Lint source using PHP_CodeSniffer with PHPCompatibility rules
 echo Linting files with PHP_CodeSniffer with PHPCompatibility rules
-vendor/bin/phpcs -p --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ruleset.xml --runtime-set testVersion 5.3 lib/ tests/
+vendor/bin/phpcs --exclude=PHPCompatibility.Upgrade.LowPHP -p --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ruleset.xml --runtime-set testVersion 5.3 lib/ tests/
 
 # We're done
 echo Tests ran successfully
