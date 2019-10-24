@@ -16,6 +16,8 @@ class Application extends BaseObject {
   private $creationDate;
   /** @var integer */
   private $updateDate;
+  /** @var integer */
+  private $trialEndDate;
   /** @var string */
   private $webKey;
   /** @var WebSdkInitOptions */
@@ -66,6 +68,22 @@ class Application extends BaseObject {
    */
   public function setUpdateDate($updateDate) {
     $this->updateDate = $updateDate;
+    return $this;
+  }
+
+  /**
+   * @return int
+   */
+  public function getTrialEndDate() {
+      return $this->trialEndDate;
+  }
+
+  /**
+   * @param int $trialEndDate
+   * @return Application
+   */
+  public function setTrialEndDate($trialEndDate) {
+    $this->trialEndDate = $trialEndDate;
     return $this;
   }
 
