@@ -29,6 +29,21 @@ class DeliveriesTest extends \WonderPush\TestCase {
     $this->assertNotNull($response->getNotificationId());
   }
 
+  public function testSendNotificationArrayParameters() {
+    /** @noinspection PhpUnhandledExceptionInspection */
+    $response = $this->api->create(
+      \WonderPush\Params\DeliveriesCreateParams::_new()
+        ->setTargetSegmentIds('@NOBODY')
+        ->setNotification(array(
+          'alert' => array(
+            'text' => 'Test PHP lib',
+          )))
+    );
+    $this->assertTrue($response->isSuccess());
+    $this->assertSame(\WonderPush\Obj\NullObject::getInstance(), $response->getCampaignId());
+    $this->assertNotNull($response->getNotificationId());
+  }
+
   public function testSendNotificationNoParameter() {
     $exception = null;
     try {

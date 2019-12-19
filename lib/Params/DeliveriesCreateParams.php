@@ -46,7 +46,7 @@ class DeliveriesCreateParams extends BaseObject {
       'segmentParams' => $this->segmentParams,
       // With PHP 5.3.x, json_encode strips protected and private properties
       // Transforming to array to avoid this
-      'notification' => $this->notification ? (object)$this->notification->toArray() : null,
+      'notification' => $this->notification ? (is_array($this->notification) ? $this->notification : (object)$this->notification->toArray()) : null,
       'notificationOverride' => $this->notificationOverride ? (is_array($this->notificationOverride) ? $this->notificationOverride : (object)$this->notificationOverride->toArray()) : null,
       'notificationParams' => $this->notificationParams,
       'notificationId' => $this->notificationId,
