@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/index.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.Api.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.Errors.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.Net.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.Obj.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.Params.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/namespace-WonderPush.Util.html</loc>
+</url>
+
+
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Api.Applications.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Api.Deliveries.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Api.Installations.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Api.Rest.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Net.CurlHttpClient.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Net.Request.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Net.Response.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.Application.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.ApplicationCollection.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.BaseObject.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.Collection.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.DeliveriesCreateResponse.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.Event.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.GeoLocation.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.Installation.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationApplication.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationApplicationApple.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationCollection.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationDevice.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationDeviceCapabilities.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationDeviceConfiguration.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationPreferences.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.InstallationPushToken.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.Notification.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlert.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertAndroid.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertAndroidButton.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertIos.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertIosAttachment.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertIosForeground.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertWeb.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationAlertWebButton.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationButton.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationButtonAction.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationButtonActionEvent.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationInApp.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationInAppButton.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationInAppMap.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationInAppMapPlace.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationPush.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationPushAndroid.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationPushIos.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NotificationPushWeb.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.NullObject.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.Pagination.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.SuccessResponse.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.User.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Obj.WebSdkInitOptions.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Params.AllInstallationsParams.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Params.CollectionParams.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Params.DeliveriesCreateParams.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Params.PatchInstallationParams.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.ArrayUtil.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.DefaultLogger.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.JsonSerializable.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.StringUtil.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.TimeUnit.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.TimeUtil.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.TimeValue.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.UrlUtil.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.WonderPush.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Net.HttpClientInterface.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Util.Logger.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Errors.Base.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Errors.Network.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Errors.Parsing.html</loc>
+</url>
+<url>
+	<loc>https://wonderpush.github.io/wonderpush-php-lib/latest/class-WonderPush.Errors.Server.html</loc>
+</url>
+</urlset>

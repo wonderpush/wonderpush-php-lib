@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Class WonderPush\WonderPush | WonderPush PHP library</title>
+
+	<link rel="stylesheet" href="resources/style.css?5936c15f060ee0d20e7fc41c55c9f5fed17c11d7">
+
+														</head>
+
+<body>
+	<nav class="navbar">
+		<svg width="50" height="50" viewBox="23.177 138.194 50 50" xmlns="http://www.w3.org/2000/svg" class="sidebar-toggle" role="button" aria-pressed="false"><path d="M73.18 146.94c0 .7-.43 1.25-.96 1.25H24.14c-.53 0-.96-.58-.96-1.26v-7.5c0-.7.43-1.26.96-1.26h48.08c.53 0 .96.55.96 1.24v7.5zm0 12.5c0-.7-.43-1.25-.96-1.25H24.14c-.53 0-.96.54-.96 1.23v7.5c0 .7.43 1.25.96 1.25h48.08c.53 0 .96-.56.96-1.26v-7.5zm0 20c0-.7-.43-1.25-.96-1.25H24.14c-.53 0-.96.54-.96 1.23v7.5c0 .7.43 1.25.96 1.25h48.08c.53 0 .96-.57.96-1.26v-7.5z"></path></svg>
+        <div class="navbar-brand"><a href="index.html">WonderPush PHP library</a></div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+	                        <li>
+                    <a href="namespace-WonderPush.html" title="Summary of WonderPush"><span class="nav-link">Namespace</span></a>
+                </li>
+                <li class="active">
+<span class="nav-link">Class</span>                </li>
+
+
+
+
+
+
+            </ul>
+
+	        <form id="search" role="search" accept-charset="UTF-8" class="search-wrapper">
+		        <svg viewBox="0 0 512 640" xmlns="http://www.w3.org/2000/svg"><path d="M215.64 62.7a154.5 154.5 0 1 1-154.5 154.5 154.5 154.5 0 0 1 154.5-154.5m0-61.14a215.68 215.68 0 0 0-84 414.31A215.68 215.68 0 0 0 299.59 18.52a214.35 214.35 0 0 0-84-17z"></path><path d="M315.188 356.876l43.232-43.233L511.997 467.22l-43.233 43.232z"></path></svg>
+		        <input class="search-query"
+		               size="8"
+		               data-hotkey="s" name="q" placeholder="Search"
+		               aria-label="Search this document"
+		               data-unscoped-placeholder="Search GitHub"
+		               data-scoped-placeholder="Search"
+		               autocapitalize="off"
+		               type="text">
+	        </form>
+        </div>
+	</nav>
+
+	<div class="veil"></div>
+
+	<aside class="sidebar">
+		<nav>
+			<div id="navigation-mirror">
+				<strong>Navigation</strong>
+				<ul>                <li>
+                    <a href="namespace-WonderPush.html" title="Summary of WonderPush"><span class="nav-link">Namespace</span></a>
+                </li>
+                <li class="active">
+<span class="nav-link">Class</span>                </li>
+
+
+
+
+
+</ul>
+			</div>
+
+
+		<div id="groups">
+				<strong>Namespaces</strong>
+			<ul>
+					<li class="active">
+						<a href="namespace-WonderPush.html">
+							WonderPush<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-WonderPush.Api.html">
+							Api						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Errors.html">
+							Errors						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Net.html">
+							Net						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Obj.html">
+							Obj						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Params.html">
+							Params						</a>
+							</li>
+					<li>
+						<a href="namespace-WonderPush.Util.html">
+							Util						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<strong>Classes</strong>
+			<ul>
+				<li class="active"><a href="class-WonderPush.WonderPush.html">WonderPush</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</nav>
+</aside>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1><span class="type">Class</span> WonderPush</h1>
+
+
+	<div class="description">
+	<p><strong>WonderPush library entry class.</strong></p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WonderPush.html">WonderPush</a><br>
+		
+
+			<b>Located at</b> WonderPush.php		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<div class="summary" id="methods">
+		<div data-order="__construct" id="___construct" class="element">
+			<a class="anchor" href="#___construct"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">__construct</span>( <span class="method-param"><span class="type">string</span> <code class="parameter">$accessToken</code><span class="initializer"></span>, <span class="method-param"><span class="type">string</span> <code class="parameter">$applicationId</code><span class="initializer"> = null</span></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Constructs the library instance that you can use to send API calls against WonderPush.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Constructs the library instance that you can use to send API calls against WonderPush.</p>
+
+<p>This is the library entry-point.</p>
+
+<p>Relying on an instance instead of a static enables you to easily handle multiple projects,
+and does not prevent you from creating your own static singleton instance out of it.</p>
+
+<p>You can find your credentials in the <em>Settings</em> / <em>Configuration</em> page of <a href="https://dashboard.wonderpush.com/">your project dashboard</a>.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$accessToken</code></dt>
+						<dd>The Management API access token used to perform API calls.</dd>
+						<dt><code class="parameter">$applicationId</code></dt>
+						<dd>The application id corresponding to the access token.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getAccessToken" id="_getAccessToken" class="element">
+			<a class="anchor" href="#_getAccessToken"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">getAccessToken</span>( void )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				<p>The Management API access token used to perform API calls.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The Management API access token used to perform API calls.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getApplicationId" id="_getApplicationId" class="element">
+			<a class="anchor" href="#_getApplicationId"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">getApplicationId</span>( void )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				<p>The application id corresponding to the access token.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The application id corresponding to the access token.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getGlobalLogger" id="_getGlobalLogger" class="element">
+			<a class="anchor" href="#_getGlobalLogger"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><span class="name">getGlobalLogger</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Util.Logger.html">WonderPush\Util\Logger</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>The logger to which the library will produce messages, when used outside the scope of a WonderPush instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The logger to which the library will produce messages, when used outside the scope of a WonderPush instance.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Util.Logger.html">WonderPush\Util\Logger</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setGlobalLogger" id="_setGlobalLogger" class="element">
+			<a class="anchor" href="#_setGlobalLogger"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public static
+				
+				</span>
+
+				<span><span class="name">setGlobalLogger</span>( <span class="method-param"><span class="type"><code><a href="class-WonderPush.Util.Logger.html">WonderPush\Util\Logger</a></code></span> <code class="parameter">$logger</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Set the logger to which the library will produce messages, when used outside the scope of a WonderPush instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set the logger to which the library will produce messages, when used outside the scope of a WonderPush instance.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$logger</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getLogger" id="_getLogger" class="element">
+			<a class="anchor" href="#_getLogger"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">getLogger</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Util.Logger.html">WonderPush\Util\Logger</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>The logger to which the library will produce messages.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The logger to which the library will produce messages.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Util.Logger.html">WonderPush\Util\Logger</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setLogger" id="_setLogger" class="element">
+			<a class="anchor" href="#_setLogger"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">setLogger</span>( <span class="method-param"><span class="type"><code><a href="class-WonderPush.Util.Logger.html">WonderPush\Util\Logger</a></code></span> <code class="parameter">$logger</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Set the logger to which the library will produce messages.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set the logger to which the library will produce messages.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$logger</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getHttpClient" id="_getHttpClient" class="element">
+			<a class="anchor" href="#_getHttpClient"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">getHttpClient</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Net.HttpClientInterface.html">WonderPush\Net\HttpClientInterface</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>The HTTP client to use to perform API calls.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The HTTP client to use to perform API calls.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Net.HttpClientInterface.html">WonderPush\Net\HttpClientInterface</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="setHttpClient" id="_setHttpClient" class="element">
+			<a class="anchor" href="#_setHttpClient"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">setHttpClient</span>( <span class="method-param"><span class="type"><code><a href="class-WonderPush.Net.HttpClientInterface.html">WonderPush\Net\HttpClientInterface</a></code></span> <code class="parameter">$httpClient</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>Set the HTTP client to use to perform API calls.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set the HTTP client to use to perform API calls.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$httpClient</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getApiBase" id="_getApiBase" class="element">
+			<a class="anchor" href="#_getApiBase"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">getApiBase</span>( void )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				<p>The API base against which to place API calls.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The API base against which to place API calls.</p>
+
+<p>This is mostly useful for developing the PHP library itself, you should ignore it.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-WonderPush.WonderPush.html#API_BASE">WonderPush\WonderPush::<b>API_BASE</b></a></code><br>
+					</div>
+
+
+			</div>
+		</div>
+		<div data-order="setApiBase" id="_setApiBase" class="element">
+			<a class="anchor" href="#_setApiBase"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">setApiBase</span>( <span class="method-param"><span class="type">string</span> <code class="parameter">$apiBase</code><span class="initializer"></span> )
+				</span>
+
+				
+			</code>
+
+			<div class="description short">
+				<p>The API base against which to place API calls.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The API base against which to place API calls.</p>
+
+<p>This is mostly useful for developing the PHP library itself, you should ignore it.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><code class="parameter">$apiBase</code></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+		</div>
+		<div data-order="getApiRoot" id="_getApiRoot" class="element">
+			<a class="anchor" href="#_getApiRoot"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">getApiRoot</span>( void )
+				</span>
+
+				: <span class="type">string</span>
+			</code>
+
+			<div class="description short">
+				<p>The API root against which to place API calls.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The API root against which to place API calls.</p>
+
+<p>Builds on the API base, API version and API prefix.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-WonderPush.WonderPush.html#_getApiBase">WonderPush\WonderPush::getApiBase()</a></code><br>
+							<code><a href="class-WonderPush.WonderPush.html#API_VERSION">WonderPush\WonderPush::<b>API_VERSION</b></a></code><br>
+							<code><a href="class-WonderPush.WonderPush.html#API_PREFIX">WonderPush\WonderPush::<b>API_PREFIX</b></a></code><br>
+					</div>
+
+
+			</div>
+		</div>
+		<div data-order="rest" id="_rest" class="element">
+			<a class="anchor" href="#_rest"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">rest</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Api.Rest.html">WonderPush\Api\Rest</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>Rest API instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Rest API instance.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Api.Rest.html">WonderPush\Api\Rest</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="deliveries" id="_deliveries" class="element">
+			<a class="anchor" href="#_deliveries"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">deliveries</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Api.Deliveries.html">WonderPush\Api\Deliveries</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>Deliveries endpoints.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Deliveries endpoints.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Api.Deliveries.html">WonderPush\Api\Deliveries</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="applications" id="_applications" class="element">
+			<a class="anchor" href="#_applications"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">applications</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Api.Applications.html">WonderPush\Api\Applications</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>Application endpoints</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Application endpoints</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Api.Applications.html">WonderPush\Api\Applications</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		<div data-order="installations" id="_installations" class="element">
+			<a class="anchor" href="#_installations"></a>
+			<code class="signature">
+				<span class="modifier">
+				 public 
+				
+				</span>
+
+				<span><span class="name">installations</span>( void )
+				</span>
+
+				: <span class="type"><code><a href="class-WonderPush.Api.Installations.html">WonderPush\Api\Installations</a></code></span>
+			</code>
+
+			<div class="description short">
+				<p>Installation endpoints</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Installation endpoints</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-WonderPush.Api.Installations.html">WonderPush\Api\Installations</a></code>
+					</div>
+
+
+
+
+			</div>
+		</div>
+		</div>
+
+
+
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<div class="summary constants" id="constants">
+		<div data-order="API_BASE" id="API_BASE" class="element">
+			<a href="#API_BASE" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+<b>API_BASE</b>				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				<p>API base URL.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>API base URL.</p>
+
+<p>Must contain scheme, host and optional port.
+Can contain an additional path.
+Must not end with a slash.</p>
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-WonderPush.WonderPush.html#_getApiBase">WonderPush\WonderPush::getApiBase()</a></code><br>
+							<code><a href="class-WonderPush.WonderPush.html#_getApiRoot">WonderPush\WonderPush::getApiRoot()</a></code><br>
+					</div>
+			</div>
+
+			<pre class="value"><span class="php-quote">'https://management-api.wonderpush.com'</span></pre>
+		</div>
+		<div data-order="API_VERSION" id="API_VERSION" class="element">
+			<a href="#API_VERSION" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+<b>API_VERSION</b>				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				<p>API version.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>API version.</p>
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-WonderPush.WonderPush.html#_getApiRoot">WonderPush\WonderPush::getApiRoot()</a></code><br>
+					</div>
+			</div>
+
+			<pre class="value"><span class="php-quote">'v1'</span></pre>
+		</div>
+		<div data-order="API_PREFIX" id="API_PREFIX" class="element">
+			<a href="#API_PREFIX" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+<b>API_PREFIX</b>				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				<p>API prefix.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>API prefix.</p>
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-WonderPush.WonderPush.html#_getApiRoot">WonderPush\WonderPush::getApiRoot()</a></code><br>
+					</div>
+			</div>
+
+			<pre class="value"><span class="php-quote">''</span></pre>
+		</div>
+		<div data-order="VERSION" id="VERSION" class="element">
+			<a href="#VERSION" class="anchor"></a>
+
+			<code class="signature">
+				<span class="name">
+<b>VERSION</b>				</span>
+
+                <span class="type">: string</span>
+			</code>
+
+			<div class="description short">
+				<p>WonderPush PHP library version.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>WonderPush PHP library version.</p>
+
+			</div>
+
+			<pre class="value"><span class="php-quote">'2.1.0'</span></pre>
+		</div>
+		</div>
+
+
+
+
+</div>
+	</div>
+
+	<footer>
+		WonderPush PHP library API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</footer>
+</div>
+
+    <div id="assets" aria-hidden="true">
+
+        <svg data-asset="icon-anchor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M 4 9 L 5 9 L 5 10 L 4 10 C 2.5 10 1 8.31 1 6.5 C 1 4.69 2.55 3 4 3 L 6.442 3 L 8 3 C 9.45 3 11 4.69 11 6.5 C 11 7.91 10.09 9.22 9 9.75 L 9 8.59 C 9.58 8.14 10 7.32 10 6.5 C 10 5.22 8.98 4 8 4 L 4 4 C 3.02 4 2 5.22 2 6.5 C 2 7.78 3 9 4 9 Z M 13 6 L 12 6 L 12 7 L 12.679 7 L 13 7 C 14 7 15 8.22 15 9.5 C 15 10.78 13.98 12 13 12 L 9 12 C 8.02 12 7 10.78 7 9.5 C 7 8.67 7.42 7.86 8 7.41 L 8 6.25 C 6.91 6.78 6 8.09 6 9.5 C 6 11.31 7.55 13 9 13 L 13 13 C 14.45 13 16 11.31 16 9.5 C 16 7.69 14.5 6 13 6 Z"></path>
+        </svg>
+
+    </div>
+
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
