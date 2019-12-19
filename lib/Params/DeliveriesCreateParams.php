@@ -73,6 +73,16 @@ class DeliveriesCreateParams extends BaseObject {
   }
 
   /**
+   * @param string|string[] $targetTag A single tag, an array of tags, or multiple tag parameters.
+   * @return $this
+   */
+  public function setTargetTags($targetTag) {
+    $this->targetType = 'targetTags';
+    $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
+    return $this;
+  }
+
+  /**
    * @param string|string[] $segmentId A single id, an array of ids, or multiple id parameters.
    * @return $this
    */
