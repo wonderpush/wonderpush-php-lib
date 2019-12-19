@@ -33,7 +33,7 @@ class WonderPush {
   /**
    * WonderPush PHP library version.
    */
-  const VERSION = '2.0.1-dev';
+  const VERSION = '2.1.0';
 
   /** @var string */
   private $accessToken;
