@@ -2,6 +2,8 @@
 
 namespace WonderPush\Errors;
 
+use WonderPush\Net\CurlHttpClient;
+
 /**
  * Network related errors, and API error responses.
  */
@@ -14,7 +16,17 @@ class Network extends Base {
   protected $response;
 
   public function __construct(\WonderPush\Net\Request $request, \WonderPush\Net\Response $response) {
-    parent::__construct('Network');
+    $msg = 'Network';
+    if ($response && $response->getHeaders()) {
+      $headers = $response->getHeaders();
+      $bits = array();
+      $curlMessage = isset($headers[CurlHttpClient::HEADER_CURL_ERROR]) ? $headers[CurlHttpClient::HEADER_CURL_ERROR] : null;
+      if ($curlMessage) $bits []= $curlMessage;
+      $curlCode = isset($headers[CurlHttpClient::HEADER_CURL_ERRNO]) ? $headers[CurlHttpClient::HEADER_CURL_ERRNO] : null;
+      if ($curlCode) $bits []= "(" . $curlCode . ")";
+      if (sizeof($bits)) $msg = join(' ', $bits);
+    }
+    parent::__construct($msg);
     $this->request = $request;
     $this->response = $response;
   }
