@@ -99,7 +99,7 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
     foreach ($methods as $method) {
       if (!$method->isStatic() && \WonderPush\Util\StringUtil::beginsWith($method->name, 'get')) {
         $field = substr($method->name, 3);
-        $field{0} = strtolower($field{0});
+        $field[0] = strtolower($field[0]);
         $value = $method->invoke($this);
         if ($value !== null) {
           $data->{$field} = $this->buildDataFromField($value);
