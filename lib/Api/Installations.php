@@ -1,6 +1,9 @@
 <?php
 
 namespace WonderPush\Api;
+
+if (count(get_included_files()) === 1) { http_response_code(403); exit(); } // Prevent direct access
+
 use WonderPush\Obj\InstallationCollection;
 use WonderPush\Params\AllInstallationsParams;
 use WonderPush\Params\PatchInstallationParams;
