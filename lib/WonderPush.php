@@ -81,6 +81,12 @@ class WonderPush {
   private $applications;
 
   /**
+   * Lazily initialized Segments endpoints.
+   * @var Api\Segments
+   */
+  private $segments;
+
+  /**
    * Lazily initialized Installations endpoints.
    * @var Api\Installations
    */
@@ -241,6 +247,17 @@ class WonderPush {
       $this->applications = new Api\Applications($this);
     }
     return $this->applications;
+  }
+
+  /**
+   * Segments endpoints
+   * @return Api\Segments
+   */
+  public function segments() {
+    if ($this->segments === null) {
+      $this->segments = new Api\Segments($this);
+    }
+    return $this->segments;
   }
 
   /**
