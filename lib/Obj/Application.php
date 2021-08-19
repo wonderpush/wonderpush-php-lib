@@ -24,6 +24,8 @@ class Application extends BaseObject {
   private $webKey;
   /** @var WebSdkInitOptions */
   private $webSdkInitOptions;
+  /** @var object */
+  private $urlParameters;
 
   /**
    * @return string
@@ -117,6 +119,24 @@ class Application extends BaseObject {
    */
   public function setWebSdkInitOptions($webSdkInitOptions) {
     $this->webSdkInitOptions = BaseObject::instantiateForSetter('\WonderPush\Obj\WebSdkInitOptions', $webSdkInitOptions);
+    return $this;
+  }
+
+  /**
+   * @return object
+   */
+  public function getUrlParameters()
+  {
+    return $this->urlParameters ?: (object)array();
+  }
+
+  /**
+   * @param object $urlParameters
+   * @return Application
+   */
+  public function setUrlParameters($urlParameters)
+  {
+    $this->urlParameters = (object)$urlParameters;
     return $this;
   }
 }

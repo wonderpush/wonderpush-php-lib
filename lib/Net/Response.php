@@ -265,14 +265,14 @@ class Response extends \WonderPush\Obj\BaseObject {
    * @return mixed
    * @throws \WonderPush\Errors\Base
    */
-  public function checkedResult($cls) {
+  public function checkedResult($cls, $key = null) {
     $exception = $this->exception();
     if ($exception) {
       throw $exception;
     }
     $this->parseBody();
     $body = $this->parsedBody();
-    return new $cls($body);
+    return new $cls($key ? $body->{$key} : $body);
   }
 
 }

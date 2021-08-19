@@ -32,4 +32,9 @@ class Applications {
     $response = $this->wp->rest()->get('/applications', is_array($collectionParams) ? $collectionParams : $collectionParams->toArray());
     return $response->checkedResult('\WonderPush\Obj\ApplicationCollection');
   }
+
+  public function patch($applicationId, $body = array(), $params = array()) {
+    $response = $this->wp->rest()->patch('/applications/' . $applicationId, array_merge($params, array('body' => $body)));
+    return $response->checkedResult('\WonderPush\Obj\Application', 'application');
+  }
 }
