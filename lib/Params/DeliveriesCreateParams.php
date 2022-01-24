@@ -23,8 +23,25 @@ class DeliveriesCreateParams extends BaseObject {
   private $notificationParams;
   private $notificationId;
   private $deliveryDate;
+  private $deliveryTime;
   /** @var bool */
   private $inheritUrlParameters;
+
+  /**
+   * @return string|null
+   */
+  public function getDeliveryTime() {
+    return $this->deliveryTime;
+  }
+
+  /**
+   * @param string $deliveryTime
+   * @return DeliveriesCreateParams
+   */
+  public function setDeliveryTime($deliveryTime) {
+    $this->deliveryTime = $deliveryTime;
+    return $this;
+  }
 
   /**
    * @return string|null
@@ -55,6 +72,7 @@ class DeliveriesCreateParams extends BaseObject {
       'notificationParams' => $this->notificationParams,
       'notificationId' => $this->notificationId,
       'deliveryDate' => $this->deliveryDate ? $this->deliveryDate : null,
+      'deliveryTime' => $this->deliveryTime ? $this->deliveryTime : null,
       'inheritUrlParameters' => (bool)$this->inheritUrlParameters,
     ));
   }
