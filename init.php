@@ -64,6 +64,7 @@ require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
 require(dirname(__FILE__) . '/lib/Params/DeliveriesCreateParams.php');
 require(dirname(__FILE__) . '/lib/Params/AllInstallationsParams.php');
 require(dirname(__FILE__) . '/lib/Params/PatchInstallationParams.php');
+require(dirname(__FILE__) . '/lib/Params/TrackEventParams.php');
 
 // WonderPush\Net
 require(dirname(__FILE__) . '/lib/Net/Request.php');
@@ -83,3 +84,4 @@ require(dirname(__FILE__) . '/lib/Api/Deliveries.php');
 require(dirname(__FILE__) . '/lib/Api/Applications.php');
 require(dirname(__FILE__) . '/lib/Api/Segments.php');
 require(dirname(__FILE__) . '/lib/Api/Installations.php');
+require(dirname(__FILE__) . '/lib/Api/Events.php');

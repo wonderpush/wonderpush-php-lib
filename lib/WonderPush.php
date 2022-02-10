@@ -93,6 +93,12 @@ class WonderPush {
   private $installations;
 
   /**
+   * Lazily initialized Events endpoints.
+   * @var Api\Events
+   */
+  private $events;
+
+  /**
    * Constructs the library instance that you can use to send API calls against WonderPush.
    *
    * This is the library entry-point.
@@ -269,6 +275,17 @@ class WonderPush {
       $this->installations = new Api\Installations($this);
     }
     return $this->installations;
+  }
+
+  /**
+   * Event endpoints
+   * @return Api\Events
+   */
+  public function events() {
+    if ($this->events === null) {
+      $this->events = new Api\Events($this);
+    }
+    return $this->events;
   }
 
 }
