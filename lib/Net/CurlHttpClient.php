@@ -59,12 +59,16 @@ class CurlHttpClient implements HttpClientInterface {
           $body = null;
         } else {
           $headers['Content-Type'] = 'application/json';
+          $options = 0;
           if (defined('JSON_UNESCAPED_SLASHES')) {
-            // @codingStandardsIgnoreLine
-            $body = json_encode($body, JSON_UNESCAPED_SLASHES);
-          } else {
-            $body = json_encode($body);
+            $options |= JSON_UNESCAPED_SLASHES;
           }
+          if (defined('JSON_INVALID_UTF8_SUBSTITUTE')) {
+            $options |= JSON_INVALID_UTF8_SUBSTITUTE;
+          } else if (defined('JSON_PARTIAL_OUTPUT_ON_ERROR')) {
+            $options |= JSON_PARTIAL_OUTPUT_ON_ERROR;
+          }
+          $body = json_encode($body, $options);
         }
         break;
     }
