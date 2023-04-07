@@ -127,8 +127,9 @@ class BaseObject implements \WonderPush\Util\JsonSerializable {
 
   /**
    * Implements JsonSerializable
-   * @return \stdClass
+   * @return mixed
    */
+  #[\ReturnTypeWillChange]
   public function jsonSerialize() {
     return $this->toData();
   }
