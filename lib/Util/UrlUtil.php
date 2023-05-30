@@ -56,7 +56,7 @@ class UrlUtil {
     if (!is_string($qs) && $qs !== null) {
       if (defined('PHP_QUERY_RFC3986')) {
         // @codingStandardsIgnoreLine
-        $qs = http_build_query($qs, null, '&', PHP_QUERY_RFC3986);
+        $qs = http_build_query($qs, '', '&', PHP_QUERY_RFC3986);
       } else {
         $qs = http_build_query($qs);
       }
