@@ -93,6 +93,12 @@ class WonderPush {
   private $installations;
 
   /**
+   * Lazily initialized Stats endpoints
+   * @var Api/Stats
+   */
+  private $stats;
+
+  /**
    * Lazily initialized Events endpoints.
    * @var Api\Events
    */
@@ -275,6 +281,17 @@ class WonderPush {
       $this->installations = new Api\Installations($this);
     }
     return $this->installations;
+  }
+
+  /**
+   * Stats endpoints
+   * @return Api\Stats
+   */
+  public function stats() {
+    if ($this->stats === null) {
+      $this->stats = new Api\Stats($this);
+    }
+    return $this->stats;
   }
 
   /**
