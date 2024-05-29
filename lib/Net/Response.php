@@ -187,7 +187,7 @@ class Response extends \WonderPush\Obj\BaseObject {
       }
     }
     if ($jsonParseError !== JSON_ERROR_NONE) {
-      $this->parseError = new \WonderPush\Errors\Parsing($jsonParseError, $jsonParseErrorMsg);
+      $this->parseError = new \WonderPush\Errors\Parsing($jsonParseError, $jsonParseErrorMsg . ' body:' . ($this->rawBody ?: '') . ' status:' . $this->statusCode . ' headers:' . ($this->headers ? json_encode($this->headers) : ''));
     }
     $this->isParsed = true;
   }
