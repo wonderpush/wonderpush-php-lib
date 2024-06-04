@@ -25,11 +25,14 @@ class CurlHttpClient implements HttpClientInterface {
    */
   private $wp;
 
+  /** @var array */
+  private $options;
   /**
    * @param \WonderPush\WonderPush $wonderPush WonderPush instance whose credentials are to be used.
    */
-  public function __construct(\WonderPush\WonderPush $wonderPush) {
+  public function __construct(\WonderPush\WonderPush $wonderPush, $options = array()) {
     $this->wp = $wonderPush;
+    $this->options = $options ?: array();
   }
 
   public function execute(Request $request) {
@@ -118,6 +121,12 @@ class CurlHttpClient implements HttpClientInterface {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADERFUNCTION, $readHeaderCallback);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+    if (array_key_exists('ipv4', $this->options)
+      && $this->options['ipv4']
+      && defined('CURLOPT_IPRESOLVE')
+      && defined('CURL_IPRESOLVE_V4')){
+      curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+    }
     if ($headers !== null) {
       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     }
