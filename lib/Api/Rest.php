@@ -37,10 +37,10 @@ class Rest {
     }
     $rtn->setPath($path);
     $rtn->setParams($params);
-    $rtn->setQsParams(array_filter(array(
-        'accessToken' => $this->wp->getAccessToken(),
-        'applicationId' => $this->wp->getApplicationId(), // filtered if null
-    )));
+    $rtn->setQsParam('applicationId', $this->wp->getApplicationId()); // filtered if null
+    if ($this->wp->getCredentials()) {
+      $this->wp->getCredentials()->authenticate($rtn);
+    }
     return $rtn;
   }
 

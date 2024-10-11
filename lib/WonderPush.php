@@ -2,6 +2,8 @@
 
 namespace WonderPush;
 
+use WonderPush\Net\Request;
+
 if (count(get_included_files()) === 1) { http_response_code(403); exit(); } // Prevent direct access
 
 /**
@@ -10,7 +12,7 @@ if (count(get_included_files()) === 1) { http_response_code(403); exit(); } // P
 class WonderPush {
 
   /**
-   * API base URL.
+   * WonderPush Management API base URL.
    *
    * Must contain scheme, host and optional port.
    * Can contain an additional path.
@@ -18,7 +20,23 @@ class WonderPush {
    * @see getApiBase()
    * @see getApiRoot()
    */
-  const API_BASE = 'https://management-api.wonderpush.com'; // DO NOT END WITH SLASH
+  const WONDERPUSH_MANAGEMENT_API_BASE = 'https://management-api.wonderpush.com'; // DO NOT END WITH SLASH
+
+  /**
+   * @deprecated
+   */
+  const API_BASE = self::WONDERPUSH_MANAGEMENT_API_BASE;
+
+  /**
+   * Brevo Management API base URL.
+   *
+   * Must contain scheme, host and optional port.
+   * Can contain an additional path.
+   * Must not end with a slash.
+   * @see getApiBase()
+   * @see getApiRoot()
+   */
+  const BREVO_API_BASE = 'https://api.brevo.com/v3/wonderpush'; // DO NOT END WITH SLASH
 
   /**
    * API version.
@@ -37,8 +55,8 @@ class WonderPush {
    */
   const VERSION = '2.1.2-dev';
 
-  /** @var string */
-  private $accessToken;
+  /** @var Credentials */
+  private $credentials;
   /** @var string */
   private $applicationId;
   /** @var string */
@@ -114,14 +132,18 @@ class WonderPush {
    *
    * You can find your credentials in the _Settings_ / _Configuration_ page of {@link https://dashboard.wonderpush.com/ your project dashboard}.
    *
-   * @param string $accessToken
+   * @param string|Credentials A credentials object, or a WonderPush access token string
    *    The Management API access token used to perform API calls.
    * @param string $applicationId
    *    The application id corresponding to the access token.
    */
-  public function __construct($accessToken, $applicationId = null) {
-    $this->accessToken = $accessToken;
+  public function __construct($credentials, $applicationId = null) {
+    $this->credentials = is_string($credentials) ? new AccessTokenCredentials($credentials) : $credentials;
     $this->applicationId = $applicationId;
+  }
+
+  public function getCredentials() {
+    return $this->credentials;
   }
 
   /**
@@ -197,10 +219,16 @@ class WonderPush {
    * This is mostly useful for developing the PHP library itself, you should ignore it.
    *
    * @return string
-   * @see API_BASE
+   * @see WONDERPUSH_MANAGEMENT_API_BASE
    */
   public function getApiBase() {
-    return $this->apiBase ?: self::API_BASE;
+    if ($this->apiBase) {
+      return $this->apiBase;
+    }
+    if ($this->credentials instanceof BrevoAPIKeyV3Credentials) {
+      return self::BREVO_API_BASE;
+    }
+    return self::WONDERPUSH_MANAGEMENT_API_BASE;
   }
 
   /**
@@ -303,6 +331,44 @@ class WonderPush {
       $this->events = new Api\Events($this);
     }
     return $this->events;
+  }
+
+}
+
+interface Credentials {
+  /**
+   * @param Request $request
+   * @return mixed
+   */
+  public function authenticate($request);
+}
+
+class AccessTokenCredentials implements Credentials {
+
+  /** @var string */
+  var $accessToken;
+
+  public function __construct($accessToken = null) {
+    $this->accessToken = $accessToken;
+  }
+
+  public function authenticate($request) {
+    $request->setQsParam('accessToken', $this->accessToken);
+  }
+
+}
+
+class BrevoAPIKeyV3Credentials implements Credentials {
+
+  /** @var string */
+  var $apiKey;
+
+  public function __construct($apiKey = null) {
+    $this->apiKey = $apiKey;
+  }
+
+  public function authenticate($request) {
+    $request->setHeader('api-key', $this->apiKey);
   }
 
 }

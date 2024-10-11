@@ -52,7 +52,7 @@ class CurlHttpClient implements HttpClientInterface {
     switch ($request->getMethod()) {
       case Request::GET:
       case Request::DELETE:
-        $qsParams = array_merge($qsParams, $request->getParams());
+        $qsParams = array_merge($qsParams ?: array(), $request->getParams());
         break;
       case Request::PUT:
       case Request::POST:

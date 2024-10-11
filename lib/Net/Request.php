@@ -173,6 +173,24 @@ class Request extends \WonderPush\Obj\BaseObject {
   }
 
   /**
+   * @param $key
+   * @param $value
+   * @return $this
+   */
+  public function setQsParam($key, $value) {
+    if ($key === null) return $this;
+    if (!$this->qsParams) {
+      $this->qsParams = array();
+    }
+    if ($value === null) {
+      unset($this->qsParams[$key]);
+    } else {
+      $this->qsParams[$key] = $value;
+    }
+    return $this;
+  }
+
+  /**
    * The body parameters.
    *
    * These parameters may be promoted to query string parameters, depending on the HTTP method used.
@@ -214,4 +232,21 @@ class Request extends \WonderPush\Obj\BaseObject {
     return $this;
   }
 
+  /**
+   * @param $key
+   * @param $value
+   * @return $this
+   */
+  public function setHeader($key, $value) {
+    if ($key === null) return $this;
+    if (!$this->headers) {
+      $this->headers = array();
+    }
+    if ($value === null) {
+      unset($this->headers[$key]);
+    } else {
+      $this->headers[$key] = $value;
+    }
+    return $this;
+  }
 }
