@@ -9,6 +9,9 @@ if (count(get_included_files()) === 1) { http_response_code(403); exit(); } // P
  */
 class CurlHttpClient implements HttpClientInterface {
 
+  public static $logging = false;
+  public static $loggingResponses = false;
+
   /**
    * The fake HTTP header that will hold the output of `curl_errno()`.
    */
@@ -132,7 +135,11 @@ class CurlHttpClient implements HttpClientInterface {
     }
 
     // Execute cURL request
+    $start = microtime(true);
     $rawResponse = curl_exec($ch);
+    if (self::$logging) {
+      error_log('--> ' . $request->getMethod() . ' ' . $url . ' ' . $body . (empty($headers) ? '' : ' ' . json_encode($headers)) . ' (' . intval(1000 * (microtime(true) - $start)) . 'ms)');
+    }
 
     // Parse response
     $response = new Response();
@@ -152,6 +159,10 @@ class CurlHttpClient implements HttpClientInterface {
       $response->setStatusCode(curl_getinfo($ch, CURLINFO_HTTP_CODE));
       $response->setHeaders($responseHeaders);
 
+    }
+
+    if (self::$logging && self::$loggingResponses) {
+      error_log('<-- (' . $response->getStatusCode() . ') ' . ($response->getRawBody() ?: '<no body>') . (empty($response->getHeaders()) ? '' : ' ' . json_encode($response->getHeaders())));
     }
 
     // Cleanup
