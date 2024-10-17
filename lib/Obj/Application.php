@@ -26,6 +26,8 @@ class Application extends BaseObject {
   private $webSdkInitOptions;
   /** @var object */
   private $urlParameters;
+  /** @var string */
+  private $status;
 
   /**
    * @return string
@@ -137,6 +139,24 @@ class Application extends BaseObject {
   public function setUrlParameters($urlParameters)
   {
     $this->urlParameters = (object)$urlParameters;
+    return $this;
+  }
+
+  /**
+   * @return string|null
+   */
+  public function getStatus()
+  {
+    return $this->status ?: null;
+  }
+
+  /**
+   * @param string $status
+   * @return Application
+   */
+  public function setStatus($status)
+  {
+    $this->status = $status;
     return $this;
   }
 }
