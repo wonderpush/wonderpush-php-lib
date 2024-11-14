@@ -116,6 +116,26 @@ class DeliveriesCreateParams extends BaseObject {
   }
 
   /**
+   * @param int|int[] $segmentId A single id, an array of ids, or multiple id parameters.
+   * @return $this
+   */
+  public function setTargetBrevoSegmentIds($segmentId) {
+    $this->targetType = 'targetBrevoSegmentIds';
+    $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
+    return $this;
+  }
+
+  /**
+   * @param int|int[] $listId A single id, an array of ids, or multiple id parameters.
+   * @return $this
+   */
+  public function setTargetBrevoListIds($segmentId) {
+    $this->targetType = 'targetBrevoListIds';
+    $this->targetValues = \WonderPush\Util\ArrayUtil::flatten(func_get_args());
+    return $this;
+  }
+
+  /**
    * @param array $segment A segment definition
    * @return $this
    */
