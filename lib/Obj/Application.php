@@ -28,6 +28,8 @@ class Application extends BaseObject {
   private $urlParameters;
   /** @var string */
   private $status;
+  /** @var integer */
+  private $subscribers;
 
   /**
    * @return string
@@ -159,4 +161,23 @@ class Application extends BaseObject {
     $this->status = $status;
     return $this;
   }
+
+  /**
+   * @return int
+   */
+  public function getSubscribers()
+  {
+    return $this->subscribers ?: 0;
+  }
+
+  /**
+   * @param int $subscribers
+   * @return Application
+   */
+  public function setSubscribers( $subscribers )
+  {
+    $this->subscribers = $subscribers;
+    return $this;
+  }
+
 }
