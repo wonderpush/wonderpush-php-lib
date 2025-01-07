@@ -18,6 +18,8 @@ class WebSdkInitOptions extends BaseObject {
   private $notificationIcon;
   /** @var string */
   private $manifestUrl;
+  /** @var bool */
+  private $resubscribe;
 
   /**
    * @return string
@@ -124,4 +126,21 @@ class WebSdkInitOptions extends BaseObject {
     }
     return null;
   }
+
+  /**
+   * @return bool
+   */
+  public function getResubscribe() {
+    return $this->resubscribe !== false; // A missing value means "true"
+  }
+
+  /**
+   * @param bool $resubscribe
+   * @return WebSdkInitOptions
+   */
+  public function setResubscribe($resubscribe) {
+    $this->resubscribe = $resubscribe !== false;
+    return $this;
+  }
+
 }
