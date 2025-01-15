@@ -21,6 +21,25 @@ class WebSdkInitOptions extends BaseObject {
   /** @var bool */
   private $resubscribe;
 
+  /** @var array */
+  private $allowedSubscriptionDomains;
+  /** @var mixed */
+  private $subscriptionNative;
+  /** @var mixed */
+  private $subscriptionDialog;
+  /** @var mixed */
+  private $subscriptionBell;
+  /** @var mixed */
+  private $subscriptionBlurb;
+  /** @var mixed */
+  private $optInOptions;
+  /** @var mixed */
+  private $plugins;
+  /** @var string */
+  private $serviceWorkerUrl;
+  /** @var string */
+  private $frameUrl;
+
   /**
    * @return string
    */
@@ -140,6 +159,150 @@ class WebSdkInitOptions extends BaseObject {
    */
   public function setResubscribe($resubscribe) {
     $this->resubscribe = $resubscribe !== false;
+    return $this;
+  }
+
+  /**
+   * @return array
+   */
+  public function getAllowedSubscriptionDomains() {
+    return $this->allowedSubscriptionDomains;
+  }
+
+  /**
+   * @param array $allowedSubscriptionDomains
+   * @return WebSdkInitOptions
+   */
+  public function setAllowedSubscriptionDomains($allowedSubscriptionDomains) {
+    $this->allowedSubscriptionDomains = $allowedSubscriptionDomains;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getSubscriptionNative() {
+    return $this->subscriptionNative;
+  }
+
+  /**
+   * @param mixed $subscriptionNative
+   * @return WebSdkInitOptions
+   */
+  public function setSubscriptionNative($subscriptionNative) {
+    $this->subscriptionNative = $subscriptionNative;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getSubscriptionDialog() {
+    return $this->subscriptionDialog;
+  }
+
+  /**
+   * @param mixed $subscriptionDialog
+   * @return WebSdkInitOptions
+   */
+  public function setSubscriptionDialog($subscriptionDialog) {
+    $this->subscriptionDialog = $subscriptionDialog;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getSubscriptionBell() {
+    return $this->subscriptionBell;
+  }
+
+  /**
+   * @param mixed $subscriptionBell
+   * @return WebSdkInitOptions
+   */
+  public function setSubscriptionBell($subscriptionBell) {
+    $this->subscriptionBell = $subscriptionBell;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getSubscriptionBlurb() {
+    return $this->subscriptionBlurb;
+  }
+
+  /**
+   * @param mixed $subscriptionBlurb
+   * @return WebSdkInitOptions
+   */
+  public function setSubscriptionBlurb($subscriptionBlurb) {
+    $this->subscriptionBlurb = $subscriptionBlurb;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getOptInOptions() {
+    return $this->optInOptions;
+  }
+
+  /**
+   * @param mixed $optInOptions
+   * @return WebSdkInitOptions
+   */
+  public function setOptInOptions($optInOptions) {
+    $this->optInOptions = $optInOptions;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getPlugins() {
+    return $this->plugins;
+  }
+
+  /**
+   * @param mixed $plugins
+   * @return WebSdkInitOptions
+   */
+  public function setPlugins($plugins) {
+    $this->plugins = $plugins;
+    return $this;
+  }
+
+  /**
+   * @return string
+   */
+  public function getServiceWorkerUrl() {
+    return $this->serviceWorkerUrl;
+  }
+
+  /**
+   * @param string $serviceWorkerUrl
+   * @return WebSdkInitOptions
+   */
+  public function setServiceWorkerUrl($serviceWorkerUrl) {
+    $this->serviceWorkerUrl = $serviceWorkerUrl;
+    return $this;
+  }
+
+  /**
+   * @return string
+   */
+  public function getFrameUrl() {
+    return $this->frameUrl;
+  }
+
+  /**
+   * @param string $frameUrl
+   * @return WebSdkInitOptions
+   */
+  public function setFrameUrl($frameUrl) {
+    $this->frameUrl = $frameUrl;
     return $this;
   }
 
