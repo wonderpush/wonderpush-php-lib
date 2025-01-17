@@ -61,7 +61,13 @@ class CurlHttpClient implements HttpClientInterface {
       case Request::POST:
       case Request::PATCH:
         $body = $request->getParams();
-        if (empty($body)) {
+        $files = $request->getFiles();
+        if (count($files)) {
+          $body = $request->getParams() ?: array();
+          foreach ($files as $name => $file) {
+            $body[$name] = new \CURLFile($file['tmp_name'], $file['type'], $file['name']);
+          }
+        } else if (empty($body)) {
           $body = null;
         } else {
           $headers['Content-Type'] = 'application/json';

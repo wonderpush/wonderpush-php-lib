@@ -77,6 +77,12 @@ class Request extends \WonderPush\Obj\BaseObject {
   private $params;
 
   /**
+   * An associative array of 'paramName' => ['tmp_name' => '/full/path','name' => 'filename.png', 'type' => 'image/png'].
+   * @var mixed
+   */
+  private $files = array();
+
+  /**
    * HTTP headers.
    * @var mixed[]
    */
@@ -188,6 +194,24 @@ class Request extends \WonderPush\Obj\BaseObject {
       $this->qsParams[$key] = $value;
     }
     return $this;
+  }
+
+  public function addFile($paramName, $filename, $path, $type) {
+    $this->files[$paramName] = array(
+      'name' => $filename,
+      'tmp_name' => $path,
+      'type' => $type,
+    );
+    return $this;
+  }
+
+  public function removeFile($paramName) {
+    unset($this->files[$paramName]);
+    return $this;
+  }
+
+  public function getFiles() {
+    return $this->files;
   }
 
   /**
