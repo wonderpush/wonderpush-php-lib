@@ -30,6 +30,8 @@ class Application extends BaseObject {
   private $status;
   /** @var integer */
   private $subscribers;
+  /** @var array */
+  private $pushDisabledPlatforms;
 
   /**
    * @return string
@@ -177,6 +179,22 @@ class Application extends BaseObject {
   public function setSubscribers( $subscribers )
   {
     $this->subscribers = $subscribers;
+    return $this;
+  }
+
+  /**
+   * @return array
+   */
+  public function getPushDisabledPlatforms() {
+    return $this->pushDisabledPlatforms;
+  }
+
+  /**
+   * @param array $pushDisabledPlatforms
+   * @return Application
+   */
+  public function setPushDisabledPlatforms($pushDisabledPlatforms) {
+    $this->pushDisabledPlatforms = (array)$pushDisabledPlatforms;
     return $this;
   }
 
