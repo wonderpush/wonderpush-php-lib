@@ -17,6 +17,7 @@ require(dirname(__FILE__) . '/lib/WonderPush.php');
 // WonderPush\Obj
 require(dirname(__FILE__) . '/lib/Obj/BaseObject.php');
 require(dirname(__FILE__) . '/lib/Obj/SuccessResponse.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignSuccessResponse.php');
 require(dirname(__FILE__) . '/lib/Obj/DeliveriesCreateResponse.php');
 require(dirname(__FILE__) . '/lib/Obj/Pagination.php');
 require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
@@ -25,6 +26,7 @@ require(dirname(__FILE__) . '/lib/Obj/Segment.php');
 require(dirname(__FILE__) . '/lib/Obj/GeoLocation.php');
 require(dirname(__FILE__) . '/lib/Obj/User.php');
 require(dirname(__FILE__) . '/lib/Obj/Collection.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignCollection.php');
 require(dirname(__FILE__) . '/lib/Obj/ApplicationCollection.php');
 require(dirname(__FILE__) . '/lib/Obj/SegmentCollection.php');
 require(dirname(__FILE__) . '/lib/Obj/Installation.php');
@@ -58,6 +60,14 @@ require(dirname(__FILE__) . '/lib/Obj/NotificationPush.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushAndroid.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushIos.php');
 require(dirname(__FILE__) . '/lib/Obj/NotificationPushWeb.php');
+require(dirname(__FILE__) . '/lib/Obj/Campaign.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignSchedule.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignSchedulePressure.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignScheduleUrlCriterion.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignStats.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignUrlFilters.php');
+require(dirname(__FILE__) . '/lib/Obj/CampaignCapping.php');
+
 require(dirname(__FILE__) . '/lib/Obj/WebSdkInitOptions.php');
 
 // WonderPush\Params
@@ -67,6 +77,8 @@ require(dirname(__FILE__) . '/lib/Params/FrequentFieldValuesParams.php');
 require(dirname(__FILE__) . '/lib/Params/AllInstallationsParams.php');
 require(dirname(__FILE__) . '/lib/Params/PatchInstallationParams.php');
 require(dirname(__FILE__) . '/lib/Params/TrackEventParams.php');
+require(dirname(__FILE__) . '/lib/Params/PatchCampaignParams.php');
+require(dirname(__FILE__) . '/lib/Params/CreateCampaignParams.php');
 
 // WonderPush\Net
 require(dirname(__FILE__) . '/lib/Net/Request.php');
@@ -87,4 +99,5 @@ require(dirname(__FILE__) . '/lib/Api/Applications.php');
 require(dirname(__FILE__) . '/lib/Api/Segments.php');
 require(dirname(__FILE__) . '/lib/Api/Stats.php');
 require(dirname(__FILE__) . '/lib/Api/Installations.php');
+require(dirname(__FILE__) . '/lib/Api/Campaigns.php');
 require(dirname(__FILE__) . '/lib/Api/Events.php');

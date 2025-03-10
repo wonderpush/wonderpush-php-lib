@@ -105,6 +105,12 @@ class WonderPush {
   private $segments;
 
   /**
+   * Lazily initialized Campaigns endpoints.
+   * @var Api\Campaigns
+   */
+  private $campaigns;
+
+  /**
    * Lazily initialized Installations endpoints.
    * @var Api\Installations
    */
@@ -309,6 +315,17 @@ class WonderPush {
       $this->installations = new Api\Installations($this);
     }
     return $this->installations;
+  }
+
+  /**
+   * Campaigns endpoints
+   * @return Api\Campaigns
+   */
+  public function campaigns() {
+    if ($this->campaigns === null) {
+      $this->campaigns = new Api\Campaigns($this);
+    }
+    return $this->campaigns;
   }
 
   /**
