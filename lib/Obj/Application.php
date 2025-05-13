@@ -32,6 +32,8 @@ class Application extends BaseObject {
   private $subscribers;
   /** @var array */
   private $pushDisabledPlatforms;
+  /** @var boolean */
+  private $wordPressSnippetDeactivated;
 
   /**
    * @return string
@@ -185,7 +187,8 @@ class Application extends BaseObject {
   /**
    * @return array
    */
-  public function getPushDisabledPlatforms() {
+  public function getPushDisabledPlatforms()
+  {
     return $this->pushDisabledPlatforms;
   }
 
@@ -193,9 +196,20 @@ class Application extends BaseObject {
    * @param array $pushDisabledPlatforms
    * @return Application
    */
-  public function setPushDisabledPlatforms($pushDisabledPlatforms) {
+  public function setPushDisabledPlatforms($pushDisabledPlatforms)
+  {
     $this->pushDisabledPlatforms = (array)$pushDisabledPlatforms;
     return $this;
   }
 
+  public function getWordPressSnippetDeactivated()
+  {
+    return (bool)$this->wordPressSnippetDeactivated;
+  }
+
+  public function setWordPressSnippetDeactivated($wordPressSnippetDeactivated)
+  {
+    $this->wordPressSnippetDeactivated = (bool)$wordPressSnippetDeactivated;
+    return $this;
+  }
 }
