@@ -3,6 +3,7 @@
 namespace WonderPush\Obj;
 
 class Campaign extends BaseObject {
+  const CAMPAIGN_BUILDER_BREVO_WORDPRESS_PLUGIN = 'brevoWordPressPlugin';
   /** @var string */
   private $id;
   /** @var string */
@@ -43,6 +44,8 @@ class Campaign extends BaseObject {
   private $editorStaffId;
   /** @var string */
   private $inheritUrlParameters;
+  /** @var string */
+  private $campaignBuilder;
 
   /**
    * @return string
@@ -361,6 +364,22 @@ class Campaign extends BaseObject {
    */
   public function setInheritUrlParameters($inheritUrlParameters) {
     $this->inheritUrlParameters = $inheritUrlParameters;
+    return $this;
+  }
+
+  /**
+   * @return string
+   */
+  public function getCampaignBuilder() {
+    return $this->campaignBuilder;
+  }
+
+  /**
+   * @param string $inheritUrlParameters
+   * @return Campaign
+   */
+  public function setCampaignBuilder($campaignBuilder) {
+    $this->campaignBuilder = $campaignBuilder;
     return $this;
   }
 
