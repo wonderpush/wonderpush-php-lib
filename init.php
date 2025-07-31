@@ -22,6 +22,7 @@ if (!class_exists('WonderPush\Obj\DeliveriesCreateResponse')) require(dirname(__
 if (!class_exists('WonderPush\Obj\Pagination')) require(dirname(__FILE__) . '/lib/Obj/Pagination.php');
 if (!class_exists('WonderPush\Obj\NullObject')) require(dirname(__FILE__) . '/lib/Obj/NullObject.php');
 if (!class_exists('WonderPush\Obj\Application')) require(dirname(__FILE__) . '/lib/Obj/Application.php');
+if (!class_exists('WonderPush\Obj\ApplicationBrevoContactSync')) require(dirname(__FILE__) . '/lib/Obj/ApplicationBrevoContactSync.php');
 if (!class_exists('WonderPush\Obj\Segment')) require(dirname(__FILE__) . '/lib/Obj/Segment.php');
 if (!class_exists('WonderPush\Obj\GeoLocation')) require(dirname(__FILE__) . '/lib/Obj/GeoLocation.php');
 if (!class_exists('WonderPush\Obj\User')) require(dirname(__FILE__) . '/lib/Obj/User.php');

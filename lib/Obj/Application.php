@@ -34,6 +34,8 @@ class Application extends BaseObject {
   private $pushDisabledPlatforms;
   /** @var boolean */
   private $wordPressSnippetDeactivated;
+  /** @var ApplicationBrevoContactSync */
+  private $brevoContactSync;
 
   /**
    * @return string
@@ -212,4 +214,24 @@ class Application extends BaseObject {
     $this->wordPressSnippetDeactivated = (bool)$wordPressSnippetDeactivated;
     return $this;
   }
+
+
+  /**
+   * @return ApplicationBrevoContactSync
+   */
+  public function getBrevoContactSync()
+  {
+    return $this->brevoContactSync;
+  }
+
+  /**
+   * @param ApplicationBrevoContactSync $brevoContactSync
+   * @return Application
+   */
+  public function setBrevoContactSync($brevoContactSync)
+  {
+    $this->brevoContactSync = BaseObject::instantiateForSetter('\WonderPush\Obj\ApplicationBrevoContactSync', $brevoContactSync);
+    return $this;
+  }
+
 }
