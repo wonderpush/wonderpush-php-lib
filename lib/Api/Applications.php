@@ -37,4 +37,22 @@ class Applications {
     $response = $this->wp->rest()->patch('/applications/' . $applicationId, array_merge($params, array('body' => $body)));
     return $response->checkedResult('\WonderPush\Obj\Application', 'application');
   }
+
+  /**
+   * Get domains for an application.
+   * @param string $applicationId
+   * @return \WonderPush\Obj\WebDomain[]
+   * @throws \WonderPush\Errors\Base
+   */
+  public function domains($applicationId) {
+    $response = $this->wp->rest()->get('/applications/' . urlencode($applicationId) . '/domains');
+    $body = $response->parsedBody();
+    $domains = array();
+    if (isset($body->domains) && is_array($body->domains)) {
+      foreach ($body->domains as $domainData) {
+        $domains[] = new \WonderPush\Obj\WebDomain($domainData);
+      }
+    }
+    return $domains;
+  }
 }

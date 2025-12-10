@@ -70,6 +70,8 @@ if (!class_exists('WonderPush\Obj\CampaignUrlFilters')) require(dirname(__FILE__
 if (!class_exists('WonderPush\Obj\CampaignCapping')) require(dirname(__FILE__) . '/lib/Obj/CampaignCapping.php');
 
 if (!class_exists('WonderPush\Obj\WebSdkInitOptions')) require(dirname(__FILE__) . '/lib/Obj/WebSdkInitOptions.php');
+if (!class_exists('WonderPush\Obj\WebDomainSdkConfig')) require(dirname(__FILE__) . '/lib/Obj/WebDomainSdkConfig.php');
+if (!class_exists('WonderPush\Obj\WebDomain')) require(dirname(__FILE__) . '/lib/Obj/WebDomain.php');
 
 // WonderPush\Params
 if (!class_exists('WonderPush\Params\CollectionParams')) require(dirname(__FILE__) . '/lib/Params/CollectionParams.php');
