@@ -28,6 +28,7 @@ class DeliveriesCreateParams extends BaseObject {
   private $inheritUrlParameters;
   /** @var array|null */
   private $filterWebDomains;
+  private $deliverySource;
 
   /**
    * @return string|null
@@ -77,6 +78,7 @@ class DeliveriesCreateParams extends BaseObject {
       'deliveryTime' => $this->deliveryTime ? $this->deliveryTime : null,
       'inheritUrlParameters' => (bool)$this->inheritUrlParameters,
       'filterWebDomains' => $this->filterWebDomains,
+      'deliverySource' => $this->deliverySource,
     ));
   }
 
@@ -272,6 +274,22 @@ class DeliveriesCreateParams extends BaseObject {
    */
   public function setFilterWebDomains($domains) {
     $this->filterWebDomains = is_array($domains) && count($domains) > 0 ? $domains : null;
+    return $this;
+  }
+
+  /**
+   * @return string|null Returns the domains as a PHP array, or null if not set
+   */
+  public function getDeliverySource() {
+    return $this->deliverySource;
+  }
+
+  /**
+   * @param string null $deliverySource
+   * @return DeliveriesCreateParams
+   */
+  public function setDeliverySource($deliverySource) {
+    $this->deliverySource = $deliverySource ?: null;
     return $this;
   }
 }
