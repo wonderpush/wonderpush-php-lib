@@ -19,7 +19,7 @@ abstract class Base extends \Exception {
 
   protected $codeStr;
 
-  public function __construct($message = '', $codeStr = '0', \Exception $previous = null) {
+  public function __construct($message = '', $codeStr = '0', $previous = null) {
     if ($message === '') {
       $message = static::DEFAULT_MESSAGE;
     }
