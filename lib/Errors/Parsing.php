@@ -15,7 +15,7 @@ class Parsing extends Base {
    */
   private $jsonErrorCode;
 
-  public function __construct($jsonErrorCode, $message = '', $codeStr = '0', \Exception $previous = null) {
+  public function __construct($jsonErrorCode, $message = '', $codeStr = '0', $previous = null) {
     parent::__construct($message, $codeStr, $previous);
     $this->jsonErrorCode = $jsonErrorCode;
   }
